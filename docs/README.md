@@ -9,7 +9,7 @@
 
 ## Minimum Viable Product
 
-Sonatify is a full-stack web application inspired by the web app of Spotify.  By the end of Week 9, this app will, 
+Sonatify is a full-stack web application inspired by the web app of Spotify.  By the end of Week 9, this app will,
 at a minimum, satisfy the following criteria with smooth, bug-free navigation, adequate seed data and
 sufficient CSS styling:
 
@@ -34,7 +34,9 @@ sufficient CSS styling:
 [api-endpoints]: api-endpoints.md
 [schema]: schema.md
 
-## Implentation Timeline **Note:** This is still wrong; it will be fixed later
+## Implentation Timeline
+
+**Note:** This is still wrong; it will be fixed later
 
 ### Phase 1: Backend setup and front end user authentication (1 day)
 
