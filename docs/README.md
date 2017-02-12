@@ -22,11 +22,11 @@ sufficient CSS styling:
 - [ ] [Production README] (../README.md) **Note:** This will be added later
 
 ## Design Docs
-* [View Wireframes][wireframes]
-* [React Components][components]
-* [API endpoints][api-endpoints]
-* [DB schema][schema]
-* [Sample State][sample-state]
+- [ ] [View Wireframes][wireframes]
+- [ ] [React Components][components]
+- [ ] [API endpoints][api-endpoints]
+- [ ] [DB schema][schema]
+- [ ] [Sample State][sample-state]
 
 [wireframes]: wireframes
 [components]: component-hierarchy.md
