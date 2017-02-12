@@ -15,7 +15,7 @@ sufficient CSS styling:
 
 - [ ] Hosting on Heroku
 - [ ] New account creation, login, and guest/demo login
-- [ ] CRUD songs and playlists
+- [ ] CRUD playlists
 - [ ] Maintain a queue of songs
 - [ ] Song playback during navigation
 - [ ] Following friends and their playlists
