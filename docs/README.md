@@ -25,7 +25,7 @@ sufficient CSS styling:
 
 ## Design Docs
 **TODO:** Finish these by Monday morning
-- [ ] [View Wireframes][wireframes]
+- [x] [View Wireframes][wireframes]
 - [ ] [React Components][components]
 - [ ] [API endpoints][api-endpoints]
 - [ ] [DB schema][schema]
