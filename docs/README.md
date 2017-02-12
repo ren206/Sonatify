@@ -3,10 +3,10 @@
 
 [Heroku link][heroku] **TODO:** Add specific link by end of Monday
 
-[Trello link][trello] **TODO:** Add specific link by end of Monday
+[Trello link][trello]
 
 [heroku]: http://www.herokuapp.com
-[trello]: https://trello.com
+[trello]: https://trello.com/b/PHWCrnkL/sonatify
 
 ## Minimum Viable Product
 
