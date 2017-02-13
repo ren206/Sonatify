@@ -10,6 +10,10 @@
 ### Users
 - `POST /api/users`
 
+### User follows
+- `POST /api/user_follows`
+- `DELETE /api/user_follows/:id`
+
 ### Session
 - `POST /api/session`
 - `DELETE /api/session`
@@ -19,6 +23,9 @@
 
 ### Albums
 - `GET /api/albums/:id`
+
+### Genres
+- `GET /api/genres/:id`
 
 ### Songs
 - `GET /api/albums/:id/songs/`
@@ -36,6 +43,6 @@
 - `DELETE /api/playlists/:id/playlist_listings/:id`
 - `PATCH /api/playlists/:id/playlist_listings/:id`
 
-### Follows
-- `POST /api/follows`
-- `DELETE /api/follows/:id`
+### Playlist follows
+- `POST /api/playlist_follows`
+- `DELETE /api/playlist_follows/:id`
