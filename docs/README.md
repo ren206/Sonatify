@@ -27,9 +27,9 @@ sufficient CSS styling:
 **TODO:** Finish these by Monday morning
 - [x] [View Wireframes][wireframes]
 - [x] [React Components][components]
-- [ ] [API endpoints][api-endpoints]
-- [ ] [DB schema][schema]
-- [ ] [Sample State][sample-state]
+- [x] [API endpoints][api-endpoints]
+- [x] [DB schema][schema]
+- [x] [Sample State][sample-state]
 
 [wireframes]: wireframes
 [components]: component-hierarchy.md
