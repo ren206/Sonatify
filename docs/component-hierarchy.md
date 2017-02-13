@@ -47,6 +47,8 @@
 **UserViewContainer**
 - UserView
 - PublicPlaylists
+- Following
+- Followers
 
 **ContextMenuContainer**
 - SongContextMenu

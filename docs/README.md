@@ -39,9 +39,7 @@ sufficient CSS styling:
 
 ## Implementation Timeline
 
-**TODO:** Revise this section
-
-### Phase 1: Backend setup and front end user authentication (1 day)
+### Phase 1: Backend setup and front end user authentication (2 days)
 
 **Objective:** Functioning rails project with front-end authentication
 
@@ -49,7 +47,7 @@ sufficient CSS styling:
 
 **Objective:** Songs can be played continuously while navigating through site
 
-### Phase 3: CRUD playlists (2 days)
+### Phase 3: CRUD playlists (1 days)
 
 **Objective:** Users can create, update, and delete playlists through context menus from songs
 
