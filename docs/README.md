@@ -1,11 +1,11 @@
 # Sonatify
 **Note:** This is the development README.
 
-[Heroku link][heroku] **TODO:** Add specific link by end of Monday
+[Heroku link][heroku]
 
 [Trello link][trello]
 
-[heroku]: http://www.herokuapp.com
+[heroku]: https://sonatify.herokuapp.com/
 [trello]: https://trello.com/b/PHWCrnkL/sonatify
 
 ## Minimum Viable Product
@@ -15,7 +15,7 @@ Spotify. By the end of Week 9, this app will, at a minimum, satisfy the followin
 criteria with smooth, bug-free navigation, adequate seed data and
 sufficient CSS styling:
 
-- [ ] Hosting on Heroku
+- [x] Hosting on Heroku
 - [ ] New account creation, login, and guest/demo login
 - [ ] CRUD playlists
 - [ ] Maintain a queue of songs
