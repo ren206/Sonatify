@@ -3,7 +3,7 @@
 {
 
   currentUser: {
-    username: "guestuser",
+    username: "guestuser"
   },
 
   errors: {

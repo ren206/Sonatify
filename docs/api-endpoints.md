@@ -22,7 +22,7 @@
 - `GET /api/artists/:id`
 
 ### Albums
-- `GET /api/albums/:id`
+- `GET /api/artists/:id/albums/:id`
 
 ### Genres
 - `GET /api/genres/:id`
