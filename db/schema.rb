@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20170214191555) do
 
   create_table "users", force: :cascade do |t|
     t.string   "username",        null: false
-    t.string   "email",           null: false
+    t.string   "email"
     t.string   "f_name",          null: false
     t.string   "l_name",          null: false
     t.string   "password_digest", null: false
@@ -38,7 +38,6 @@ ActiveRecord::Schema.define(version: 20170214191555) do
     t.datetime "updated_at",      null: false
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", using: :btree
   add_index "users", ["f_name"], name: "index_users_on_f_name", using: :btree
   add_index "users", ["l_name"], name: "index_users_on_l_name", using: :btree
   add_index "users", ["session_token"], name: "index_users_on_session_token", using: :btree
