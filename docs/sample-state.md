@@ -1,14 +1,15 @@
 ```javascript
 
 {
+  session: {
 
-  currentUser: {
-    username: "guestuser"
-  },
+    currentUser: {
+      id: 3,
+      username: "guest"
+    },
 
-  errors: {
-    session: {},
-  },
+    errors: []
+  }
 
   currentSong: {
     song: {
