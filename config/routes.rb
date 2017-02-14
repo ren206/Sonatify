@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   root to: 'static_pages#root'
-  # TODO: Add routes for users and sessions
-  resources :users, only: [:create]
+  
+  resources :users, only: [:crenamespace :api, defaults: { format: :json } do
+    resources :users, only: [:create]
+    resource :session, only: [:create, :destroy]
+  end
 end
