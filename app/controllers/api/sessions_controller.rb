@@ -14,7 +14,7 @@ class Api::SessionsController < ApplicationController
       log_out!
       render json: {}
     else
-      render json: ['Sign in before you sign out'], status: 404
+      render json: ['No one is signed in'], status: 404
     end
   end
 end
