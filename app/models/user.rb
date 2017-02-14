@@ -14,13 +14,19 @@
 #
 
 class User < ActiveRecord::Base
-  validates :username, :password_digest, :session_token, presence: true
+  validates :username, :email, :f_name, :l_name, :password_digest, :session_token, presence: true
   validates :username, :session_token, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
 
   after_initialize :ensure_session_token
 
   attr_reader :password
+
+  # user followings associations
+  has_many :in_follows, class_name: "Follow", foreign_key: "followee_id"
+  has_many :out_follows, class_name: "Follow", foreign_key: "follower_id"
+  has_many :followers, through: :in_follows, source: :follower
+  has_many :followees, through: :out_follows, source: :followee
 
   def self.find_by_credentials(credentials)
     user = User.find_by_username(credentials[:username])
