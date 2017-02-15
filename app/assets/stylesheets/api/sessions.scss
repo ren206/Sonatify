@@ -1,3 +1,40 @@
 // Place all the styles related to the api/sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.splash {
+  // background-image: image-url('splash/black-bg.jpeg');
+  // background-image: image-url('splash/guitar-bg.jpeg');
+  background-position: center;
+  background-size: cover;
+  background-color: #555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.splash-wrapper {
+  display: flex;
+    align-items: center;
+    justify-content: center;
+  min-width: 829px;
+}
+
+.splash-left {
+
+}
+
+.splash-right {
+
+}
+
+.splash-divider {
+  background-color: #999;
+  flex: 0 0 1px;
+  height: 430px;
+}

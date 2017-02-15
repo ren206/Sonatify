@@ -12,12 +12,12 @@ const App = ({currentUser, logout, router}) => {
   if (!currentUser) return null;
 
   return (
-    <div className="app">
+    <section className="app">
       <h1>Welcome, {currentUser.username}</h1>
       <h3>Most of the app would live here</h3>
 
       <button onClick={handleLogout}>Log Out</button>
-    </div>
+    </section>
   )
 }
 

@@ -47,7 +47,7 @@ class Login extends React.Component {
 
   render() {
 		return (
-			<div>
+			<section>
         <h3>LOGO</h3>
 
         <br/>
@@ -82,7 +82,7 @@ class Login extends React.Component {
         <a href="#" onClick={this.props.updateFormType("authnav")}>
           Sign up here!
         </a>
-			</div>
+			</section>
 		);
 	}
 }
