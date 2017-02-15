@@ -35,24 +35,34 @@ class Splash extends React.Component {
 
   render() {
     return(
-      <div>
-        <div className="Splash">
-          <h1>Get the right music, right now</h1>
+      <section className="splash">
+        <div className="splash-wrapper">
+          
+          <div className="splash-left">
+            {this.renderAuth()}
+          </div>
 
-          <br />
+          <div className="splash-divider" />
 
-          <h3>Listen to millions of songs for free.</h3>
+          <div className="splash-right">
 
-          <br />
+            <h1>Get the right music, right now</h1>
 
-          <img/>
+            <br />
 
+            <h2>Listen to millions of songs for free.</h2>
+
+            <br />
+
+            <ul>
+              <li>Search &amp; discover music you'll love</li>
+              <li>Create playlists of your favorite music</li>
+              <li>Follow friends and their playlists</li>
+            </ul>
+          </div>
         </div>
 
-        <div>
-          {this.renderAuth()}
-        </div>
-      </div>
+      </section>
     )
   }
 }

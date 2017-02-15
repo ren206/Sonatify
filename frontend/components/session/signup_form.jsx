@@ -50,9 +50,11 @@ class Signup extends React.Component {
 
   render() {
 		return (
-			<div className="signup-form">
+			<section className="signup-form">
         <h3>Small LOGO</h3>
         <h3>Create your free Sonatify account</h3>
+        <br />
+        {this.renderErrors()}
 				<form onSubmit={this.handleSubmit}>
 
 						<label> Username:
@@ -89,7 +91,7 @@ class Signup extends React.Component {
 				</form>
 
         <a href="#" onClick={this.props.updateFormType("authnav")}>Go back</a>
-			</div>
+			</section>
 		);
 	}
 }
