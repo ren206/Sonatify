@@ -38,34 +38,23 @@ class Splash extends React.Component {
       <div>
         <div className="Splash">
           <h1>Get the right music, right now</h1>
-          <h4>...on Sonatify, not Spotify</h4>
+
+          <br />
+
+          <h3>Listen to millions of songs for free.</h3>
+
+          <br />
+
+          <img/>
+
         </div>
 
-        {this.renderAuth()}
+        <div>
+          {this.renderAuth()}
+        </div>
       </div>
     )
   }
 }
 
 export default Splash;
-
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     login: user => dispatch(login(user))
-//   }
-// };
-//
-// export default connect(
-//   null,
-//   mapDispatchToProps
-// )(Splash);
-
-
-// authNav component
-  // links to set formType
-// signup component
-// login component
-
-// click handler in Splash for setting state.formType
-// pass down click handler as props to children components
-// so they can set state too
