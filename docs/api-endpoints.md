@@ -8,7 +8,11 @@
 ## JSON API
 
 ### Users
+- `GET /api/users/:userId`
 - `POST /api/users`
+- `GET /api/user`
+  - own user page
+- `PATCH /api/user`
 
 ### User follows
 - `POST /api/user_follows`
@@ -22,15 +26,14 @@
 - `GET /api/artists/:id`
 
 ### Albums
-- `GET /api/artists/:id/albums/:id`
+- `GET /api/albums/:id`
 
 ### Genres
 - `GET /api/genres/:id`
 
 ### Songs
-- `GET /api/albums/:id/songs/`
-- `GET /api/albums/:id/songs/:id`
-- `GET /api/playlists/:id/songs`
+- `GET /api/songs/`
+- `GET /api/songs/:id`
 
 ### Playlists
 - `POST /api/playlists`

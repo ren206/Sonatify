@@ -42,13 +42,13 @@ sufficient CSS styling:
 
 **Objective:** Functioning rails project with front-end authentication
 
-### Phase 2: Song model, API, and components (2 days)
-
-**Objective:** Songs can be played continuously while navigating through site
-
-### Phase 3: CRUD playlists (1 days)
+### Phase 2: CRUD playlists (1 days)
 
 **Objective:** Users can create, update, and delete playlists through context menus from songs
+
+### Phase 3: Song model, API, and components (2 days)
+
+**Objective:** Songs can be played continuously while navigating through site
 
 ### Phase 4: Persistent play queue (2 day)
 

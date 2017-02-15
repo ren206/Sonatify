@@ -59,8 +59,8 @@
 | Path                                  | Component             |
 |---------------------------------------|-----------------------|
 | `/` (without session)                 | SplashContainer       |
-| `/signup`                             | AuthFormContainer     |
-| `/login`                              | AuthFormContainer     |
+| `/signup`                             | SessionFormContainer  |
+| `/login`                              | SessionFormContainer  |
 | `/browse`                             | BrowseContainer       |
 | `/queue`                              | QueueContainer        |
 | `/user`                               | UserViewContainer     |
