@@ -50,31 +50,31 @@ class Login extends React.Component {
         <br/>
         <div className="login-errors">{this.renderErrors()}</div>
 				<form onSubmit={this.handleSubmit}>
-						<br/>
+					<br/>
 
-						<label> Username
-              <br/>
-							<input type="text"
-								value={this.state.username}
-                placeholder="Sonatify username"
-								onChange={this.updateInfo("username")} />
-						</label>
+					<label htmlFor="username">Username</label>
+            <br/>
+						<input type="text"
+              id="username"
+							value={this.state.username}
+              placeholder="Sonatify username"
+							onChange={this.updateInfo("username")} />
 
-						<br/>
+					<br/>
 
-						<label> Password
-              <br/>
-							<input type="password"
-								value={this.state.password}
-                placeholder="Password"
-								onChange={this.updateInfo("password")} />
-						</label>
+					<label htmlFor="password">Password</label>
+            <br/>
+						<input type="password"
+              id="password"
+							value={this.state.password}
+              placeholder="Password"
+							onChange={this.updateInfo("password")} />
 
-						<br/>
+					<br/>
 
-						<button className="clear-button">
-              Login
-            </button>
+					<button className="clear-button">
+            Login
+          </button>
 				</form>
 
         <div className="small-text">
@@ -85,7 +85,7 @@ class Login extends React.Component {
             Sign up here!
           </a>
         </div>
-        
+
 			</section>
 		);
 	}

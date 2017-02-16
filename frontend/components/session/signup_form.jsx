@@ -60,43 +60,45 @@ class Signup extends React.Component {
             errors={ this.props.errors }
             />
 
-						<label> Username
+          <label htmlFor="username">Username</label>
+            <br/>
+						<input type="text"
+              id="username"
+							value={this.state.username}
+              placeholder="e.g. johndoe"
+							onChange={this.updateInfo("username")} />
+
+					<br/>
+
+					<label htmlFor="password">Password</label>
+            <br/>
+						<input type="password"
+              id="password"
+							value={this.state.password}
+              placeholder="Choose a password"
+							onChange={this.updateInfo("password")} />
+
+					<br/>
+
+					<label htmlFor="fname">First Name</label>
               <br/>
 							<input type="text"
-								value={this.state.username}
-                placeholder="e.g. johndoe"
-								onChange={this.updateInfo("username")} />
-						</label>
-
-						<br/>
-
-						<label> Password
-              <br/>
-							<input type="password"
-								value={this.state.password}
-                placeholder="Choose a password"
-								onChange={this.updateInfo("password")} />
-						</label>
-
-						<br/>
-
-						<label> First Name
-              <br/>
-							<input type="text"
+                id="fname"
 								value={this.state.f_name}
                 placeholder="e.g. John"
 								onChange={this.updateInfo("f_name")} />
-						</label>
-						<br/>
 
-						<label> Last Name
-              <br/>
-							<input type="text"
-								value={this.state.l_name}
-                placeholder="e.g. Doe"
-								onChange={this.updateInfo("l_name")} />
-						</label>
-						<br/>
+					<br/>
+
+					<label htmlFor="lname">Last Name</label>
+            <br/>
+						<input type="text"
+              id="lname"
+							value={this.state.l_name}
+              placeholder="e.g. Doe"
+							onChange={this.updateInfo("l_name")} />
+
+					<br/>
 
 						<button className="clear-button">
               Sign Up

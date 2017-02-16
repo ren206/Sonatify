@@ -60,6 +60,13 @@
   text-align: center;
 }
 
+.splash-left label {
+  color: #a0a0a0;
+  display: block;
+  font-size: 13px;
+  margin-top: 15px;
+}
+
 .splash-left input {
   background-color: transparent;
   border: none;
@@ -71,6 +78,23 @@
   outline: none;
   padding: 5px 10px;
   width: 100%;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: white;
+  font-weight: 300;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: white;
+  font-weight: 300;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: white;
+  font-weight: 300;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: white;
+  font-weight: 300;
 }
 
 .small-text {
@@ -151,10 +175,10 @@
   padding-top: 20px;
 }
 
-.signup-errors {
+ul.signup-errors {
   position: absolute;
-  top: 395px;
-  left: 375px;
+  top: 362px;
+  left: 370px;
   z-index: 1;
 }
 
@@ -163,8 +187,8 @@
   color: #DDD;
   position: relative;
   font-size: 14px;
-  margin: 20px;
-  padding: 5px 8px;
+  margin: 36px;
+  padding: 8px 8px;
   visibility: hidden;
 }
 
