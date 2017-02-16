@@ -18,12 +18,24 @@
     left: 0;
 }
 
+.splash-right {
+  flex: 0 0 540px;
+  padding: 45px;
+}
+
+.splash-left {
+  flex: 0 0 288px;
+  padding: 45px;
+  color: white;
+}
+
 .splash-wrapper {
   display: flex;
     align-items: center;
     justify-content: center;
   min-width: 829px;
 }
+
 .splash-left button {
   border-radius: 19px;
   box-sizing: border-box;
@@ -40,21 +52,9 @@
   width: 100%;
 }
 
-
-.splash-right {
-  flex: 0 0 540px;
-  padding: 45px;
+.splash-left a {
+  color: white;
 }
-
-.splash-left {
-  flex: 0 0 288px;
-  padding: 45px;
-}
-
-.splash-left button {
-  font-family: 'Proxima Nova';
-}
-
 
 .splash-divider {
   background-color: #999;
