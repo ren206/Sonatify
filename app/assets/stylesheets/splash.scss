@@ -1,0 +1,86 @@
+// Place all the styles related to the api/sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.splash {
+  background-image: image-url('splash/black-bg.jpeg');
+  // background-image: image-url('splash/guitar-bg.jpeg');
+  background-position: center;
+  background-size: cover;
+  background-color: #555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.splash-wrapper {
+  display: flex;
+    align-items: center;
+    justify-content: center;
+  min-width: 829px;
+}
+.splash-left button {
+  border-radius: 19px;
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+  display: block;
+  font-family: 'Proxima Nova', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  height: 37px;
+  margin: 20px 0px;
+  padding: 5px 0px;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+
+.splash-right {
+  flex: 0 0 540px;
+  padding: 45px;
+}
+
+.splash-left {
+  flex: 0 0 288px;
+  padding: 45px;
+}
+
+.splash-left button {
+  font-family: 'Proxima Nova';
+}
+
+
+.splash-divider {
+  background-color: #999;
+  flex: 0 0 1px;
+  height: 430px;
+}
+
+.splash-right h1 {
+  color: #07D159;
+  font-size: 60px;
+  font-weight: 400;
+}
+
+.splash-right h2 {
+  color: white;
+  font-size: 28px;
+  font-weight: 300;
+  margin: 35px 0px 45px 0px;
+}
+
+.splash-right li {
+  background: image-url('splash/checked.png') no-repeat left top;
+  color: white;
+  font-size: 18px;
+  font-weight: 300;
+  height: 24px;
+  padding: 5px 0 0 40px;
+  position: relative;
+}
