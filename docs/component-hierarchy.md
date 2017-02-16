@@ -1,10 +1,11 @@
 ## Component Hierarchy
 
-**AuthFormContainer**
-- SignUpForm
-  - SignUpErrors
-- LoginForm
-  - LoginErrors
+**Splash**
+- SplashNav
+  - AuthNav
+  - LoginForm
+  - SignupForm
+    - SignupErrors
 
 **NavigationContainer**
 - Navigation
@@ -58,9 +59,7 @@
 
 | Path                                  | Component             |
 |---------------------------------------|-----------------------|
-| `/` (without session)                 | SplashContainer       |
-| `/signup`                             | SessionFormContainer  |
-| `/login`                              | SessionFormContainer  |
+| `/` (without session)                 | Splash                |
 | `/browse`                             | BrowseContainer       |
 | `/queue`                              | QueueContainer        |
 | `/user`                               | UserViewContainer     |
