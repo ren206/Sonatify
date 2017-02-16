@@ -42,7 +42,7 @@ sufficient CSS styling:
 
 **Objective:** Functioning rails project with front-end authentication
 
-### Phase 2: CRUD playlists (1 days)
+### Phase 2: CRUD playlists (2 days)
 
 **Objective:** Users can create, update, and delete playlists
 
@@ -50,7 +50,7 @@ sufficient CSS styling:
 
 **Objective:** Songs can be played continuously while navigating through site
 
-### Phase 4: Persistent play queue (2 day)
+### Phase 4: Persistent play queue (1 day)
 
 **Objective:** Songs can be added to a play queue that will persist during a user's session
 
