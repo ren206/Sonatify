@@ -57,32 +57,40 @@ class Signup extends React.Component {
         {this.renderErrors()}
 				<form onSubmit={this.handleSubmit}>
 
-						<label> Username:
+						<label> Username
+              <br/>
 							<input type="text"
 								value={this.state.username}
+                placeholder="e.g. johndoe"
 								onChange={this.updateInfo("username")} />
 						</label>
 
 						<br/>
 
-						<label> Password:
+						<label> Password
+              <br/>
 							<input type="password"
 								value={this.state.password}
+                placeholder="Choose a password"
 								onChange={this.updateInfo("password")} />
 						</label>
 
 						<br/>
 
-						<label> First Name:
+						<label> First Name
+              <br/>
 							<input type="text"
 								value={this.state.f_name}
+                placeholder="e.g. John"
 								onChange={this.updateInfo("f_name")} />
 						</label>
 						<br/>
 
-						<label> Last Name:
+						<label> Last Name
+              <br/>
 							<input type="text"
 								value={this.state.l_name}
+                placeholder="e.g. Doe"
 								onChange={this.updateInfo("l_name")} />
 						</label>
 						<br/>
