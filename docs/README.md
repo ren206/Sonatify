@@ -44,7 +44,7 @@ sufficient CSS styling:
 
 ### Phase 2: CRUD playlists (1 days)
 
-**Objective:** Users can create, update, and delete playlists through context menus from songs
+**Objective:** Users can create, update, and delete playlists
 
 ### Phase 3: Song model, API, and components (2 days)
 
