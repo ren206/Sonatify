@@ -1,0 +1,213 @@
+// Place all the styles related to the api/sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.splash {
+  background-image: image-url('splash/black-bg.jpeg');
+  // background-image: image-url('splash/guitar-bg.jpeg');
+  background-position: center;
+  background-size: cover;
+  background-color: #555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.splash-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 829px;
+}
+
+.auth-nav-logo {
+  background-image: image-url('splash/logo-white');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 146.4px;
+  margin: 0 auto;
+  width: 268px;
+}
+
+.small-signup-logo, .small-login-logo {
+  background-image: image-url('splash/logo-white');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 80px;
+  margin: 0 auto;
+  width: 268px;
+}
+
+.splash-right {
+  flex: 0 0 540px;
+  padding: 45px;
+}
+
+.splash-left {
+  flex: 0 0 288px;
+  padding: 45px;
+  color: white;
+}
+
+.splash-left h3 {
+  text-align: center;
+}
+
+.splash-left label {
+  color: #a0a0a0;
+  display: block;
+  font-size: 13px;
+  margin-top: 15px;
+}
+
+.splash-left input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  box-sizing: border-box;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  outline: none;
+  padding: 5px 10px;
+  width: 100%;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: white;
+  font-weight: 300;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: white;
+  font-weight: 300;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: white;
+  font-weight: 300;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: white;
+  font-weight: 300;
+}
+
+.small-text {
+  color: white;
+  font-size: 12px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.splash-left a {
+  color: white;
+  text-decoration: none;
+  font-weight: 300;
+}
+
+.splash-left a:hover {
+  text-decoration: underline;
+}
+
+.splash-left button {
+  border-radius: 19px;
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+  display: block;
+  font-family: 'Proxima Nova', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  height: 37px;
+  margin: 20px 0px;
+  padding: 5px 0px;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.green-button {
+  border: none;
+  background-color: #07D159;
+}
+
+.clear-button {
+  background-color: transparent;
+  border: 1px solid white;
+}
+
+.splash-divider {
+  background-color: #999;
+  flex: 0 0 1px;
+  height: 430px;
+}
+
+.splash-right h1 {
+  color: #07D159;
+  font-size: 60px;
+  font-weight: 400;
+}
+
+.splash-right h2 {
+  color: white;
+  font-size: 28px;
+  font-weight: 300;
+  margin: 35px 0px 45px 0px;
+}
+
+.splash-right li {
+  background: image-url('splash/checked.png') no-repeat left top;
+  color: white;
+  font-size: 18px;
+  font-weight: 300;
+  height: 24px;
+  padding: 5px 0 0 40px;
+  position: relative;
+}
+
+.login-errors {
+  color: #CE1A2B;
+  font-size: 16px;
+  padding-top: 20px;
+}
+
+ul.signup-errors {
+  position: absolute;
+  top: 362px;
+  left: 370px;
+  z-index: 1;
+}
+
+.signup-errors li {
+  background-color: #CE1A2B;
+  color: #DDD;
+  position: relative;
+  font-size: 14px;
+  margin: 36px;
+  padding: 8px 8px;
+  visibility: hidden;
+}
+
+.error-message {
+  white-space: pre;
+}
+
+.error-message:before {
+  border-right: 5px solid #CE1A2B;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: none;
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: -5px;
+
+}
+
+li.error {
+  visibility: visible;
+}

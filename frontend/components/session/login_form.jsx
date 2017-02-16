@@ -28,15 +28,8 @@ class Login extends React.Component {
   }
 
   renderErrors() {
-		return(
-			<ul>
-				{this.props.errors.map((error, i) => (
-					<li key={`error-${i}`}>
-						{error}
-					</li>
-				))}
-			</ul>
-		);
+    const errors = Boolean(this.props.errors.length)
+    return errors ? "Incorrect username and password" : "";
 	}
 
   updateInfo(field) {
@@ -48,40 +41,51 @@ class Login extends React.Component {
   render() {
 		return (
 			<section>
-        <h3>LOGO</h3>
+        <div className="small-login-logo" />
 
         <br/>
 
         <h3>Log in</h3>
 
         <br/>
-        {this.renderErrors()}
+        <div className="login-errors">{this.renderErrors()}</div>
 				<form onSubmit={this.handleSubmit}>
-						<br/>
+					<br/>
 
-						<label> Username:
-							<input type="text"
-								value={this.state.username}
-								onChange={this.updateInfo("username")} />
-						</label>
+					<label htmlFor="username">Username</label>
+            <br/>
+						<input type="text"
+              id="username"
+							value={this.state.username}
+              placeholder="Sonatify username"
+							onChange={this.updateInfo("username")} />
 
-						<br/>
+					<br/>
 
-						<label> Password:
-							<input type="password"
-								value={this.state.password}
-								onChange={this.updateInfo("password")} />
-						</label>
+					<label htmlFor="password">Password</label>
+            <br/>
+						<input type="password"
+              id="password"
+							value={this.state.password}
+              placeholder="Password"
+							onChange={this.updateInfo("password")} />
 
-						<br/>
+					<br/>
 
-						<input type="submit" value="Login" />
+					<button className="clear-button">
+            Login
+          </button>
 				</form>
 
-        Don't have an account?
-        <a href="#" onClick={this.props.updateFormType("authnav")}>
-          Sign up here!
-        </a>
+        <div className="small-text">
+          Don't have an account? &nbsp;
+          <a href="#"
+            className="auth-link"
+            onClick={this.props.updateFormType("authnav")}>
+            Sign up here!
+          </a>
+        </div>
+
 			</section>
 		);
 	}

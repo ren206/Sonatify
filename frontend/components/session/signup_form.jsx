@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router';
 import { connect } from 'react-redux';
 import { signup } from '../../actions/session_actions';
+import SignupErrors from './signup_errors';
 
 class Signup extends React.Component {
   constructor(props) {
@@ -51,46 +52,61 @@ class Signup extends React.Component {
   render() {
 		return (
 			<section className="signup-form">
-        <h3>Small LOGO</h3>
+        <div className="small-signup-logo" />
         <h3>Create your free Sonatify account</h3>
         <br />
-        {this.renderErrors()}
 				<form onSubmit={this.handleSubmit}>
+          <SignupErrors
+            errors={ this.props.errors }
+            />
 
-						<label> Username:
+          <label htmlFor="username">Username</label>
+            <br/>
+						<input type="text"
+              id="username"
+							value={this.state.username}
+              placeholder="e.g. johndoe"
+							onChange={this.updateInfo("username")} />
+
+					<br/>
+
+					<label htmlFor="password">Password</label>
+            <br/>
+						<input type="password"
+              id="password"
+							value={this.state.password}
+              placeholder="Choose a password"
+							onChange={this.updateInfo("password")} />
+
+					<br/>
+
+					<label htmlFor="fname">First Name</label>
+              <br/>
 							<input type="text"
-								value={this.state.username}
-								onChange={this.updateInfo("username")} />
-						</label>
-
-						<br/>
-
-						<label> Password:
-							<input type="password"
-								value={this.state.password}
-								onChange={this.updateInfo("password")} />
-						</label>
-
-						<br/>
-
-						<label> First Name:
-							<input type="text"
+                id="fname"
 								value={this.state.f_name}
+                placeholder="e.g. John"
 								onChange={this.updateInfo("f_name")} />
-						</label>
-						<br/>
 
-						<label> Last Name:
-							<input type="text"
-								value={this.state.l_name}
-								onChange={this.updateInfo("l_name")} />
-						</label>
-						<br/>
+					<br/>
 
-						<input type="submit" value="Sign Up" />
+					<label htmlFor="lname">Last Name</label>
+            <br/>
+						<input type="text"
+              id="lname"
+							value={this.state.l_name}
+              placeholder="e.g. Doe"
+							onChange={this.updateInfo("l_name")} />
+
+					<br/>
+
+						<button className="clear-button">
+              Sign Up
+            </button>
 				</form>
-
-        <a href="#" onClick={this.props.updateFormType("authnav")}>Go back</a>
+        <div className="small-text">
+          <a href="#" onClick={this.props.updateFormType("authnav")}>Go back</a>
+        </div>
 			</section>
 		);
 	}

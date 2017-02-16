@@ -22,18 +22,24 @@ class AuthNav extends React.Component {
   render() {
     return(
       <nav className="auth-nav">
-        <h1>LOGO</h1>
-        <button onClick={this.props.updateFormType("signup")}>Sign Up</button>
+        <div className="auth-nav-logo"/>
+        <button className="clear-button" onClick={this.props.updateFormType("signup")}>
+          Sign Up
+        </button>
 
         <br/>
 
-        <button onClick={this.handleGuest}>Login as Guest</button>
+        <button className="green-button" onClick={this.handleGuest}>
+          Login as Guest
+        </button>
 
         <br/>
 
+        <div className="small-text">  
         <a href="#" onClick={this.props.updateFormType("login")}>
           Already have an account? Log in here.
         </a>
+      </div>
       </nav>
     )
   }
