@@ -18,6 +18,8 @@ class User < ActiveRecord::Base
   validates :username, :session_token, uniqueness: true
   validates :password, length: { minimum: 8, allow_nil: true }
   validates :password_digest, presence: { message: "Password can't be blank" }
+  validates_format_of :username, with: /[A-Za-z0-9]+/
+  validates_format_of :f_name, :l_name, with: /[a-z]+/i
 
 
   after_initialize :ensure_session_token

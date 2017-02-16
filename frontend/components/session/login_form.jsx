@@ -28,15 +28,8 @@ class Login extends React.Component {
   }
 
   renderErrors() {
-		return(
-			<ul>
-				{this.props.errors.map((error, i) => (
-					<li key={`error-${i}`}>
-						{error}
-					</li>
-				))}
-			</ul>
-		);
+    const errors = Boolean(this.props.errors.length)
+    return errors ? "Incorrect username and password" : "";
 	}
 
   updateInfo(field) {
@@ -48,14 +41,14 @@ class Login extends React.Component {
   render() {
 		return (
 			<section>
-        <h3>LOGO</h3>
+        <div className="small-login-logo" />
 
         <br/>
 
         <h3>Log in</h3>
 
         <br/>
-        {this.renderErrors()}
+        <div className="login-errors">{this.renderErrors()}</div>
 				<form onSubmit={this.handleSubmit}>
 						<br/>
 
@@ -79,13 +72,20 @@ class Login extends React.Component {
 
 						<br/>
 
-						<input type="submit" value="Login" />
+						<button className="clear-button">
+              Login
+            </button>
 				</form>
 
-        Don't have an account?
-        <a href="#" onClick={this.props.updateFormType("authnav")}>
-          Sign up here!
-        </a>
+        <div className="small-text">
+          Don't have an account? &nbsp;
+          <a href="#"
+            className="auth-link"
+            onClick={this.props.updateFormType("authnav")}>
+            Sign up here!
+          </a>
+        </div>
+        
 			</section>
 		);
 	}

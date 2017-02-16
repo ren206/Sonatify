@@ -18,6 +18,33 @@
     left: 0;
 }
 
+.splash-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 829px;
+}
+
+.auth-nav-logo {
+  background-image: image-url('splash/logo-white');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 146.4px;
+  margin: 0 auto;
+  width: 268px;
+}
+
+.small-signup-logo, .small-login-logo {
+  background-image: image-url('splash/logo-white');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 80px;
+  margin: 0 auto;
+  width: 268px;
+}
+
 .splash-right {
   flex: 0 0 540px;
   padding: 45px;
@@ -29,11 +56,38 @@
   color: white;
 }
 
-.splash-wrapper {
-  display: flex;
-    align-items: center;
-    justify-content: center;
-  min-width: 829px;
+.splash-left h3 {
+  text-align: center;
+}
+
+.splash-left input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  box-sizing: border-box;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  outline: none;
+  padding: 5px 10px;
+  width: 100%;
+}
+
+.small-text {
+  color: white;
+  font-size: 12px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.splash-left a {
+  color: white;
+  text-decoration: none;
+  font-weight: 300;
+}
+
+.splash-left a:hover {
+  text-decoration: underline;
 }
 
 .splash-left button {
@@ -52,8 +106,14 @@
   width: 100%;
 }
 
-.splash-left a {
-  color: white;
+.green-button {
+  border: none;
+  background-color: #07D159;
+}
+
+.clear-button {
+  background-color: transparent;
+  border: 1px solid white;
 }
 
 .splash-divider {
@@ -83,4 +143,47 @@
   height: 24px;
   padding: 5px 0 0 40px;
   position: relative;
+}
+
+.login-errors {
+  color: #CE1A2B;
+  font-size: 16px;
+  padding-top: 20px;
+}
+
+.signup-errors {
+  position: absolute;
+  top: 395px;
+  left: 375px;
+  z-index: 1;
+}
+
+.signup-errors li {
+  background-color: #CE1A2B;
+  color: #DDD;
+  position: relative;
+  font-size: 14px;
+  margin: 20px;
+  padding: 5px 8px;
+  visibility: hidden;
+}
+
+.error-message {
+  white-space: pre;
+}
+
+.error-message:before {
+  border-right: 5px solid #CE1A2B;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: none;
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: -5px;
+
+}
+
+li.error {
+  visibility: visible;
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router';
 import { connect } from 'react-redux';
 import { signup } from '../../actions/session_actions';
+import SignupErrors from './signup_errors';
 
 class Signup extends React.Component {
   constructor(props) {
@@ -51,11 +52,13 @@ class Signup extends React.Component {
   render() {
 		return (
 			<section className="signup-form">
-        <h3>Small LOGO</h3>
+        <div className="small-signup-logo" />
         <h3>Create your free Sonatify account</h3>
         <br />
-        {this.renderErrors()}
 				<form onSubmit={this.handleSubmit}>
+          <SignupErrors
+            errors={ this.props.errors }
+            />
 
 						<label> Username
               <br/>
@@ -95,10 +98,13 @@ class Signup extends React.Component {
 						</label>
 						<br/>
 
-						<input type="submit" value="Sign Up" />
+						<button className="clear-button">
+              Sign Up
+            </button>
 				</form>
-
-        <a href="#" onClick={this.props.updateFormType("authnav")}>Go back</a>
+        <div className="small-text">
+          <a href="#" onClick={this.props.updateFormType("authnav")}>Go back</a>
+        </div>
 			</section>
 		);
 	}
