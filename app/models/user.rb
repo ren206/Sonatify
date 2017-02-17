@@ -26,6 +26,10 @@ class User < ActiveRecord::Base
 
   attr_reader :password
 
+  # user music associations
+  has_many :playlists
+  has_many :songs, through: :playlists
+
   # user followings associations
   has_many :in_follows, class_name: "Follow", foreign_key: "followee_id"
   has_many :out_follows, class_name: "Follow", foreign_key: "follower_id"
