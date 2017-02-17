@@ -9,7 +9,7 @@ class Api::PlaylistsController < ApplicationController
   end
 
   def index
-    @playlists = Playlist.find_by_owner_id(current_user.id)
+    @playlists = User.find(params[:user_id]).playlists
     render :index
   end
 
@@ -24,6 +24,12 @@ class Api::PlaylistsController < ApplicationController
     else
       render json: @playlist.errors.full_messages, status: 422
     end
+  end
+
+  def destroy
+    @playlist = Playlist.find(params[:id])
+    @playlist.destroy
+    render json: ['Playlist has been removed']
   end
 
   private
