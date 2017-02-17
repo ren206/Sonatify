@@ -4,7 +4,7 @@
 #
 #  id              :integer          not null, primary key
 #  username        :string           not null
-#  email           :string           not null
+#  email           :string
 #  f_name          :string           not null
 #  l_name          :string           not null
 #  password_digest :string           not null
@@ -25,6 +25,10 @@ class User < ActiveRecord::Base
   after_initialize :ensure_session_token
 
   attr_reader :password
+
+  # user music associations
+  has_many :playlists, foreign_key: :owner_id
+  has_many :songs, through: :playlists
 
   # user followings associations
   has_many :in_follows, class_name: "Follow", foreign_key: "followee_id"
