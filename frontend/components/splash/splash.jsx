@@ -3,8 +3,6 @@ import { Link } from 'react-router';
 import AuthNav from '../session/auth_nav';
 import LoginForm from '../session/login_form';
 import SignupForm from '../session/signup_form';
-import { connect } from 'react-redux';
-import { login } from '../../actions/session_actions';
 
 class Splash extends React.Component {
   constructor() {
