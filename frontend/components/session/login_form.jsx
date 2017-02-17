@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
 import { connect } from 'react-redux';
-import { login, clearErrors } from '../../actions/session_actions';
+import { login } from '../../actions/session_actions';
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -97,8 +97,7 @@ const mapStateToProps = ({ session }, { location }) => {
 
 const mapDispatchToProps = (dispatch, { location }) => {
   return {
-    login: user => dispatch(login(user)),
-    clearErrors: () => dispatch(clearErrors())
+    login: user => dispatch(login(user))
   }
 }
 

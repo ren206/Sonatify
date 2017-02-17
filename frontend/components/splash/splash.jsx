@@ -14,10 +14,9 @@ class Splash extends React.Component {
     this.updateFormType = this.updateFormType.bind(this);
   }
 
-  updateFormType(type) {
-    return event => this.setState({
-      formType: type
-    })
+  updateFormType(formType) {
+    this.setState({ formType });
+    this.props.clearErrors();
   }
 
   renderAuth() {

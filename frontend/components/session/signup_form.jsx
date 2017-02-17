@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
 import { connect } from 'react-redux';
-import { signup, clearErrors } from '../../actions/session_actions';
+import { signup } from '../../actions/session_actions';
 import SignupErrors from './signup_errors';
 
 class SignupForm extends React.Component {
@@ -121,8 +121,7 @@ const mapStateToProps = ({ session }, { location }) => {
 
 const mapDispatchToProps = (dispatch, { location }) => {
   return {
-    signup: user => dispatch(signup(user)),
-    clearErrors: () => dispatch(clearErrors())
+    signup: user => dispatch(signup(user))
   }
 }
 
