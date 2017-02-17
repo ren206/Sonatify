@@ -1,7 +1,11 @@
 class Api::PlaylistsController < ApplicationController
   def create
-    @playlist = Playlist.create!(playlist_params)
-    render :show
+    @playlist = Playlist.new(playlist_params)
+    if @playlist.save
+      render :show
+    else
+      render json: @playlist.errors.full_messages, status: 422
+    end
   end
 
   def index
@@ -15,8 +19,11 @@ class Api::PlaylistsController < ApplicationController
 
   def update
     @playlist = Playlist.find(params[:id])
-    @playlist.update!(playlist_params)
-    render :show
+    if @playlist.update(playlist_params)
+      render :show
+    else
+      render json: @playlist.errors.full_messages, status: 422
+    end
   end
 
   private
