@@ -41,7 +41,7 @@
 - `PATCH /api/playlists/:id`
 - `DELETE /api/playlists`
 
-### Playlist listings
+### Listings
 - `POST /api/playlists/:id/playlist_listings`
 - `DELETE /api/playlists/:id/playlist_listings/:id`
 - `PATCH /api/playlists/:id/playlist_listings/:id`

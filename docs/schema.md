@@ -59,7 +59,7 @@
 |owner_id   |integer  |not null, foreign key (references users), indexed |
 |mood       |string   |                                                  |
 
-## playlist listings
+## listings
 
 |column name |data type|details                         |
 |------------|---------|--------------------------------|
