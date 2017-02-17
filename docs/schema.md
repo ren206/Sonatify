@@ -55,9 +55,9 @@
 |column name|data type|details                                           |
 |-----------|---------|--------------------------------------------------|
 |id         |integer  |not null, primary key                             |
-|name       |string   |not null, indexed                                 |
+|name       |string   |not null, indexed, unique                         |
 |owner_id   |integer  |not null, foreign key (references users), indexed |
-|mood       |string   |                                                  |
+|mood       |string   |(bonus)                                           |
 
 ## listings
 
