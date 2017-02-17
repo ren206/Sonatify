@@ -2,7 +2,7 @@ import React from 'react';
 import { logout } from '../../actions/session_actions';
 import { connect } from 'react-redux';
 
-const App = ({currentUser, logout, router}) => {
+const Browse = ({currentUser, logout, router}) => {
 
   const handleLogout = (event) => {
     event.preventDefault();
@@ -14,7 +14,7 @@ const App = ({currentUser, logout, router}) => {
   return (
     <section className="app">
       <h1>Welcome, {currentUser.username}</h1>
-      <h3>Most of the app would live here</h3>
+      <h3>Most of Sonatify will live here</h3>
 
       <button onClick={handleLogout}>Log Out</button>
     </section>
@@ -36,4 +36,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(App);
+)(Browse);

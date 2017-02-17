@@ -35,7 +35,7 @@ class AuthNav extends React.Component {
 
         <br/>
 
-        <div className="small-text">  
+        <div className="small-text">
         <a href="#" onClick={this.props.updateFormType("login")}>
           Already have an account? Log in here.
         </a>

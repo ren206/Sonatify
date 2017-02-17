@@ -3,7 +3,7 @@ import { Link, withRouter } from 'react-router';
 import { connect } from 'react-redux';
 import { login } from '../../actions/session_actions';
 
-class Login extends React.Component {
+class LoginForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -107,4 +107,4 @@ const mapDispatchToProps = (dispatch, { location }) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(withRouter(Login));
+)(withRouter(LoginForm));
