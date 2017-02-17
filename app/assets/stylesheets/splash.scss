@@ -2,23 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .splash {
+  width: 100vw;
+  height: 100vh;
+
   background-image: radial-gradient(ellipse, #535353 -50%, #090909 30%);
   background-color: #535353; // Old browsers
   align-items: center;
   justify-content: center;
   display: flex;
-  position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
 }
 
 .splash-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 829px;
+  width: 829px;
 }
 
 .auth-nav-logo {
@@ -73,7 +71,7 @@
   font-weight: 700;
   outline: none;
   padding: 5px 10px;
-  width: 100%;
+  width: 350px;
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -171,28 +169,25 @@
   padding-top: 20px;
 }
 
-ul.signup-errors {
-  position: absolute;
-  top: 362px;
-  left: 370px;
-  z-index: 1;
-}
-
-.signup-errors li {
+p > div {
+  display: inline;
   background-color: #CE1A2B;
   color: #DDD;
   position: relative;
+  left: 366px;
+  top: -25px;
   font-size: 14px;
   margin: 36px;
   padding: 8px 8px;
   visibility: hidden;
+  z-index: 1;
 }
 
-.error-message {
+div.has-error {
   white-space: pre;
 }
 
-.error-message:before {
+div.has-error:before {
   border-right: 5px solid #CE1A2B;
   border-top: 5px solid transparent;
   border-bottom: 5px solid transparent;
@@ -201,9 +196,9 @@ ul.signup-errors {
   position: absolute;
   top: 7px;
   left: -5px;
-
 }
 
-li.error {
+
+div.has-error {
   visibility: visible;
 }
