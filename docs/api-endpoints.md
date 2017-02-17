@@ -3,41 +3,44 @@
 ## HTML API
 
 ### Root
-- `GET /` - loads React web app
+- `root: GET /` - loads React web app
 
 ## JSON API
 
 ### Users
-- `GET /api/users/:userId`
-- `POST /api/users`
-- `GET /api/user`
+- `show: GET /api/users/:userId`
+- `create: POST /api/users`
+- `show: GET /api/me`
   - own user page
-- `PATCH /api/user`
+- `update: PATCH /api/user`
 
 ### User follows
-- `POST /api/user_follows`
-- `DELETE /api/user_follows/:id`
+- `create: POST /api/user_follows`
+- `destroy: DELETE /api/user_follows/:id`
 
 ### Session
-- `POST /api/session`
-- `DELETE /api/session`
+- `create: POST /api/session`
+- `destroy: DELETE /api/session`
 
 ### Artists
-- `GET /api/artists/:id`
+- `show: GET /api/artists/:id`
 
 ### Albums
-- `GET /api/albums/:id`
+- `show: GET /api/albums/:id`
 
 ### Genres
-- `GET /api/genres/:id`
+- `show: GET /api/genres/:id`
 
 ### Songs
-- `GET /api/songs/`
+- `index: GET /api/artists/:artistId/albums/:albumId/songs/`
 - `GET /api/songs/:id`
 
 ### Playlists
-- `POST /api/playlists`
-- `GET /api/playlists/:id`
+- `create: POST /api/playlists`
+- `show: GET /api/users/:userId/playlists/:playlistId`
+- `index: GET /api/users/:userId/playlists/`
+- `index: GET /api/me/playlists/`
+  - user's playlists
 - `PATCH /api/playlists/:id`
 - `DELETE /api/playlists`
 
