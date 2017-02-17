@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
-import { connect } from 'react-redux';
 import { login } from '../../actions/session_actions';
 
 class LoginForm extends React.Component {
@@ -21,17 +20,6 @@ class LoginForm extends React.Component {
     this.props.login(user).then(() => this.props.router.push('/browse'));
   }
 
-  redirect() {
-    if (this.props.currentUser) {
-			this.props.router.push("/");
-		}
-  }
-
-  renderErrors() {
-    const errors = Boolean(this.props.errors.length)
-    return errors ? "Incorrect username and password" : "";
-	}
-
   updateInfo(field) {
 		return event => this.setState({
 			[field]: event.currentTarget.value
@@ -48,7 +36,9 @@ class LoginForm extends React.Component {
         <h3>Log in</h3>
 
         <br/>
-        <div className="login-errors">{this.renderErrors()}</div>
+        <div className="login-errors">
+          {Boolean(this.props.session.errors.length) ? "Incorrect username and password" : ""}
+        </div>
 				<form onSubmit={this.handleSubmit}>
 					<br/>
 
@@ -81,7 +71,7 @@ class LoginForm extends React.Component {
           Don't have an account? &nbsp;
           <a href="#"
             className="auth-link"
-            onClick={this.props.updateFormType("authnav")}>
+            onClick={this.props.updateFormType('authnav')}>
             Sign up here!
           </a>
         </div>
@@ -91,20 +81,4 @@ class LoginForm extends React.Component {
 	}
 }
 
-const mapStateToProps = ({ session }, { location }) => {
-  return {
-    currentUser: session.currentUser,
-    errors: session.errors
-  }
-}
-
-const mapDispatchToProps = (dispatch, { location }) => {
-  return {
-    login: user => dispatch(login(user))
-  }
-}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(withRouter(LoginForm));
+export default (withRouter(LoginForm));

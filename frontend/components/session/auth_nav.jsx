@@ -15,7 +15,6 @@ class AuthNav extends React.Component {
       username: 'guest',
       password: 'sonatify'
     }
-
     this.props.login(guestUser).then(() => this.props.router.push('/browse'));
   }
 
@@ -23,7 +22,7 @@ class AuthNav extends React.Component {
     return(
       <nav className="auth-nav">
         <div className="auth-nav-logo"/>
-        <button className="clear-button" onClick={this.props.updateFormType("signup")}>
+        <button className="clear-button" onClick={this.props.updateFormType('signup')}>
           Sign Up
         </button>
 
@@ -36,7 +35,7 @@ class AuthNav extends React.Component {
         <br/>
 
         <div className="small-text">
-        <a href="#" onClick={this.props.updateFormType("login")}>
+        <a href="#" onClick={this.props.updateFormType('login')}>
           Already have an account? Log in here.
         </a>
       </div>
@@ -45,20 +44,4 @@ class AuthNav extends React.Component {
   }
 }
 
-const mapStateToProps = ({ session }, { location }) => {
-  return {
-    currentUser: session.currentUser,
-    errors: session.errors
-  }
-}
-
-const mapDispatchToProps = (dispatch, { location }) => {
-  return {
-    login: user => dispatch(login(user))
-  }
-}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(withRouter(AuthNav));
+export default withRouter(AuthNav);
