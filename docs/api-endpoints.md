@@ -8,11 +8,11 @@
 ## JSON API
 
 ### Users
-- `show: GET /api/users/:userId`
+- `show: GET /api/users/:user_id`
 - `create: POST /api/users`
 - `show: GET /api/me`
   - own user page
-- `update: PATCH /api/user`
+- `update: PUT /api/user`
 
 ### User follows
 - `create: POST /api/user_follows`
@@ -32,22 +32,22 @@
 - `show: GET /api/genres/:id`
 
 ### Songs
-- `index: GET /api/artists/:artistId/albums/:albumId/songs/`
+- `index: GET /api/artists/:artist_id/albums/:album_id/songs/`
 - `GET /api/songs/:id`
 
 ### Playlists
 - `create: POST /api/playlists`
-- `show: GET /api/users/:userId/playlists/:playlistId`
-- `index: GET /api/users/:userId/playlists/`
+- `show: GET /api/playlists/:playlist_id`
+- `index: GET /api/users/:user_id/playlists/`
 - `index: GET /api/me/playlists/`
   - user's playlists
-- `PATCH /api/playlists/:id`
-- `DELETE /api/playlists`
+- `update: PUT /api/playlists/:playlist_id`
+- `destroy: DELETE /api/playlists`
 
 ### Listings
-- `POST /api/playlists/:id/playlist_listings`
-- `DELETE /api/playlists/:id/playlist_listings/:id`
-- `PATCH /api/playlists/:id/playlist_listings/:id`
+- `create: POST /api/listings`
+- `update: PUT /api/listings/:listing_id`
+- `destroy: DELETE /api/listings/:listing_id`
 
 ### Playlist follows
 - `POST /api/playlist_follows`
