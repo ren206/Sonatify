@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { signup } from '../../actions/session_actions';
 import SignupErrors from './signup_errors';
 
-class Signup extends React.Component {
+class SignupForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -128,4 +128,4 @@ const mapDispatchToProps = (dispatch, { location }) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(withRouter(Signup));
+)(withRouter(SignupForm));
