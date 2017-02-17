@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
-import { connect } from 'react-redux';
 import { signup } from '../../actions/session_actions';
 import SignupErrors from './signup_errors';
 
@@ -17,6 +16,8 @@ class SignupForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.redirectToAuthNav = this.redirectToAuthNav.bind(this);
+
   }
 
   handleSubmit(event) {
@@ -25,23 +26,22 @@ class SignupForm extends React.Component {
     this.props.signup(user).then( ()=> this.props.router.push('/browse'));
   }
 
-  redirect() {
-    if (this.props.currentUser) {
-			this.props.router.push("/");
-		}
+  redirectToAuthNav(event) {
+    event.preventDefault();
+    this.props.updateFormType("authnav");
   }
 
-  renderErrors() {
-		return(
-			<ul>
-				{this.props.errors.map((error, i) => (
-					<li key={`error-${i}`}>
-						{error}
-					</li>
-				))}
-			</ul>
-		);
-	}
+  // renderErrors() {
+	// 	return(
+	// 		<ul>
+	// 			{this.props.session.errors.map((error, i) => (
+	// 				<li key={`error-${i}`}>
+	// 					{error}
+	// 				</li>
+	// 			))}
+	// 		</ul>
+	// 	);
+	// }
 
   updateInfo(field) {
 		return event => this.setState({
@@ -57,7 +57,7 @@ class SignupForm extends React.Component {
         <br />
 				<form onSubmit={this.handleSubmit}>
           <SignupErrors
-            errors={ this.props.errors }
+            errors={ this.props.session.errors }
             />
 
           <label htmlFor="username">Username</label>
@@ -105,27 +105,11 @@ class SignupForm extends React.Component {
             </button>
 				</form>
         <div className="small-text">
-          <a href="#" onClick={this.props.updateFormType("authnav")}>Go back</a>
+          <a href="#" onClick={this.props.updateFormType('authnav')}>Go back</a>
         </div>
 			</section>
 		);
 	}
 }
 
-const mapStateToProps = ({ session }, { location }) => {
-  return {
-    currentUser: session.currentUser,
-    errors: session.errors
-  }
-}
-
-const mapDispatchToProps = (dispatch, { location }) => {
-  return {
-    signup: user => dispatch(signup(user))
-  }
-}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(withRouter(SignupForm));
+export default withRouter(SignupForm);

@@ -1,12 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { connect } from 'react-redux';
+import { login, signup, clearErrors } from '../../actions/session_actions';
 import AuthNav from '../session/auth_nav';
 import LoginForm from '../session/login_form';
 import SignupForm from '../session/signup_form';
 
 class Splash extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       formType: "authnav"
     }
@@ -15,18 +16,33 @@ class Splash extends React.Component {
   }
 
   updateFormType(formType) {
-    this.setState({ formType });
-    this.props.clearErrors();
-  }
+      return event => {
+        event.preventDefault();
+        this.setState({ formType });
+        this.props.clearErrors();
+    }
+  };
 
   renderAuth() {
+    const { session, login, signup } = this.props;
     switch(this.state.formType) {
       case "login":
-        return <LoginForm updateFormType={this.updateFormType} />
+        return <LoginForm
+          updateFormType={this.updateFormType}
+          session={session}
+          login={login} />
+
       case "signup":
-        return <SignupForm updateFormType={this.updateFormType} />
+        return <SignupForm
+          updateFormType={this.updateFormType}
+          session={session}
+          signup={signup} />
+
       default:
-        return <AuthNav updateFormType={this.updateFormType} />
+        return <AuthNav
+          updateFormType={this.updateFormType}
+          session={session}
+          login={login} />
     }
   }
 
@@ -63,5 +79,21 @@ class Splash extends React.Component {
     )
   }
 }
+const mapStateToProps = ({ session }, { location }) => {
+  return {
+    session
+  }
+}
 
-export default Splash;
+const mapDispatchToProps = (dispatch, { location }) => {
+  return {
+    signup: user => dispatch(signup(user)),
+    login: user => dispatch(login(user)),
+    clearErrors: () => dispatch(clearErrors())
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Splash);
