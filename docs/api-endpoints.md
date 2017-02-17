@@ -31,15 +31,13 @@
 ### Genres
 - `show: GET /api/genres/:id`
 
-### Songs
-- `index: GET /api/playlists/:playlist_id/songs` (temporary)
-<!-- - `index: GET /api/artists/:artist_id/albums/:album_id/songs/` -->
-- `GET /api/songs/:id`
+<!-- ### Songs
+- `index: GET /api/artists/:artist_id/albums/:album_id/songs` -->
 
 ### Playlists
 - `create: POST /api/playlists`
 - `show: GET /api/playlists/:playlist_id`
-- `index: GET /api/users/:user_id/playlists/`
+- `index: GET /api/users/:user_id/playlists`
 - `index: GET /api/me/playlists/`
   - user's playlists
 - `update: PUT /api/playlists/:playlist_id`
