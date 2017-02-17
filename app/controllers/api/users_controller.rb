@@ -9,4 +9,13 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find_by_credentials(user_params)
+    if @user
+      render 'api/users/show'
+    else
+      render json: @user.errors.full_messages, status: 404
+    end
+  end
+
 end
