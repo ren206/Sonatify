@@ -67,7 +67,7 @@
 |playlist_id |integer  |not null, foreign key, indexed  |
 |song_id     |integer  |not null, foreign key, indexed  |
 |ord         |integer  |not null                        |
-|added_date  |date     |not null                        |
+|added_date  |date     |not null (later)                |
 
 ## playlist followings
 
