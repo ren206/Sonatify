@@ -32,6 +32,7 @@
 - `show: GET /api/genres/:id`
 
 ### Songs
+- `index: GET /api/playlists/:playlist_id/songs` (temporary)
 - `index: GET /api/artists/:artist_id/albums/:album_id/songs/`
 - `GET /api/songs/:id`
 
@@ -42,7 +43,7 @@
 - `index: GET /api/me/playlists/`
   - user's playlists
 - `update: PUT /api/playlists/:playlist_id`
-- `destroy: DELETE /api/playlists`
+- `destroy: DELETE /api/playlists/:playlist_id`
 
 ### Listings
 - `create: POST /api/listings`
