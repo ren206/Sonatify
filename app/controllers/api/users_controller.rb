@@ -10,7 +10,7 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by_credentials(user_params)
+    @user = User.find_by(id: params[:id])
     if @user
       render 'api/users/show'
     else
