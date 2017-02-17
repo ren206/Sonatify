@@ -12,12 +12,6 @@ class LoginForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.redirectToAuthNav = this.redirectToAuthNav.bind(this);
-  }
-
-  redirectToAuthNav(event) {
-    event.preventDefault();
-    this.props.updateFormType("authnav");
   }
 
   handleSubmit(event) {

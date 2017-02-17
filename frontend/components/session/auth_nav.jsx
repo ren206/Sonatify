@@ -8,8 +8,6 @@ class AuthNav extends React.Component {
     super(props);
 
     this.handleGuest = this.handleGuest.bind(this);
-    this.redirectToLogin = this.redirectToLogin.bind(this);
-    this.redirectToSignup = this.redirectToSignup.bind(this);
   }
 
   handleGuest() {
@@ -19,17 +17,6 @@ class AuthNav extends React.Component {
     }
     this.props.login(guestUser).then(() => this.props.router.push('/browse'));
   }
-
-  redirectToLogin() {
-    event.preventDefault();
-    this.props.updateFormType("login");
-  }
-
-  redirectToSignup() {
-    event.preventDefault();
-    this.props.updateFormType("signup");
-  }
-
 
   render() {
     return(

@@ -18,8 +18,8 @@ class Splash extends React.Component {
   updateFormType(formType) {
       return event => {
         event.preventDefault();
-        this.setState({ formType });
         this.props.clearErrors();
+        this.setState({ formType });
     }
   };
 

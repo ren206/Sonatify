@@ -16,8 +16,6 @@ class SignupForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.redirectToAuthNav = this.redirectToAuthNav.bind(this);
-
   }
 
   handleSubmit(event) {
@@ -25,23 +23,6 @@ class SignupForm extends React.Component {
     const user = Object.assign({}, this.state);
     this.props.signup(user).then( ()=> this.props.router.push('/browse'));
   }
-
-  redirectToAuthNav(event) {
-    event.preventDefault();
-    this.props.updateFormType("authnav");
-  }
-
-  // renderErrors() {
-	// 	return(
-	// 		<ul>
-	// 			{this.props.session.errors.map((error, i) => (
-	// 				<li key={`error-${i}`}>
-	// 					{error}
-	// 				</li>
-	// 			))}
-	// 		</ul>
-	// 	);
-	// }
 
   updateInfo(field) {
 		return event => this.setState({

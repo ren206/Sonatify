@@ -25,7 +25,7 @@ export default (state = _initialState, action) => {
       });
 
     case CLEAR_ERRORS:
-      return merge({}, state, { errors: [] });
+      return Object.assign({}, state, { errors: [] });
 
     default:
       return state;
