@@ -27,11 +27,6 @@ class LoginForm extends React.Component {
 		}
   }
 
-  renderErrors() {
-    const errors = Boolean(this.props.errors.length)
-    return errors ? "Incorrect username and password" : "";
-	}
-
   updateInfo(field) {
 		return event => this.setState({
 			[field]: event.currentTarget.value
@@ -48,7 +43,9 @@ class LoginForm extends React.Component {
         <h3>Log in</h3>
 
         <br/>
-        <div className="login-errors">{this.renderErrors()}</div>
+        <div className="login-errors">
+          {Boolean(this.props.errors.length) ? "Incorrect username and password" : ""}
+        </div>
 				<form onSubmit={this.handleSubmit}>
 					<br/>
 
