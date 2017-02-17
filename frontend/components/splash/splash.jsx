@@ -37,14 +37,14 @@ class Splash extends React.Component {
     return(
       <section className="splash">
         <div className="splash-wrapper">
-          
+
           <div className="splash-left">
             {this.renderAuth()}
           </div>
 
           <div className="splash-divider" />
 
-          <div className="splash-right">
+          <div className="splash-features">
 
             <h1>Get the right music, right now</h1>
 

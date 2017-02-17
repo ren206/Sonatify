@@ -2,12 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .splash {
-  background-image: image-url('splash/black-bg.jpeg');
-  // background-image: image-url('splash/guitar-bg.jpeg');
-  background-position: center;
-  background-size: cover;
-  background-color: #555;
-  display: flex;
+  background-image: radial-gradient(ellipse, #535353 -50%, #090909 30%);
+  background-color: #535353; // Old browsers
   align-items: center;
   justify-content: center;
   display: flex;
@@ -26,7 +22,7 @@
 }
 
 .auth-nav-logo {
-  background-image: image-url('splash/logo-white');
+  background-image: image-url('splash/logo');
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -36,7 +32,7 @@
 }
 
 .small-signup-logo, .small-login-logo {
-  background-image: image-url('splash/logo-white');
+  background-image: image-url('splash/logo');
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -45,7 +41,7 @@
   width: 268px;
 }
 
-.splash-right {
+.splash-features {
   flex: 0 0 540px;
   padding: 45px;
 }
@@ -146,21 +142,21 @@
   height: 430px;
 }
 
-.splash-right h1 {
+.splash-features h1 {
   color: #07D159;
   font-size: 60px;
   font-weight: 400;
 }
 
-.splash-right h2 {
+.splash-features h2 {
   color: white;
   font-size: 28px;
   font-weight: 300;
   margin: 35px 0px 45px 0px;
 }
 
-.splash-right li {
-  background: image-url('splash/checked.png') no-repeat left top;
+.splash-features li {
+  background: image-url('splash/check.svg') no-repeat left top;
   color: white;
   font-size: 18px;
   font-weight: 300;
