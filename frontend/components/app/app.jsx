@@ -1,6 +1,7 @@
 import React from 'react';
+import Navigation from
 
-// wrapper component
+// main app component
 export default ({ children }) => {
   return (
     <main>

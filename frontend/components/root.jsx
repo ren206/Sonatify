@@ -2,9 +2,9 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 
-import App from './app';
+import App from './app/app';
 import Splash from './splash/splash';
-import Browse from './browse/browse';
+import Browse from './app/browse/browse';
 
 export default ({ store }) => {
 
@@ -23,7 +23,8 @@ export default ({ store }) => {
           <IndexRoute component={ Splash }
             onEnter={ _redirectIfLoggedIn } />
 
-          <Route component={ App } onEnter={ _redirectUnlessLoggedIn } >
+          <Route component={ App }
+            onEnter={ _redirectUnlessLoggedIn } >
             <Route path="/browse" component={ Browse } />
           </Route>
         </Route>
