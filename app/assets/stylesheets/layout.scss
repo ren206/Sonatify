@@ -1,0 +1,40 @@
+#app-wrapper * {
+  border: 1px solid lightblue;
+}
+
+#app-wrapper {
+  position: absolute;
+  display: flex;
+  overflow: hidden;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#main-nav {
+  display: flex;
+  flex: 0 0 90px;
+  flex-direction: column;
+  background-color: #1c1c1f;
+}
+
+
+.main-view {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: calc(100% - 90px);
+}
+
+.now-playing-wrapper {
+  position: relative;
+  width: 270px;
+  right: 0;
+  height: 100vh;
+  background-color: #1c1c1f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: grey;
+}

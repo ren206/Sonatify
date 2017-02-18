@@ -14,6 +14,8 @@
  *= require typeface
  *= require splash
  *= require main
-
+ *= require layout
+ *= require main_nav
+ *= require now_playing
  *= require_self
  */
