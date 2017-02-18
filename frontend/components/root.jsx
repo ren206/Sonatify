@@ -1,48 +1,29 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { Router, Route, IndexRoute, hashHistory } from 'react-router';
+import { Router, Route, IndexRoute, IndexRedirect, hashHistory } from 'react-router';
 
-import App from './app/app';
-import Splash from './splash/splash';
-import Browse from './app/browse/browse';
+import App from './app';
+
+import Browse from './web_player/browse/browse';
+import Playlist from './web_player/playlist/playlist';
 
 export default ({ store }) => {
 
-  const _redirectIfLoggedIn = (nextState, replace) => {
-    if (store.getState().session.currentUser)replace('/browse');
-  }
-
-  const _redirectUnlessLoggedIn = (nextState, replace) => {
-    if (!store.getState().session.currentUser) replace('/');
+  const _redirect = (nextState, replace) => {
+    replace('/');
   }
 
   return (
     <Provider store={ store }>
       <Router history={ hashHistory }>
-        <Route path="/">
-          <IndexRoute component={ Splash }
-            onEnter={ _redirectIfLoggedIn } />
 
-          <Route component={ App }
-            onEnter={ _redirectUnlessLoggedIn } >
-            <Route path="/browse" component={ Browse } />
-          </Route>
+        <Route path="/" component={ App }>
+          <Route path="browse" component={ Browse } />
+          <Route path="playlists" component={ Playlist } />
         </Route>
 
-        <Route path="/:DNE" onEnter={_redirectIfLoggedIn}/>
+        <Route path="/:DNE" onEnter={ _redirect } />
       </Router>
     </Provider>
-    // <Provider store={ store }>
-    //   <Router history={ hashHistory }>
-    //     <Route path="/" component={ App }>
-    //     <IndexRoute component={ Splash } onEnter={ _redirectIfLoggedIn } />
-    //
-    //     <Route
-    //     <Route path="/browse" component={ Browse } onEnter={ _redirectUnlessLoggedIn } />
-    //
-    //     <Route path="/:DNE" onEnter={_redirectIfLoggedIn}/>
-    //     </Route>
-    //   </Router>
-    // </Provider>
   )
 }

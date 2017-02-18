@@ -21,7 +21,7 @@ class AuthNav extends React.Component {
   render() {
     return(
       <nav className="auth-nav">
-        <div className="auth-nav-logo"/>
+        <div className="auth-nav-logo" />
         <button className="clear-button" onClick={this.props.updateFormType('signup')}>
           Sign Up
         </button>
