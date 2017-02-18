@@ -1,5 +1,4 @@
 import React from 'react';
-import Navigation from
 
 // main app component
 export default ({ children }) => {
