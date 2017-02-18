@@ -1,5 +1,5 @@
 import React from 'react';
-import { login } from '../../actions/session_actions';
+import { login } from '../../../actions/session_actions';
 import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
 

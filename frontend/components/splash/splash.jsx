@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { login, signup, clearErrors } from '../../actions/session_actions';
-import AuthNav from '../session/auth_nav';
-import LoginForm from '../session/login_form';
-import SignupForm from '../session/signup_form';
+import AuthNav from './session/auth_nav';
+import LoginForm from './session/login_form';
+import SignupForm from './session/signup_form';
 
 class Splash extends React.Component {
   constructor(props) {
