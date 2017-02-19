@@ -19,11 +19,11 @@ end
 unless Playlist.find_by(name: "Recommended for You")
   rec = Playlist.create(
     name: 'Recommended for You',
-    owner_id: 10
+    user_id: 10
   )
   test = Playlist.create(
     name: 'Test Playlist',
-    owner_id: 10
+    user_id: 10
   )
 end
 
