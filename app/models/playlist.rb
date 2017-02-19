@@ -14,6 +14,6 @@ class Playlist < ActiveRecord::Base
 
   belongs_to :owner, class_name: :User, foreign_key: :owner_id
 
-  has_many :listings
+  has_many :listings, dependent: :delete_all
   has_many :songs, through: :listings
 end
