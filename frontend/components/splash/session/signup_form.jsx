@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
 import { signup } from '../../../actions/session_actions';
-// import SignupErrors from './signup_errors';
 
 class SignupForm extends React.Component {
   constructor(props) {
