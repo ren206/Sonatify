@@ -1,36 +1,56 @@
 import React from 'react';
-import { withRouter } from 'react-router';
+import { Link, withRouter } from 'react-router';
 import { connect } from 'react-redux';
 import { logout } from '../../../actions/session_actions';
 
-const MainNav = ({ session, logout, router }) => {
+class MainNav extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleLogout = this.handleLogout.bind(this);
+  }
 
-  const handleLogout = (event) => {
+
+  handleLogout(event) {
+    const { logout, router } = this.props;
      event.preventDefault();
      logout().then( ()=> router.push('/'));
-   }
+  }
+  render() {
 
-  return (
-    <div id="main-nav" className="main-menu">
-      <div id="logo" className="logo" />
+    return (
+      <div id="main-nav" className="main-menu">
+        <div id="logo" className="logo" />
 
-      <ul id="nav-items" className="main-menu-nav">
+        <ul id="nav-items" className="main-menu-nav">
 
-        <li className="browse-nav">
+          <li className="browse-nav">
+            <Link to={ "/browse" }>
+              <div id="browse-icon">
+                Browse
+              </div>
+            </Link>
+          </li>
 
-        </li>
+          <li className="playlists-nav">
+            <Link to={ "/playlists" }>
+              <div id="playlists-icon">
+                Playlists
+              </div>
+            </Link>
+          </li>
 
 
-        <li className="logout-nav">
-          <button
-            id="logout" className="logout"
-            onClick={handleLogout}>
-            Log Out
-          </button>
-        </li>
-      </ul>
-    </div>
-  );
+          <li className="logout-nav">
+            <button
+              id="logout" className="logout"
+              onClick={this.handleLogout}>
+              Log Out
+            </button>
+          </li>
+        </ul>
+      </div>
+    );
+  }
 }
 
 const mapStateToProps = ({ session }) => {

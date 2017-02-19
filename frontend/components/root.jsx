@@ -5,7 +5,7 @@ import { Router, Route, IndexRoute, IndexRedirect, hashHistory } from 'react-rou
 import App from './app';
 
 import Browse from './web_player/browse/browse';
-import Playlist from './web_player/playlist/playlist';
+import Playlists from './web_player/playlists/playlists';
 
 export default ({ store }) => {
 
@@ -19,7 +19,7 @@ export default ({ store }) => {
 
         <Route path="/" component={ App }>
           <Route path="browse" component={ Browse } />
-          <Route path="playlists" component={ Playlist } />
+          <Route path="playlists" component={ Playlists } />
         </Route>
 
         <Route path="/:DNE" onEnter={ _redirect } />

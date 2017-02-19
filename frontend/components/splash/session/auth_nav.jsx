@@ -1,7 +1,6 @@
 import React from 'react';
 import { login } from '../../../actions/session_actions';
 import { withRouter } from 'react-router';
-import { connect } from 'react-redux';
 
 class AuthNav extends React.Component {
   constructor(props) {
@@ -15,7 +14,7 @@ class AuthNav extends React.Component {
       username: 'guest',
       password: 'sonatify'
     }
-    this.props.login(guestUser).then(() => this.props.router.push('/browse'));
+    this.props.login(guestUser).then(() => this.props.router.push('/playlists'));
   }
 
   render() {
