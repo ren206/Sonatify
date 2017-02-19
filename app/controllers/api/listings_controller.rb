@@ -11,7 +11,7 @@ class Api::ListingsController < ApplicationController
   def update
     @listing = Listing.find(params[:id])
     if @listing.update(listing_params)
-      render json: ['Listing has been changed']
+      render json: @listing
     else
       render json: @listing.errors.full_messages
     end
