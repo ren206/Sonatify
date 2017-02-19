@@ -1,14 +1,6 @@
-export const fetchPlaylists = playlist => {
-  return $.ajax({
-    method: 'GET',
-    url: 'api/playlists',
-    playlist
-  });
-};
-
 export const fetchPlaylist = id => {
   return $.ajax({
-    method: 'GET',
+    type: 'GET',
     url: `api/playlists/${id}`
   });
 };
@@ -17,7 +9,7 @@ export const fetchPlaylist = id => {
 
 export const createPlaylist = playlist => {
   return $.ajax({
-    method: 'POST',
+    type: 'POST',
     url: 'api/playlists',
     playlist
   });
@@ -25,16 +17,23 @@ export const createPlaylist = playlist => {
 
 export const updatePlaylist = (id, newName) => {
   return $.ajax({
-    method: 'patch',
+    type: 'PATCH',
     url: `api//playlists/${id}`,
     data: { playlist: { name: newName } },
     dataType: 'JSON'
   });
 };
 
+export const deletePlaylist = id => {
+  return $.ajax({
+    method: 'DELETE',
+    url: `api/playlists/${playlistId}`
+  });
+};
+
 export const addSongToPlaylist = (playlistId, songId) => {
   return $.ajax({
-    method: 'post',
+    type: 'POST',
     url: 'api/playlist_listings',
     data: { playlist_listing: {
       playlist_id: playlistId,
@@ -46,7 +45,7 @@ export const addSongToPlaylist = (playlistId, songId) => {
 
 export const removeSongFromPlaylist = listingId => {
   return $.ajax({
-    method: 'delete',
+    type: 'DELETE',
     url: `api/playlist_listings/${listingId}`
   });
 };
