@@ -2,7 +2,7 @@ class Api::ListingsController < ApplicationController
   def create
     @listing = Listing.new(listing_params)
     if @listing.save
-      render json: ['Song has been added']
+      render :show
     else
       render json: @listing.errors.full_messages
     end
@@ -20,7 +20,7 @@ class Api::ListingsController < ApplicationController
   def destroy
     @listing = Listing.find(params[:id])
     @listing.destroy
-    render json: ['Song has been removed']
+    render :show
   end
 
   private
