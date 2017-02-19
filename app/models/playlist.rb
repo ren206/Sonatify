@@ -16,4 +16,11 @@ class Playlist < ActiveRecord::Base
 
   has_many :listings, dependent: :delete_all
   has_many :songs, through: :listings
+
+  def self.get_by_username(username)
+    Playlist
+      .includes(:songs)
+      .joins("JOIN users ON users.id = playlists.user_id")
+      .where("users.username = ?", username)
+  end
 end
