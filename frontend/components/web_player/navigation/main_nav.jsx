@@ -15,6 +15,7 @@ class MainNav extends React.Component {
      event.preventDefault();
      logout().then( ()=> router.push('/'));
   }
+
   render() {
 
     return (
@@ -53,7 +54,7 @@ class MainNav extends React.Component {
   }
 }
 
-const mapStateToProps = ({ session }) => {
+const mapStateToProps = ({ session }, { location }) => {
   return {
     session
   }
