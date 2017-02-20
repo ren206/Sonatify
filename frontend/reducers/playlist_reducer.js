@@ -1,17 +1,7 @@
 import {
-  RECEIVE_CURRENT_USER,
-  RECEIVE_ERRORS,
-  CLEAR_ERRORS,
-  LOGOUT
-} from '../actions/session_actions';
-
-import {
-RECEIVE_NEW_PLAYLIST,
-RECEIVE_DELETED_PLAYLIST,
-RECEIVE_LISTING,
-RECEIVE_PLAYLIST_WITHOUT_SONG
+  RECEIVE_PLAYLIST,
+RECEIVE_PLAYLIST_WITHOUT_SONG 
 } from '../actions/playlist_actions';
-
 
 import merge from 'lodash/merge';
 
