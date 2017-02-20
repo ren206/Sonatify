@@ -1,9 +1,11 @@
 class Api::PlaylistsController < ApplicationController
   def create
-    user = User.find_by_username(params[:playlist][:username])
-
+    user = User.find_by_username(
+      params[:playlist][:username]
+    )
+    
     @playlist = Playlist.new(
-      name: params[:playlist[:name]],
+      name: params[:playlist][:name],
       user_id: user.id
       )
 
