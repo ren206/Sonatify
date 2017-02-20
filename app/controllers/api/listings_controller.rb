@@ -1,8 +1,16 @@
 class Api::ListingsController < ApplicationController
   def create
-    @listing = Listing.new(listing_params)
+    playlist = Playlist.find_by(
+      id: params[:listing][:playlist_id]
+    )
+    @listing = Listing.new(
+      playlist_id: playlist.id,
+      song_id: params[:listing][:song_id],
+      ord: playlist.songs.length + 1
+    )
+
     if @listing.save
-      render json: ['Song has been added']
+      render :show
     else
       render json: @listing.errors.full_messages
     end
@@ -11,7 +19,7 @@ class Api::ListingsController < ApplicationController
   def update
     @listing = Listing.find(params[:id])
     if @listing.update(listing_params)
-      render json: ['Listing has been changed']
+      render json: @listing
     else
       render json: @listing.errors.full_messages
     end
@@ -20,7 +28,7 @@ class Api::ListingsController < ApplicationController
   def destroy
     @listing = Listing.find(params[:id])
     @listing.destroy
-    render json: ['Song has been removed']
+    render :show
   end
 
   private

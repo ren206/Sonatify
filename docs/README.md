@@ -16,7 +16,7 @@ criteria with smooth, bug-free navigation, adequate seed data and
 sufficient CSS styling:
 
 - [x] Hosting on Heroku
-- [ ] New account creation, login, and guest/demo login
+- [x] New account creation, login, and guest/demo login
 - [ ] CRUD playlists
 - [ ] Maintain a queue of songs
 - [ ] Song playback during navigation

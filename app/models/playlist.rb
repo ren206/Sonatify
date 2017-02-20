@@ -10,10 +10,17 @@
 #
 
 class Playlist < ActiveRecord::Base
-  validates :name, :owner_id, presence: true
+  validates :name, :user_id, presence: true
 
-  belongs_to :owner, class_name: :User, foreign_key: :owner_id
+  belongs_to :user
 
-  has_many :listings
+  has_many :listings, dependent: :delete_all
   has_many :songs, through: :listings
+
+  def self.get_by_username(username)
+    Playlist
+      .includes(:songs)
+      .joins("JOIN users ON users.id = playlists.user_id")
+      .where("users.username = ?", username)
+  end
 end

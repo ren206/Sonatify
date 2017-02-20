@@ -1,6 +1,14 @@
 class Api::PlaylistsController < ApplicationController
   def create
-    @playlist = Playlist.new(playlist_params)
+    user = User.find_by_username(
+      params[:playlist][:username]
+    )
+    
+    @playlist = Playlist.new(
+      name: params[:playlist][:name],
+      user_id: user.id
+      )
+
     if @playlist.save
       render :show
     else
@@ -30,7 +38,7 @@ class Api::PlaylistsController < ApplicationController
   def destroy
     @playlist = Playlist.find(params[:id])
     @playlist.destroy
-    render json: ['Playlist has been removed']
+    render json: @playlist
   end
 
   private
@@ -38,7 +46,7 @@ class Api::PlaylistsController < ApplicationController
   def playlist_params
     params.require(:playlist).permit(
       :name,
-      :owner_id
+      :username
     )
   end
 end
