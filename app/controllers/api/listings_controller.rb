@@ -1,6 +1,14 @@
 class Api::ListingsController < ApplicationController
   def create
-    @listing = Listing.new(listing_params)
+    playlist = Playlist.find_by(
+      id: params[:listing][:playlist_id]
+    )
+    @listing = Listing.new(
+      playlist_id: playlist.id,
+      song_id: params[:listing][:song_id],
+      ord: playlist.songs.length + 1
+    )
+
     if @listing.save
       render :show
     else
