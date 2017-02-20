@@ -12,41 +12,34 @@ export const fetchPlaylist = playlistId => dispatch => {
   );
 }
 
-export const createPlaylist = playlist => dispatch {
+export const createPlaylist = playlist => dispatch => {
   return APIUtil.createPlaylist(playlist).then(
     playlist => dispatch(receiveNewPlaylist(playlist))
   );
 }
 
-export const updatePlaylist = (playlistId, newName) => dispatch {
+export const updatePlaylist = (playlistId, newName) => dispatch => {
   return APIUtil.updatePlaylist(playlistId, newName).then(
     playlist => dispatch(receivePlaylist(playlist))
   );
 }
 
-export const deletePlaylist = playlistId => dispatch {
+export const deletePlaylist = playlistId => dispatch => {
   return APIUtil.deletePlaylist(playlistId).then(
     () => dispatch(receiveDeletedPlaylistId(playlistId))
   );
 }
 
-export const createListing = (playlistId, songId) => dispatch {
+export const createListing = (playlistId, songId) => dispatch => {
   return APIUtil.createListing(playlistId, songId).then(
     listing => dispatch(receiveListing(listing))
   );
 }
 
-export const removeListing = listingId => dispatch {
+export const removeListing = listingId => dispatch => {
   return APIUtil.removeListing(listingId).then(
     listing => dispatch(receivePlaylistWithoutSong(listing))
   );
-}
-
-export function requestRemoveSongFromPlaylist(listingId){
-  return (dispatch) => {
-    return PlaylistAPIUtil.removeSongFromPlaylist(listingId)
-    .then( listing => dispatch(removeSongFromPlaylist(listing)) );
-  };
 }
 
 export const receivePlaylist = playlist => ({
