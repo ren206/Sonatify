@@ -1,11 +1,14 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
 import { connect } from 'react-redux';
+
 import {
   createPlaylist,
   renamePlaylist,
   deletePlaylist
 } from '../../actions/playlist_actions';
+
+import NewPlaylistForm from './new_playlist_form';
 
 class YourMusic extends React.Component {
   constructor(props) {
@@ -37,6 +40,11 @@ class YourMusic extends React.Component {
         <h1>{ this.props.session.currentUser.f_name }'s Music</h1>
 
         <ul className="your-playlists">
+            <li>
+              <NewPlaylistForm
+                currentUser={ this.props.session.currentUser }
+              createPlaylist={ this.props.createPlaylist }/>
+            </li>
           { playlistsAsArray }
         </ul>
       </section>
@@ -59,5 +67,6 @@ const mapDispatchToProps = dispatch => {
 }
 
 export default connect(
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(withRouter(YourMusic));

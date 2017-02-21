@@ -38,7 +38,7 @@ class SignupForm extends React.Component {
   // }
 
   render() {
-    const {session} = this.props;
+    const { session } = this.props;
     const findError = field => {
       let someError = session.errors.find( error => (error.toLowerCase().includes(field)) );
       return Boolean(someError) ? someError : "";
@@ -112,9 +112,9 @@ class SignupForm extends React.Component {
 
 					<br/>
 
-						<button className="clear-button">
-              Sign Up
-            </button>
+					<button className="clear-button">
+            Sign Up
+          </button>
 				</form>
         <div className="small-text">
           <a href="#" onClick={this.props.updateFormType('authnav')}>Go back</a>
