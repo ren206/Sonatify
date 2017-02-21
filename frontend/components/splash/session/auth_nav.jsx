@@ -14,7 +14,7 @@ class AuthNav extends React.Component {
       username: 'guest',
       password: 'sonatify'
     }
-    this.props.login(guestUser).then(() => this.props.router.push('/playlists'));
+    this.props.login(guestUser).then(() => this.props.router.push('/browse'));
   }
 
   render() {
