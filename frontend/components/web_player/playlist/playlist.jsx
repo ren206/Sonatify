@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Playlists extends React.Component {
+class Playlist extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -8,10 +8,19 @@ class Playlists extends React.Component {
   render() {
     return(
       <section className="playlists-wrapper">
-        <h1>Playlists</h1>
+        <h1>Playlist</h1>
+        <ul>
+
+        </ul>
       </section>
     )
   }
 }
 
-export default Playlists;
+const mapStateToProps = state => {
+  return {
+    playlist: state.playlist
+  }
+}
+
+export default Playlist;

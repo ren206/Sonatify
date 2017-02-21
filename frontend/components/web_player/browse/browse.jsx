@@ -8,24 +8,30 @@ class Browse extends React.Component {
   }
 
   render() {
+    const playlists =
     return (
       <section className="browse">
         <h1>Browse</h1>
+        <ul>
+
+        </ul>
       </section>
     )
   }
 }
 const mapStateToProps = ({ session }) => {
   return {
+    session
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
+    receivePlaylists: userId => dispatch(receivePlaylists(userId))
   }
 }
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Browse);
+)(withRouter(Browse));

@@ -1,3 +1,10 @@
+export const fetchPlaylists = userId => {
+  return $.ajax({
+    type: 'GET',
+    url: `api/users/${userId}/playlists`
+  });
+};
+
 export const fetchPlaylist = playlistId => {
   return $.ajax({
     type: 'GET',

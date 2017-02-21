@@ -32,10 +32,10 @@ class MainNav extends React.Component {
             </Link>
           </li>
 
-          <li className="playlists-nav">
-            <Link to={ "/playlists" }>
-              <div id="playlists-icon">
-                Playlists
+          <li className="your-music-nav">
+            <Link to={ "/your-music" }>
+              <div id="your-music-icon">
+                Your Music
               </div>
             </Link>
           </li>

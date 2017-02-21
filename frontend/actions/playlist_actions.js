@@ -1,6 +1,7 @@
 import * as APIUtil from '../util/playlist_api_util';
 
 export const RECEIVE_PLAYLIST = "RECEIVE_PLAYLIST";
+export const RECEIVE_PLAYLISTS = "RECEIVE_PLAYLISTS";
 export const RECEIVE_NEW_PLAYLIST = "RECEIVE_NEW_PLAYLIST";
 export const RECEIVE_DELETED_PLAYLIST = "RECEIVE_DELETED_PLAYLIST";
 export const RECEIVE_LISTING = "RECEIVE_LISTING";
@@ -9,6 +10,12 @@ export const RECEIVE_PLAYLIST_WITHOUT_SONG = "RECEIVE_PLAYLIST_WITHOUT_SONG";
 export const fetchPlaylist = playlistId => dispatch => {
   return APIUtil.fetchPlaylist(playlistId).then(
     playlist => dispatch(receivePlaylist(playlist))
+  );
+}
+
+export const fetchPlaylists = userId => dispatch => {
+  return APIUtil.fetchPlaylist(userId).then(
+    playlists => dispatch(receivePlaylist(playlists))
   );
 }
 
@@ -45,6 +52,11 @@ export const removeListing = listingId => dispatch => {
 export const receivePlaylist = playlist => ({
   type: RECEIVE_PLAYLIST,
   playlist
+});
+
+export const receivePlaylists = playlists => ({
+  type: RECEIVE_PLAYLIST,
+  playlists
 });
 
 export const receiveNewPlaylist = playlist => ({
