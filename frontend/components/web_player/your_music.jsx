@@ -1,6 +1,11 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
 import { connect } from 'react-redux';
+import {
+  createPlaylist,
+  renamePlaylist,
+  deletePlaylist
+} from '../../actions/playlist_actions';
 
 class YourMusic extends React.Component {
   constructor(props) {
@@ -30,6 +35,7 @@ class YourMusic extends React.Component {
     return(
       <section className="your-music">
         <h1>{ this.props.session.currentUser.f_name }'s Music</h1>
+
         <ul className="your-playlists">
           { playlistsAsArray }
         </ul>
@@ -44,10 +50,13 @@ const mapStateToProps = ({ session }) => {
   }
 }
 
-// const mapDispatchToProps = dispatch => {
-//   return {
-//   }
-// }
+const mapDispatchToProps = dispatch => {
+  return {
+    createPlaylist: playlist => dispatch(createPlaylist(playlist)),
+    renamePlaylist: (playlistId, newName) => dispatch(renamePlaylist(playlistId, newName)),
+    deletePlaylist: playlistId => dispatch(deletePlaylist(playlistId))
+  }
+}
 
 export default connect(
   mapStateToProps
