@@ -3,7 +3,7 @@ class Api::PlaylistsController < ApplicationController
     user = User.find_by_username(
       params[:playlist][:username]
     )
-    
+
     @playlist = Playlist.new(
       name: params[:playlist][:name],
       user_id: user.id
@@ -17,8 +17,7 @@ class Api::PlaylistsController < ApplicationController
   end
 
   def index
-    @playlists = User.find(params[:user_id]).playlists
-    render :index
+    @playlists = Playlist.get_by_username(params[:user_id])
   end
 
   def show

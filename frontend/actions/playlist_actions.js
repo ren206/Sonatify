@@ -1,6 +1,7 @@
 import * as APIUtil from '../util/playlist_api_util';
 
 export const RECEIVE_PLAYLIST = "RECEIVE_PLAYLIST";
+export const RECEIVE_PLAYLISTS = "RECEIVE_PLAYLISTS";
 export const RECEIVE_NEW_PLAYLIST = "RECEIVE_NEW_PLAYLIST";
 export const RECEIVE_DELETED_PLAYLIST = "RECEIVE_DELETED_PLAYLIST";
 export const RECEIVE_LISTING = "RECEIVE_LISTING";
@@ -12,46 +13,50 @@ export const fetchPlaylist = playlistId => dispatch => {
   );
 }
 
-export const createPlaylist = playlist => dispatch {
+export const fetchPlaylists = username => dispatch => {
+  return APIUtil.fetchPlaylists(username).then(
+    playlists => dispatch(receivePlaylists(playlists))
+  );
+}
+
+export const createPlaylist = playlist => dispatch => {
   return APIUtil.createPlaylist(playlist).then(
     playlist => dispatch(receiveNewPlaylist(playlist))
   );
 }
 
-export const updatePlaylist = (playlistId, newName) => dispatch {
+export const updatePlaylist = (playlistId, newName) => dispatch => {
   return APIUtil.updatePlaylist(playlistId, newName).then(
     playlist => dispatch(receivePlaylist(playlist))
   );
 }
 
-export const deletePlaylist = playlistId => dispatch {
+export const deletePlaylist = playlistId => dispatch => {
   return APIUtil.deletePlaylist(playlistId).then(
     () => dispatch(receiveDeletedPlaylistId(playlistId))
   );
 }
 
-export const createListing = (playlistId, songId) => dispatch {
+export const createListing = (playlistId, songId) => dispatch => {
   return APIUtil.createListing(playlistId, songId).then(
     listing => dispatch(receiveListing(listing))
   );
 }
 
-export const removeListing = listingId => dispatch {
+export const removeListing = listingId => dispatch => {
   return APIUtil.removeListing(listingId).then(
     listing => dispatch(receivePlaylistWithoutSong(listing))
   );
 }
 
-export function requestRemoveSongFromPlaylist(listingId){
-  return (dispatch) => {
-    return PlaylistAPIUtil.removeSongFromPlaylist(listingId)
-    .then( listing => dispatch(removeSongFromPlaylist(listing)) );
-  };
-}
-
 export const receivePlaylist = playlist => ({
   type: RECEIVE_PLAYLIST,
   playlist
+});
+
+export const receivePlaylists = playlists => ({
+  type: RECEIVE_PLAYLISTS,
+  playlists
 });
 
 export const receiveNewPlaylist = playlist => ({

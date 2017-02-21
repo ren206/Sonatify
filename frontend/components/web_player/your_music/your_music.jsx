@@ -1,20 +1,14 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router';
-import { fetchPlaylists } from '../../../actions/playlist_actions';
+import { connect } from 'react-redux';
 
-class Browse extends React.Component {
-
+class YourMusic extends React.Component {
   constructor(props) {
     super(props);
   }
 
-  componentDidMount() {
-    this.props.fetchPlaylists('michael');
-  }
-
   render() {
-    const playlistsObj = this.props.playlists;
+    const playlistsObj = this.props.session.currentUser.playlists
     const playlistKeys = Object.keys(playlistsObj);
 
     const playlists = playlistKeys.map( key => {
@@ -33,30 +27,28 @@ class Browse extends React.Component {
       );
     });
 
-    return (
-      <section className="browse">
-        <h1>Browse</h1>
-        <ul>
+    return(
+      <section className="your-music">
+        <h1>{ this.props.session.currentUser.f_name }'s Music</h1>
+        <ul className="your-playlists">
           { playlistsAsArray }
         </ul>
       </section>
     )
   }
 }
-const mapStateToProps = ({ session, playlists }) => {
+
+const mapStateToProps = ({ session }) => {
   return {
-    session,
-    playlists
+    session
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    fetchPlaylists: username => dispatch(fetchPlaylists(username))
-  }
-}
+// const mapDispatchToProps = dispatch => {
+//   return {
+//   }
+// }
 
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(withRouter(Browse));
+  mapStateToProps
+)(withRouter(YourMusic));

@@ -5,8 +5,7 @@ class Api::ListingsController < ApplicationController
     )
     @listing = Listing.new(
       playlist_id: playlist.id,
-      song_id: params[:listing][:song_id],
-      ord: playlist.songs.length + 1
+      song_id: params[:listing][:song_id]
     )
 
     if @listing.save
@@ -36,8 +35,7 @@ class Api::ListingsController < ApplicationController
   def listing_params
     params.require(:listing).permit(
       :playlist_id,
-      :song_id,
-      :ord
+      :song_id
     )
   end
 end
