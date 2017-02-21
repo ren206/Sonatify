@@ -4,8 +4,7 @@ export default class NewPlaylistForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "New Playlist",
-      username: `${this.props.currentUser.username}`
+      name: "New Playlist"
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -14,7 +13,9 @@ export default class NewPlaylistForm extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     const playlist = Object.assign({}, this.state)
-    this.props.createPlaylist(playlist);
+    this.props.createPlaylist(playlist).then(
+      () => this.setState({name: "New Playlist"})
+    )
   }
 
   updateInfo(field) {

@@ -11,9 +11,6 @@ import {
 import NewPlaylistForm from './new_playlist_form';
 
 class YourMusic extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     const playlistsObj = this.props.session.currentUser.playlists
@@ -42,7 +39,6 @@ class YourMusic extends React.Component {
         <ul className="your-playlists">
             <li>
               <NewPlaylistForm
-                currentUser={ this.props.session.currentUser }
               createPlaylist={ this.props.createPlaylist }/>
             </li>
           { playlistsAsArray }
