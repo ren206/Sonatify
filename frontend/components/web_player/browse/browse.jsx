@@ -32,6 +32,7 @@ class Browse extends React.Component {
         </li>
       );
     });
+
     return (
       <section className="browse">
         <h1>Browse</h1>

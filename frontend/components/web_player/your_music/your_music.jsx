@@ -9,7 +9,6 @@ class YourMusic extends React.Component {
 
   render() {
     const playlistsObj = this.props.session.currentUser.playlists
-    debugger
     const playlistKeys = Object.keys(playlistsObj);
 
     const playlists = playlistKeys.map( key => {
