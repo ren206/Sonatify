@@ -13,7 +13,8 @@ import NewPlaylistForm from './new_playlist_form';
 class YourMusic extends React.Component {
 
   render() {
-    const playlistsObj = this.props.session.currentUser.playlists
+    const currentUser = this.props.session.currentUser
+    const playlistsObj = currentUser ? currentUser.playlists : {};
     const playlistKeys = Object.keys(playlistsObj);
 
     const playlists = playlistKeys.map( key => {
@@ -26,7 +27,7 @@ class YourMusic extends React.Component {
       return (
         <li key={index}>
           <Link to={ `playlists/${ playlist.id }` }>
-              <h3>{ playlist.name }</h3>
+              <h4>{ playlist.name }</h4>
           </Link>
         </li>
       );
