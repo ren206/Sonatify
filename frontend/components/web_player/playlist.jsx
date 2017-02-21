@@ -1,5 +1,8 @@
 import React from 'react';
-import { fetchPlaylist } from '../../actions/playlist_actions';
+import {
+  fetchPlaylist,
+  deletePlaylist
+} from '../../actions/playlist_actions';
 import { connect } from 'react-redux';
 
 class Playlist extends React.Component {
@@ -8,8 +11,8 @@ class Playlist extends React.Component {
   }
 
   componentDidMount() {
-    const id = this.props.routeParams.playlistId;
-    this.props.fetchPlaylist(id);
+    const playlistId = this.props.routeParams.playlistId;
+    this.props.fetchPlaylist(playlistId);
   }
 
   render() {
@@ -71,7 +74,8 @@ const mapStateToProps = (state, { location }) => {
 
 const mapDispatchToProps = (dispatch, { location }) => {
   return {
-    fetchPlaylist: id => dispatch(fetchPlaylist(id)),
+    fetchPlaylist: playlistId => dispatch(fetchPlaylist(playlistId)),
+    deletePlaylist: playlistId => dispatch(deletePlaylist(playlistId)),
     location
   }
 }
