@@ -15,8 +15,8 @@
  *= require splash
  *= require main
  *= require layout
- *= require web_player
  *= require main_nav
+ *= require main_view
  *= require now_playing
  *= require_self
  */
