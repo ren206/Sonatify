@@ -8,7 +8,7 @@ import {
   deletePlaylist
 } from '../../actions/playlist_actions';
 
-import NewPlaylistForm from './new_playlist_form';
+import PlaylistForm from './playlist_form';
 
 class YourMusic extends React.Component {
 
@@ -39,7 +39,8 @@ class YourMusic extends React.Component {
 
         <ul className="your-playlists">
             <li>
-              <NewPlaylistForm
+              <PlaylistForm
+                formType="new"
               createPlaylist={ this.props.createPlaylist }/>
             </li>
           { playlistsAsArray }

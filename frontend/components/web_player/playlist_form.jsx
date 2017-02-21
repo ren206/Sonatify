@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class NewPlaylistForm extends React.Component {
+export default class PlaylistForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {

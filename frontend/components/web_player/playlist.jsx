@@ -10,11 +10,22 @@ import {
 class Playlist extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      edit: 'inactive'
+    };
   }
 
   componentDidMount() {
     const playlistId = this.props.routeParams.playlistId;
     this.props.fetchPlaylist(playlistId);
+  }
+
+  handleClick(event) {
+    event.preventDefault();
+    this.setState({
+      edit: 'active'
+    });
   }
 
   render() {
@@ -48,6 +59,9 @@ class Playlist extends React.Component {
           <h1 className="main-title">
             { this.props.playlist.name }
           </h1>
+          <button onClick={ this.handleClick }>
+            Rename Playlist
+          </button>
         </header>
 
         <table className="song-list">
