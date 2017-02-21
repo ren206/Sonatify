@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import NavigationBar from './navigation/main_nav';
-import NowPlaying from './now_playing/now_playing';
+import NavigationBar from './main_nav';
+import NowPlaying from './now_playing';
 
 export default ({ children }) => {
 

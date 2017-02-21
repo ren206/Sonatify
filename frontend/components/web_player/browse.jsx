@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router';
-import { fetchPlaylists } from '../../../actions/playlist_actions';
+import { fetchPlaylists } from '../../actions/playlist_actions';
 
 class Browse extends React.Component {
 

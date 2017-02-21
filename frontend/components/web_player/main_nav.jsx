@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
 import { connect } from 'react-redux';
-import { logout } from '../../../actions/session_actions';
+import { logout } from '../../actions/session_actions';
 
 class MainNav extends React.Component {
   constructor(props) {

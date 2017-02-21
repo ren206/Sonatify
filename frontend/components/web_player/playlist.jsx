@@ -1,5 +1,5 @@
 import React from 'react';
-import {fetchPlaylist} from '../../../actions/playlist_actions';
+import { fetchPlaylist } from '../../actions/playlist_actions';
 import { connect } from 'react-redux';
 
 class Playlist extends React.Component {

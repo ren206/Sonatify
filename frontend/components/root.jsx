@@ -4,9 +4,9 @@ import { Router, Route, IndexRoute, IndexRedirect, hashHistory } from 'react-rou
 
 import App from './app';
 
-import Browse from './web_player/browse/browse';
-import YourMusic from './web_player/your_music/your_music';
-import Playlist from './web_player/playlist/playlist';
+import Browse from './web_player/browse';
+import YourMusic from './web_player/your_music';
+import Playlist from './web_player/playlist';
 
 export default ({ store }) => {
 
