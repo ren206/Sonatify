@@ -34,7 +34,7 @@ export default class NewPlaylistForm extends React.Component {
             onChange={ this.updateInfo("name") }
             />
           &nbsp;
-          <button className="green-button">
+          <button className="main-green-button">
             Create
           </button>
         </form>
