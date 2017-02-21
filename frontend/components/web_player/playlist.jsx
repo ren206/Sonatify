@@ -1,9 +1,11 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
+
 import {
   fetchPlaylist,
   deletePlaylist
 } from '../../actions/playlist_actions';
-import { connect } from 'react-redux';
 
 class Playlist extends React.Component {
   constructor(props) {
@@ -83,4 +85,4 @@ const mapDispatchToProps = (dispatch, { location }) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Playlist);
+)(withRouter(Playlist));
