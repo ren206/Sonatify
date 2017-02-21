@@ -2,7 +2,6 @@
 import {
   RECEIVE_PLAYLIST,
   RECEIVE_PLAYLIST_WITHOUT_SONG
-
 } from '../actions/playlist_actions';
 
 import { LOGOUT } from '../actions/session_actions';

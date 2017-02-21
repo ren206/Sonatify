@@ -16,6 +16,3 @@ document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={ store }/>, root);
 });
-
-import fetchPlaylists from './util/playlist_api_util';
-window.fetchPlaylists = fetchPlaylists;

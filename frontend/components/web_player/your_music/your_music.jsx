@@ -9,6 +9,7 @@ class YourMusic extends React.Component {
 
   render() {
     const playlistsObj = this.props.session.currentUser.playlists
+    debugger
     const playlistKeys = Object.keys(playlistsObj);
 
     const playlists = playlistKeys.map( key => {
@@ -19,7 +20,7 @@ class YourMusic extends React.Component {
 
     const playlistsAsArray = playlists.map( (playlist, index) => {
       return (
-        <li key={ index}>
+        <li key={index}>
           <Link to={ `playlists/${ playlist.id }` }>
               <h3>{ playlist.name }</h3>
           </Link>

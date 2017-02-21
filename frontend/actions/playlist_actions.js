@@ -13,9 +13,9 @@ export const fetchPlaylist = playlistId => dispatch => {
   );
 }
 
-export const fetchPlaylists = userId => dispatch => {
-  return APIUtil.fetchPlaylist(userId).then(
-    playlists => dispatch(receivePlaylist(playlists))
+export const fetchPlaylists = username => dispatch => {
+  return APIUtil.fetchPlaylists(username).then(
+    playlists => dispatch(receivePlaylists(playlists))
   );
 }
 
@@ -55,7 +55,7 @@ export const receivePlaylist = playlist => ({
 });
 
 export const receivePlaylists = playlists => ({
-  type: RECEIVE_PLAYLIST,
+  type: RECEIVE_PLAYLISTS,
   playlists
 });
 
