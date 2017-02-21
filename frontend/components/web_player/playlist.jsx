@@ -26,18 +26,37 @@ class Playlist extends React.Component {
 
     const songsAsArray = songs.map( (song, index) => {
       return (
-        <li key={index}>
-            <h3>{ song.title }</h3>
-        </li>
+        <tr
+          className="song-list-items"
+          key={index}>
+            <td>{ song.title }</td>
+            <td>Artist Name</td>
+            <td>Album Name</td>
+            <td>3:00</td>
+        </tr>
       );
     });
 
     return(
       <section className="playlist-wrapper">
-        <h1>{ this.props.playlist.name }</h1>
-        <ul>
-          { songsAsArray }
-        </ul>
+        <header className="main-title">
+          <h1 className="main-title">
+            { this.props.playlist.name }
+          </h1>
+        </header>
+
+        <table className="song-list">
+          <tbody>
+            <tr>
+              <th>Song</th>
+              <th>Artist</th>
+              <th>Album</th>
+              <th>Time</th>
+            </tr>
+            { songsAsArray }
+          </tbody>
+        </table>
+
       </section>
     )
   }
