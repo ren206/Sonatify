@@ -38,6 +38,7 @@ ul a:hover {
   color: #3e3e40;
 }
 
+// only create playlist button so far
 .main-view button {
   display: inline-block;
   position: relative;
@@ -50,7 +51,6 @@ ul a:hover {
   text-transform: uppercase;
 }
 
-// only create playlist button so far
 .new-playlist-form button {
   border-radius: 500px;
   letter-spacing: 1.5px;
