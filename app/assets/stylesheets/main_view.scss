@@ -1,3 +1,13 @@
+.main-view {
+  background-color: black;
+  color: #fbfbfc;
+  font-weight: lighter;
+}
+
+.main-view h1 {
+  font-weight: lighter;
+}
+
 table.song-list {
   width: 100%;
 }
@@ -7,8 +17,17 @@ th {
   text-align: left;
 }
 
-ul.your-playlists a {
+ul h4 {
+  font-weight: lighter;
+}
+
+ul a {
   display: inline-block;
+  color: #dfe0e6;
+}
+
+ul a:hover {
+  color: #fbfbfc;
 }
 
 // new playlist form/input
