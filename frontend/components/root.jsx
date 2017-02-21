@@ -21,7 +21,7 @@ export default ({ store }) => {
         <Route path="/" component={ App }>
           <Route path="browse" component={ Browse } />
           <Route path="your-music" component={ YourMusic } />
-          <Route path="playlist" component={ Playlist } />
+          <Route path="playlists/:playlistId" component={ Playlist } />
         </Route>
 
         <Route path="/:DNE" onEnter={ _redirect } />
