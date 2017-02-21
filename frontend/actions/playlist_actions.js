@@ -25,8 +25,8 @@ export const createPlaylist = playlist => dispatch => {
   );
 }
 
-export const updatePlaylist = (playlistId, newName) => dispatch => {
-  return APIUtil.updatePlaylist(playlistId, newName).then(
+export const renamePlaylist = (playlistId, newName) => dispatch => {
+  return APIUtil.renamePlaylist(playlistId, newName).then(
     playlist => dispatch(receivePlaylist(playlist))
   );
 }

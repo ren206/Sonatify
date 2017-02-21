@@ -27,7 +27,7 @@ class Browse extends React.Component {
       return (
         <li key={index}>
           <Link to={ `playlists/${ playlist.id }` }>
-              <h3>{ playlist.name }</h3>
+              <h4>{ playlist.name }</h4>
           </Link>
         </li>
       );

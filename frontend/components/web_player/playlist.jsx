@@ -1,16 +1,34 @@
 import React from 'react';
-import { fetchPlaylist } from '../../actions/playlist_actions';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
+
+import {
+  fetchPlaylist,
+  deletePlaylist
+} from '../../actions/playlist_actions';
+
+import PlaylistForm from './playlist_form';
 
 class Playlist extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  //
+  //   this.state = {
+  //     edit: 'inactive'
+  //   };
+  // }
 
   componentDidMount() {
-    const id = this.props.routeParams.playlistId;
-    this.props.fetchPlaylist(id);
+    const playlistId = this.props.routeParams.playlistId;
+    this.props.fetchPlaylist(playlistId);
   }
+
+  // handleClick(event) {
+  //   event.preventDefault();
+  //   this.setState({
+  //     edit: 'active'
+  //   });
+  // }
 
   render() {
     const list = this.props.playlist;
@@ -37,12 +55,17 @@ class Playlist extends React.Component {
       );
     });
 
+    // <button onClick={ this.handleClick }>
+    //   Rename
+    // </button>
     return(
       <section className="playlist-wrapper">
         <header className="main-title">
           <h1 className="main-title">
             { this.props.playlist.name }
           </h1>
+          <PlaylistForm
+            params={this.props.params} />
         </header>
 
         <table className="song-list">
@@ -71,7 +94,8 @@ const mapStateToProps = (state, { location }) => {
 
 const mapDispatchToProps = (dispatch, { location }) => {
   return {
-    fetchPlaylist: id => dispatch(fetchPlaylist(id)),
+    fetchPlaylist: playlistId => dispatch(fetchPlaylist(playlistId)),
+    deletePlaylist: playlistId => dispatch(deletePlaylist(playlistId)),
     location
   }
 }
@@ -79,4 +103,4 @@ const mapDispatchToProps = (dispatch, { location }) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Playlist);
+)(withRouter(Playlist));

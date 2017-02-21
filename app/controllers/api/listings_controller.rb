@@ -1,7 +1,7 @@
 class Api::ListingsController < ApplicationController
   def create
-    playlist = Playlist.find_by(
-      id: params[:listing][:playlist_id]
+    playlist = Playlist.find(
+      params[:listing][:playlist_id]
     )
     @listing = Listing.new(
       playlist_id: playlist.id,
@@ -11,7 +11,7 @@ class Api::ListingsController < ApplicationController
     if @listing.save
       render :show
     else
-      render json: @listing.errors.full_messages
+      render json: @listing.errors.full_messages, status: 422
     end
   end
 
@@ -20,7 +20,7 @@ class Api::ListingsController < ApplicationController
     if @listing.update(listing_params)
       render json: @listing
     else
-      render json: @listing.errors.full_messages
+      render json: @listing.errors.full_messages, status: 422
     end
   end
 

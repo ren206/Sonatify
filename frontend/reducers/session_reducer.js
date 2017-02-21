@@ -39,17 +39,17 @@ export default (state = _initialState, action) => {
       return Object.assign({}, state, { errors: [] });
 
     case RECEIVE_NEW_PLAYLIST:
-    const newUserWithPlaylists = Object.assign( {}, state.currentUser );
-    newUserWithPlaylists.playlists = merge(
-      {},
-      state.currentUser.playlists,
-      { [action.playlist.id]: action.playlist }
-    );
-    return Object.assign(
-      {},
-      state,
-      { currentUser: newUserWithPlaylists }
-    );
+      const newUserWithPlaylists = Object.assign( {}, state.currentUser );
+      newUserWithPlaylists.playlists = merge(
+        {},
+        state.currentUser.playlists,
+        { [action.playlist.id]: action.playlist }
+      );
+      return Object.assign(
+        {},
+        state,
+        { currentUser: newUserWithPlaylists }
+      );
 
     case RECEIVE_DELETED_PLAYLIST:
       const newUserWithDeletedPlaylist = Object.assign({}, state.currentUser);
