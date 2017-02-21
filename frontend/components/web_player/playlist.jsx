@@ -7,26 +7,28 @@ import {
   deletePlaylist
 } from '../../actions/playlist_actions';
 
-class Playlist extends React.Component {
-  constructor(props) {
-    super(props);
+import PlaylistForm from './playlist_form';
 
-    this.state = {
-      edit: 'inactive'
-    };
-  }
+class Playlist extends React.Component {
+  // constructor(props) {
+  //   super(props);
+  //
+  //   this.state = {
+  //     edit: 'inactive'
+  //   };
+  // }
 
   componentDidMount() {
     const playlistId = this.props.routeParams.playlistId;
     this.props.fetchPlaylist(playlistId);
   }
 
-  handleClick(event) {
-    event.preventDefault();
-    this.setState({
-      edit: 'active'
-    });
-  }
+  // handleClick(event) {
+  //   event.preventDefault();
+  //   this.setState({
+  //     edit: 'active'
+  //   });
+  // }
 
   render() {
     const list = this.props.playlist;
@@ -53,15 +55,17 @@ class Playlist extends React.Component {
       );
     });
 
+    // <button onClick={ this.handleClick }>
+    //   Rename
+    // </button>
     return(
       <section className="playlist-wrapper">
         <header className="main-title">
           <h1 className="main-title">
             { this.props.playlist.name }
           </h1>
-          <button onClick={ this.handleClick }>
-            Rename Playlist
-          </button>
+          <PlaylistForm
+            params={this.props.params} />
         </header>
 
         <table className="song-list">

@@ -20,7 +20,7 @@ export const createPlaylist = playlist => {
   });
 };
 
-export const updatePlaylist = (playlistId, newName) => {
+export const renamePlaylist = (playlistId, newName) => {
   return $.ajax({
     type: 'PATCH',
     url: `api//playlists/${playlistId}`,
