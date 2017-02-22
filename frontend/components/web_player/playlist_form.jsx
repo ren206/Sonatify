@@ -9,14 +9,16 @@ import {
 class PlaylistForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.playlist;
+    this.state = this.props.playlist || {};
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
     if (this.props.params) {
-      this.props.fetchPlaylist(this.props.params.playlistId);
+      this.props.fetchPlaylist(this.props.params.playlistId).then(
+        () => this.setState(this.props.playlist || {})
+      );
     }
   }
 
@@ -47,6 +49,7 @@ class PlaylistForm extends React.Component {
   }
 
   render() {
+    if (!this.state.name) return null;
     const text = this.props.formType === 'new' ? "Create" : "Rename";
     return(
       <div className="new-playlist-form">

@@ -57,8 +57,8 @@ class Playlist extends React.Component {
           className="song-list-items"
           key={index}>
             <td>{ song.title }</td>
-            <td>Artist Name</td>
-            <td>Album Name</td>
+            <td>{ song.artist }</td>
+            <td>{ song.album }</td>
             <td>3:00</td>
         </tr>
       );
