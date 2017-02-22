@@ -22,7 +22,7 @@ class PlaylistForm extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    this.setState(newProps.playlist);
+    if(!!newProps.playlist) this.setState(newProps.playlist);
   }
 
   handleSubmit(event) {
