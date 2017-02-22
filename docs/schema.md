@@ -27,7 +27,8 @@
 |id             |integer  |not null, primary key |
 |title          |string   |not null, indexed     |
 |album_id       |integer  |not null, indexed     |
-|album          |integer  |not null              |
+|ord            |integer  |not null              |
+|duration       |integer  |not null              |
 |media_url      |string   |not null              |
 
 ## albums
