@@ -8,6 +8,7 @@
 #  updated_at :datetime         not null
 #  album_id   :integer          not null
 #  ord        :integer          not null
+#  duration   :integer          not null
 #
 
 class Song < ActiveRecord::Base
