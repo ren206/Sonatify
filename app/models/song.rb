@@ -6,6 +6,8 @@
 #  title      :string           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  album_id   :integer          not null
+#  ord        :integer          not null
 #
 
 class Song < ActiveRecord::Base
