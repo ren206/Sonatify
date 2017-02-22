@@ -8,11 +8,7 @@
 ## JSON API
 
 ### Users
-- `show: GET /api/users/:user_id`
 - `create: POST /api/users`
-- `show: GET /api/me`
-  - own user page
-- `update: PUT /api/user`
 
 ### User follows
 - `create: POST /api/user_follows`
@@ -28,11 +24,9 @@
 ### Albums
 - `show: GET /api/albums/:id`
 
-### Genres
-- `show: GET /api/genres/:id`
-
-<!-- ### Songs
-- `index: GET /api/artists/:artist_id/albums/:album_id/songs` -->
+### Songs
+- `GET /api/playlists/:id/songs`
+- `GET /api/albums/:id/songs`
 
 ### Playlists
 - `create: POST /api/playlists`
