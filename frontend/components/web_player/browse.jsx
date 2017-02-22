@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link, withRouter } from 'react-router';
 import { fetchPlaylists } from '../../actions/playlist_actions';
+import MainList from './main_list';
 
 class Browse extends React.Component {
 
@@ -12,35 +12,19 @@ class Browse extends React.Component {
   componentDidMount() {
     this.props.fetchPlaylists('michael');
   }
+  componentWillReceiveProps({playlists}) {
+    if (Object.keys(this.props.playlists).length !== Object.keys(playlists).length) {
+      this.props.fetchPlaylists('michael');
+    }
+  }
 
   render() {
-    const playlistsObj = this.props.playlists;
-    const playlistKeys = Object.keys(playlistsObj);
-
-    const playlists = playlistKeys.map( key => {
-      const playlist = playlistsObj[key];
-      playlist.id = key;
-      return playlist;
-    });
-
-    const playlistsAsArray = playlists.map( (playlist, index) => {
-      return (
-        <li key={index}>
-          <img className="artwork"
-            src={playlist.image_url}/>
-          <Link to={ `playlists/${ playlist.id }` }>
-              <h4>{ playlist.name }</h4>
-          </Link>
-        </li>
-      );
-    });
-
     return (
       <section className="browse">
         <h1>Browse</h1>
-        <ul>
-          { playlistsAsArray }
-        </ul>
+        <MainList
+          itemsObj={this.props.playlists}
+          />
       </section>
     )
   }
@@ -61,4 +45,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(withRouter(Browse));
+)(Browse);
