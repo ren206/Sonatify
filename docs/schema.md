@@ -27,7 +27,8 @@
 |id             |integer  |not null, primary key |
 |title          |string   |not null, indexed     |
 |album_id       |integer  |not null, indexed     |
-|album_ord      |integer  |not null              |
+|ord            |integer  |not null              |
+|duration       |integer  |not null              |
 |media_url      |string   |not null              |
 
 ## albums
@@ -37,9 +38,9 @@
 |id         |integer  |not null, primary key          |
 |title      |string   |not null, primary key          |
 |artist_id  |integer  |not null, foreign key, indexed |
-|genre      |string   |                               |
-|added_year |date     |                               |
+|added_year |date     |not null                       |
 |image_url  |string   |not null                       |
+|genre      |string   |                               |
 
 ## artists
 
@@ -66,7 +67,6 @@
 |id          |integer  |not null, primary key           |
 |playlist_id |integer  |not null, foreign key, indexed  |
 |song_id     |integer  |not null, foreign key, indexed  |
-|ord         |integer  |not null                        |
 |added_date  |date     |not null (later)                |
 
 ## playlist followings
