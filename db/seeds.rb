@@ -11,7 +11,7 @@ User.find_or_create_by(
   l_name: "Ren"
 )
 Playlist.destroy_all
-rec = Playlist.create(
+Playlist.find_or_create_by(
   name: 'Recommended for You',
   user_id: User.find_by_username("michael").id
 )
@@ -83,23 +83,23 @@ Song.create!(
 
 Listing.destroy_all
 
-Listing.create(
-  playlist_id: rec.id,
-  song_id: Song.find_by_title("Double Violin Concerto by JS Bach")
+Listing.create!(
+  playlist_id: Playlist.find_by_name("Recommended for You").id,
+  song_id: Song.find_by_title("Double Violin Concerto by JS Bach").id
 )
-Listing.create(
-  playlist_id: rec.id,
-  song_id: Song.find_by_title("Courante 1st Cello Suite by JS Bach")
+Listing.create!(
+  playlist_id: Playlist.find_by_name("Recommended for You").id,
+  song_id: Song.find_by_title("Courante 1st Cello Suite by JS Bach").id
 )
 # Listing.create(
-#   playlist_id: rec.id,
+#   playlist_id: Playlist.find_by_name("Recommended for You").id,
 #   song_id: Song.find_by_title("Tammy Morgan")
 # )
 # Listing.create(
-#   playlist_id: rec.id,
+#   playlist_id: Playlist.find_by_name("Recommended for You").id,
 #   song_id: Song.find_by_title("What's Left")
 # )
-Listing.create(
-  playlist_id: rec.id,
-  song_id: Song.find_by_title("The Calling")
+Listing.create!(
+  playlist_id: Playlist.find_by_name("Recommended for You").id,
+  song_id: Song.find_by_title("The Calling").id
 )
