@@ -19,11 +19,11 @@ end
 Playlist.destroy_all
 rec = Playlist.create(
   name: 'Recommended for You',
-  user_id: 10
+  user_id: User.find_by_username("michael").id
 )
 test = Playlist.create(
   name: 'Test Playlist',
-  user_id: 10
+  user_id: User.find_by_username("michael").id
 )
 
 Song.destroy_all
