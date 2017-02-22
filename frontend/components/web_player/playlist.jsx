@@ -10,17 +10,19 @@ import {
 import PlaylistForm from './playlist_form';
 
 class Playlist extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  //
-  //   this.state = {
-  //     edit: 'inactive'
-  //   };
-  // }
+  constructor(props) {
+    super(props);
+
+    // this.state = {
+      // edit: 'inactive',
+    // };
+    this.handleDelete = this.handleDelete.bind(this);
+
+  }
 
   componentDidMount() {
-    const playlistId = this.props.routeParams.playlistId;
-    this.props.fetchPlaylist(playlistId);
+    // const playlistId = this.props.routeParams.playlistId;
+    this.props.fetchPlaylist(this.props.routeParams.playlistId);
   }
 
   // handleClick(event) {
@@ -30,8 +32,16 @@ class Playlist extends React.Component {
   //   });
   // }
 
+  handleDelete(event) {
+    const { routeParams, deletePlaylist, router } = this.props;
+    event.preventDefault();
+    deletePlaylist(routeParams.playlistId).then(
+      () => router.push('/your-music')
+    );
+
+  }
+
   render() {
-    const list = this.props.playlist;
     const songsObj = this.props.playlist.songs;
     if (!this.props.playlist.songs) return null;
     const songKeys = Object.keys(songsObj);
@@ -66,6 +76,11 @@ class Playlist extends React.Component {
           </h1>
           <PlaylistForm
             params={this.props.params} />
+          <button
+            className="delete-playlist"
+            onClick={ this.handleDelete }>
+            Delete
+          </button>
         </header>
 
         <table className="song-list">
