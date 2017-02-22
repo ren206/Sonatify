@@ -23,7 +23,6 @@ class YourMusic extends React.Component {
   }
 
   render() {
-    const currentUser = this.props.currentUser;
     const playlistsObj = this.props.playlists || {};
 
     return(

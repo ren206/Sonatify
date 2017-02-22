@@ -9,7 +9,6 @@ import {
 class PlaylistForm extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = this.props.playlist;
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -70,7 +69,7 @@ class PlaylistForm extends React.Component {
 const mapStateToProps = (state, ownProps) => {
   let playlist = { name: "New Playlist" };
   if (ownProps.params) {
-    playlist = state.session.currentUser.playlists[ownProps.params.playlistId];
+    playlist = state.playlists[ownProps.params.playlistId];
   }
   let formType = ownProps.formType || "edit";
   return { playlist, formType };

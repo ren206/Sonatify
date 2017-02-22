@@ -11,6 +11,7 @@ import merge from 'lodash/merge';
 const _initialState = {};
 
 export default (state = _initialState, action) => {
+  Object.freeze(state);
   switch (action.type) {
     case LOGOUT:
       return _initialState;

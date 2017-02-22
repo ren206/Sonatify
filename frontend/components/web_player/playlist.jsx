@@ -38,7 +38,6 @@ class Playlist extends React.Component {
     deletePlaylist(routeParams.playlistId).then(
       () => router.push('/your-music')
     );
-
   }
 
   render() {
