@@ -60,13 +60,13 @@ Song.create!(
   title: "Double Violin Concerto by JS Bach",
   album_id: Album.find_by_name("Classical Songs").id,
   ord: 1,
-  audio: File.open('app/assets/songs/Double-Violin-Concerto_JSBach-Jon+Sayles.mp3')
+  audio: File.open('app/assets/songs/Double-Violin-Concerto_JSBach-Jon-Sayles.mp3')
 )
 Song.create!(
   title: "Courante 1st Cello Suite by JS Bach",
   album_id: Album.find_by_name("Classical Songs").id,
   ord: 2,
-  audio: File.open('app/assets/songs/Courante_1st_Cello_Suite_JS_Bach-Jon+Sayles.mp3')
+  audio: 'https://s3.amazonaws.com/aa-sonatify-dev/seeds/Courante_1st_Cello_Suite_JS_Bach-Jon-Sayles.mp3'
 )
 # Song.create!(
 #   title: "Tammy Morgan",
