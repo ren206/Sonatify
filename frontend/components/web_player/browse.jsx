@@ -26,6 +26,7 @@ class Browse extends React.Component {
     const playlistsAsArray = playlists.map( (playlist, index) => {
       return (
         <li key={index}>
+          <img src={playlist.image_url}/>
           <Link to={ `playlists/${ playlist.id }` }>
               <h4>{ playlist.name }</h4>
           </Link>
