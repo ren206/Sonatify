@@ -1,1 +1,1 @@
-json.extract! album, :id, :title, :image_url, :year
+json.extract! album, :id, :name, :year
