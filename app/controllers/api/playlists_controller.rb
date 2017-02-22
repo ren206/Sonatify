@@ -1,7 +1,5 @@
 class Api::PlaylistsController < ApplicationController
   def create
-
-
     @playlist = Playlist.new(
       name: params[:playlist][:name],
       user_id: current_user.id
