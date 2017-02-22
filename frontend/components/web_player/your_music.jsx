@@ -3,6 +3,7 @@ import { Link, withRouter } from 'react-router';
 import { connect } from 'react-redux';
 
 import {
+  fetchPlaylists,
   createPlaylist,
   renamePlaylist,
   deletePlaylist
@@ -12,8 +13,12 @@ import PlaylistForm from './playlist_form';
 
 class YourMusic extends React.Component {
 
+  componentDidMount() {
+    this.props.fetchPlaylists(`${this.props.session.currentUser.username}`);
+  }
+
   render() {
-    const currentUser = this.props.session.currentUser
+    const currentUser = this.props.session.currentUser;
     const playlistsObj = currentUser ? currentUser.playlists : {};
     const playlistKeys = Object.keys(playlistsObj);
 
@@ -58,6 +63,7 @@ const mapStateToProps = ({ session }) => {
 
 const mapDispatchToProps = dispatch => {
   return {
+    fetchPlaylists: username => dispatch(fetchPlaylists(username)),
     createPlaylist: playlist => dispatch(createPlaylist(playlist)),
     renamePlaylist: (playlistId, newName) => dispatch(renamePlaylist(playlistId, newName)),
     deletePlaylist: playlistId => dispatch(deletePlaylist(playlistId))

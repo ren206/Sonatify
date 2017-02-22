@@ -63,7 +63,7 @@ class Splash extends React.Component {
 
             <br />
 
-            <h2>Listen to millions of songs for free.</h2>
+            <h2>Listen to hundreds of songs for free.</h2>
 
             <br />
 
