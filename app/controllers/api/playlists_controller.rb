@@ -1,4 +1,5 @@
 class Api::PlaylistsController < ApplicationController
+
   def create
     @playlist = Playlist.new(
       name: params[:playlist][:name],
@@ -23,17 +24,25 @@ class Api::PlaylistsController < ApplicationController
 
   def update
     @playlist = Playlist.find(params[:id])
-    if @playlist.update(playlist_params)
-      render :show
+    if @playlist.user_id == current_user.id
+      if @playlist.update(playlist_params)
+        render :show
+      else
+        render json: @playlist.errors.full_messages, status: 422
+      end
     else
-      render json: @playlist.errors.full_messages, status: 422
+      render json: ['You cannot edit this'], status: 403
     end
   end
 
   def destroy
     @playlist = Playlist.find(params[:id])
-    @playlist.destroy
-    render json: @playlist
+    if @playlist.user_id == current_user.id
+      @playlist.destroy
+      render json: @playlist
+    else
+      render json: ['You cannot delete this'], status: 403
+    end
   end
 
   private
