@@ -1,15 +1,13 @@
-User.find_or_create_by(username: "guest")
-  username: "guest",
+User.find_or_create_by(username: "guest"
   password_digest: "$2a$10$ivFZmFpmMRjijSFpeo.QCO1enzsfNJWZp/9PsMXZrG17OfI5ChVRW",
   f_name: "Guest",
   l_name: "User"
-
-User.find_or_create_by(username: "michael")
-  username: "michael",
+)
+User.find_or_create_by(username: "michael"
   password_digest: "$2a$10$LzMd2UIgX/NmNILhp1SNHO2qZ5qbeLqYNZseXyHmUy3CME5XSZxhy",
   f_name: "Michael",
   l_name: "Ren"
-
+)
 Playlist.destroy_all
 rec = Playlist.create(
   name: 'Recommended for You',
