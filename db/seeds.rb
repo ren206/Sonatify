@@ -77,7 +77,7 @@ Song.create!(
 Song.create!(
   title: "The Calling",
   album_id: Album.find_by_name("Rock Instrumental Music").id,
-  ord: 2,
+  ord: 1,
   audio: 'https://s3.amazonaws.com/aa-sonatify-dev/seeds/theCalling-Angelwing.mp3'
 )
 

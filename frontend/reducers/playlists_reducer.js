@@ -13,8 +13,6 @@ export default (state = _initialState, action) => {
     case RECEIVE_PLAYLISTS:
       return action.playlists;
 
-
-
     default:
       return state;
   }
