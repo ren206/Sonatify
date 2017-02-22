@@ -1,20 +1,14 @@
-unless User.find_by(username: "guest")
-  User.create(
-    username: "guest",
-    password_digest: "$2a$10$ivFZmFpmMRjijSFpeo.QCO1enzsfNJWZp/9PsMXZrG17OfI5ChVRW",
-    f_name: "Guest",
-    l_name: "User"
-  )
-end
+User.find_or_create_by(username: "guest")
+  username: "guest",
+  password_digest: "$2a$10$ivFZmFpmMRjijSFpeo.QCO1enzsfNJWZp/9PsMXZrG17OfI5ChVRW",
+  f_name: "Guest",
+  l_name: "User"
 
-unless User.find_by(username: "michael")
-  User.create(
-    username: "michael",
-    password_digest: "$2a$10$LzMd2UIgX/NmNILhp1SNHO2qZ5qbeLqYNZseXyHmUy3CME5XSZxhy",
-    f_name: "Michael",
-    l_name: "Ren"
-  )
-end
+User.find_or_create_by(username: "michael")
+  username: "michael",
+  password_digest: "$2a$10$LzMd2UIgX/NmNILhp1SNHO2qZ5qbeLqYNZseXyHmUy3CME5XSZxhy",
+  f_name: "Michael",
+  l_name: "Ren"
 
 Playlist.destroy_all
 rec = Playlist.create(
@@ -60,7 +54,7 @@ Song.create!(
   title: "Double Violin Concerto by JS Bach",
   album_id: Album.find_by_name("Classical Songs").id,
   ord: 1,
-  audio: File.open('app/assets/songs/Double-Violin-Concerto_JSBach-Jon-Sayles.mp3')
+  audio: 'https://s3.amazonaws.com/aa-sonatify-dev/seeds/Double-Violin-Concerto_JSBach-Jon-Sayles.mp3'
 )
 Song.create!(
   title: "Courante 1st Cello Suite by JS Bach",
@@ -84,7 +78,7 @@ Song.create!(
   title: "The Calling",
   album_id: Album.find_by_name("Rock Instrumental Music").id,
   ord: 2,
-  audio: File.open('app/assets/songs/theCalling-Angelwing.mp3')
+  audio: 'https://s3.amazonaws.com/aa-sonatify-dev/seeds/theCalling-Angelwing.mp3'
 )
 
 Listing.destroy_all
@@ -97,14 +91,14 @@ Listing.create(
   playlist_id: rec.id,
   song_id: Song.find_by_title("Courante 1st Cello Suite by JS Bach")
 )
-Listing.create(
-  playlist_id: rec.id,
-  song_id: Song.find_by_title("Tammy Morgan")
-)
-Listing.create(
-  playlist_id: rec.id,
-  song_id: Song.find_by_title("What's Left")
-)
+# Listing.create(
+#   playlist_id: rec.id,
+#   song_id: Song.find_by_title("Tammy Morgan")
+# )
+# Listing.create(
+#   playlist_id: rec.id,
+#   song_id: Song.find_by_title("What's Left")
+# )
 Listing.create(
   playlist_id: rec.id,
   song_id: Song.find_by_title("The Calling")
