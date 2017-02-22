@@ -11,4 +11,10 @@
 #
 
 class Album < ActiveRecord::Base
+  validates :name, :artist, presence: true
+
+  belongs_to :artist
+  has_many :songs, dependent: :delete_all
+  
+
 end
