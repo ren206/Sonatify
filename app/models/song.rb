@@ -12,8 +12,12 @@
 #
 
 class Song < ActiveRecord::Base
-  validates :title, presence: true
+  validates :title, :album_id, :ord, presence: true
+  validates_uniquness_of :ord, scope: :album_id
 
   has_many :listings
   has_many :playlists, through: :listings
+
+  belongs_to :album
+  has_one :artist, through: :album
 end
