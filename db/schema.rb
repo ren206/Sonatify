@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(version: 20170222060636) do
     t.datetime "updated_at", null: false
     t.integer  "album_id",   null: false
     t.integer  "ord",        null: false
-    t.integer  "duration",   null: false
+    t.integer  "duration"
   end
 
   add_index "songs", ["title"], name: "index_songs_on_title", using: :btree
