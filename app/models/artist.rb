@@ -9,4 +9,9 @@
 #
 
 class Artist < ActiveRecord::Base
+  validates :name, presence: true, uniquness: true
+
+  has_many :albums, dependent: :delete_all
+  has_many :songs, through: :albums
+  
 end
