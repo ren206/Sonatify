@@ -16,11 +16,3 @@ document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={ store }/>, root);
 });
-
-// import * as Music from './actions/music_actions';
-import {
-  fetchArtist,
-  fetchArtists,
-  fetchAlbum,
-  fetchSong
-} from './actions/music_actions';
