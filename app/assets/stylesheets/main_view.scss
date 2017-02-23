@@ -2,11 +2,30 @@
   background-color: black;
   color: #fbfbfc;
   font-weight: lighter;
+  overflow-y: scroll;
 }
 
 .main-view h1 {
   display: inline-block;
   font-weight: lighter;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.main-view::-webkit-scrollbar {
+  display: block;
+  background-color: #1c1c1f;
+  width: 10px;
+}
+
+.main-view::-webkit-scrollbar-thumb {
+  display: block;
+  background-color: #323438;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background-clip: content-box;
 }
 
 table.song-list {
