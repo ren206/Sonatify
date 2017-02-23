@@ -28,10 +28,10 @@ class NowPlaying extends React.Component {
   render() {
     const currentSong = this.props.currentSong;
     if (!currentSong.title) {
-      return (<div className="now-playing-wrapper inactive"></div>);
+      return (<div className="now-playing-wrapper-inactive" />);
     }
     return(
-      <div className="now-playing-wrapper active">
+      <div className="now-playing-wrapper-active">
         <div id="now-playing">
           <h3
             className="now-playing-header">
@@ -41,7 +41,7 @@ class NowPlaying extends React.Component {
           <br />
 
           <div className="now-playing-info">
-            
+
             <div className="now-playing-art">
               <img src={window.images.logo} />
               <h4>
@@ -52,13 +52,13 @@ class NowPlaying extends React.Component {
           <br />
 
             <h5>
-              {`${currentSong.title}`}
+              {`${currentSong.title}` || ""}
             </h5>
 
             <br/>
 
             <h6>
-              {`${currentSong.artist.name}`}
+              {`${currentSong.artist.name}` || ""}
             </h6>
           </div>
 
@@ -87,6 +87,7 @@ class NowPlaying extends React.Component {
             ref={ ref => this.audioPlayer = ref }
             src={ `${currentSong.audio}` }
             controls={ true }
+            autoPlay
             />
         </div>
       </div>

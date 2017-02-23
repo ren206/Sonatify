@@ -27,7 +27,7 @@
   width: calc(100% - 90px);
 }
 
-.now-playing-wrapper {
+.now-playing-wrapper-active {
   position: relative;
   width: 270px;
   right: 0;
@@ -38,4 +38,9 @@
   align-items: center;
   color: #88898c;
   text-transform: uppercase;
+}
+
+.now-playing-wrapper-inactive {
+  display: none;
+  width: 0;
 }
