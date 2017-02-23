@@ -1,0 +1,16 @@
+.now-playing-wrapper {
+  display: flex;
+}
+
+.play-toggle {
+  display: block;
+  height: 50px;
+  width: 50px;
+  background: none;
+  border: none;
+}
+
+.play-toggle > img {
+  width: 100%;
+  height: 100%;
+}

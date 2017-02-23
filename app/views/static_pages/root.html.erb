@@ -1,9 +1,18 @@
 <script type="text/javascript">
-<% if logged_in? %>
-window.currentUser = <%= render(
-  "api/users/user.json.jbuilder",
-  user: current_user).html_safe %>
+  <% if logged_in? %>
+  window.currentUser = <%= render(
+    "api/users/user.json.jbuilder",
+    user: current_user).html_safe %>
   <% end %>
+
+  window.images = {
+    logo: "<%= image_path("logo.png") %>",
+    check: "<%= image_path("check.svg") %>",
+    browseIcon: "<%= image_path("browse.png") %>",
+    yourMusicIcon: "<%= image_path("your-music.png") %>",
+    play: "<%= image_path("play.png") %>",
+    pause: "<%= image_path("pause.png") %>",
+  }
   </script>
 
 <div id='root'>

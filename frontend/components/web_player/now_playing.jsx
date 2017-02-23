@@ -1,9 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import {
+  playCurrentSong,
+  pauseCurrentSong
+} from '../../actions/queue_actions';
+
 class NowPlaying extends React.Component {
   constructor(props) {
     super(props);
+    this.handlePlayToggle = this.handlePlayToggle.bind(this);
   }
 
   componentDidUpdate () {
@@ -14,6 +20,11 @@ class NowPlaying extends React.Component {
     }
   }
 
+  handlePlayToggle(event) {
+    event.preventDefault();
+    this.props.playing ? this.props.pauseCurrentSong() : this.props.playCurrentSong();
+  }
+
   render() {
     const currentSong = this.props.currentSong;
     if (!currentSong.title) {
@@ -22,20 +33,29 @@ class NowPlaying extends React.Component {
     return(
       <div className="now-playing-wrapper active">
         <div id="now-playing">
-          <ul>
-            <li className="now-playing-header">
-              <h3>Now Playing</h3>
-            </li>
+              <h3
+                className="now-playing-header">
+                Now Playing
+              </h3>
 
-            <li className="audio-player">
               <audio
+                className="audio-player"
                 ref={ ref => this.audioPlayer = ref }
                 src={ `${currentSong.audio}` }
                 controls={ true }
                 />
-            </li>
+              <button
+                className="play-toggle"
+                onClick={ this.handlePlayToggle }
+                >
+                <img
+                  src={
+                    this.props.playing ?
+                    window.images.pause :
+                    window.images.play
+                  } />
+              </button>
 
-          </ul>
         </div>
       </div>
     )
@@ -52,6 +72,8 @@ const mapStateToProps = ({ queue }) => {
 }
 const mapDispatchToProps = dispatch => {
   return {
+    playCurrentSong: () => dispatch(playCurrentSong()),
+    pauseCurrentSong: () => dispatch(pauseCurrentSong())
   }
 }
 
