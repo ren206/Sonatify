@@ -26,21 +26,27 @@ class MainNav extends React.Component {
 
           <li className="browse-nav">
             <Link to={ "/browse" }>
-              <div id="browse-icon">
+              <img
+                 id="browse-icon"
+                 src={window.images.browseIcon} />
                 Browse
-              </div>
             </Link>
           </li>
 
           <li className="your-music-nav">
             <Link to={ "/your-music" }>
-              <div id="your-music-icon">
+                <img
+                  id="your-music-icon"
+                  src={window.images.yourMusicIcon} />
                 Your Music
-              </div>
             </Link>
           </li>
 
-
+          <li className="user-name">
+            { `${this.props.session.currentUser.f_name}` }
+            <br/>
+            { `${this.props.session.currentUser.l_name}` }
+          </li>
           <li className="logout-nav">
             <button
               id="logout" className="logout"

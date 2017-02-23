@@ -16,35 +16,50 @@ ul.main-menu-nav {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 75px;
 }
 
-ul.main-menu-nav a {
+ul.main-menu-nav a, li {
   color: white;
   text-decoration: none;
 }
 
+ul.main-menu-nav li {
+  padding: 5px;
+}
+
+ul.main-menu-nav img {
+  width: 60%;
+}
+
+li.user-name {
+  position: fixed;
+  bottom: 60px;
+}
+
 li.logout-nav {
   position: fixed;
-  bottom: 0;
+  bottom: 10px;
 }
 
 button.logout {
-  height: 40px;
   width: 100%;
+  height: 40px;
   border-radius: 100%;
+  border: none;
   display: inline-block;
   position: relative;
   cursor: pointer;
   font-family: 'Proxima Nova', sans-serif;
   box-sizing: border-box;
-  color: white;
-  background: #648f00;
-  border-color: #648f00;
+  color: #fbfbfc;
+  background: #07d159;
+  border-color: #07d159;
   text-transform: uppercase;
 }
 
 button.logout:hover {
-  color: #fbfbfc;
-  background: #84bd00;
-  border-color: #84bd00;
+  color: white;
+  background: #07d159;
+  border-color: #07d159;
 }
