@@ -19,6 +19,7 @@ class NowPlaying extends React.Component {
             <li className="audio-player">
               <audio
                 ref={ ref => this.audio = ref }
+                src={ this.props.currentSong }
                 />
             </li>
 
@@ -33,7 +34,7 @@ class NowPlaying extends React.Component {
 
 const mapStateToProps = state => {
   return {
-
+    currentSong: state.currentSong
   }
 }
 const mapDispatchToProps = dispatch => {
