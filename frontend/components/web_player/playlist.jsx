@@ -72,9 +72,8 @@ class Playlist extends React.Component {
           key={index}>
             <td
               onClick={ this.handlePlay(song) }
-              className="play-button"
-            >
-              Play
+              className="play-button">
+              <img src={window.images.play} />
             </td>
             <td>{ song.title }</td>
             <td>{ song.artist.name }</td>
@@ -93,13 +92,16 @@ class Playlist extends React.Component {
           <h1 className="main-title">
             { this.props.playlist.name }
           </h1>
-          <PlaylistForm
-            params={this.props.params} />
-          <button
-            className="delete-playlist"
-            onClick={ this.handleDelete }>
-            Delete
-          </button>
+          <div className="edit-delete-playlist">
+            <PlaylistForm
+              params={this.props.params} />
+            &nbsp;&nbsp;
+            <button
+              className="delete-playlist"
+              onClick={ this.handleDelete }>
+              Delete
+            </button>
+          </div>
         </header>
 
         <table className="song-list">

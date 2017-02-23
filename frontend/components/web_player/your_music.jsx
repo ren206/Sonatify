@@ -27,13 +27,11 @@ class YourMusic extends React.Component {
 
     return(
       <section className="your-music">
-        <header>
-          <h1>{ this.props.currentUser.f_name }'s Music</h1>
+        <h1>{ this.props.currentUser.f_name }'s Music</h1>
 
-          <PlaylistForm
-            formType="new"
+        <PlaylistForm
+          formType="new"
           createPlaylist={ this.props.createPlaylist }/>
-        </header>
 
         <MainList
           itemsObj={playlistsObj}

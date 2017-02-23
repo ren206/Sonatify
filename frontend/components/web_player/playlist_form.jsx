@@ -52,7 +52,7 @@ class PlaylistForm extends React.Component {
     const stateName = this.state.name || "";
     const text = this.props.formType === 'new' ? "Create" : "Rename";
     return(
-      <div className="new-playlist-form">
+      <div className="playlist-form">
         <form onSubmit={ this.handleSubmit }>
           <input
             type="text"

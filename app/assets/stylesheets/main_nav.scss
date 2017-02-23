@@ -8,8 +8,8 @@
   background-repeat: no-repeat;
   background-size: contain;
   height: 70px;
-  margin: 0 auto;
   width: 70px;
+  margin: 5px auto;
 }
 
 ul.main-menu-nav {
@@ -43,23 +43,21 @@ li.logout-nav {
 }
 
 button.logout {
-  width: 100%;
-  height: 40px;
-  border-radius: 100%;
+  width: 80px;
+  height: 30px;
+  border-radius: 30px;
   border: none;
   display: inline-block;
   position: relative;
   cursor: pointer;
   font-family: 'Proxima Nova', sans-serif;
   box-sizing: border-box;
-  color: #fbfbfc;
+  color: #dfe0e6;
   background: #07d159;
   border-color: #07d159;
   text-transform: uppercase;
 }
 
 button.logout:hover {
-  color: white;
-  background: #07d159;
-  border-color: #07d159;
+  color: #FFFFFF;
 }

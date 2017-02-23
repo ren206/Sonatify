@@ -8,6 +8,7 @@
 .main-view h1 {
   display: inline-block;
   font-weight: lighter;
+  padding: 10px;
 }
 
 ::-webkit-scrollbar {
@@ -38,7 +39,6 @@ th {
 }
 
 td.play-button {
-  color: #dfe0e6;
 }
 
 ul h4 {
@@ -55,24 +55,41 @@ ul a:hover {
   color: #fbfbfc;
 }
 
-// new playlist form/input
-.new-playlist-form input {
+.edit-delete-playlist {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.playlist-form input {
+  display: inline-block;
+  background-color: transparent;
+  border: 1px solid white;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 700;
   height: 30px;
   font-size: 14px;
   line-height: 19px;
-  color: #3e3e40;
+  color: #dfe0e6;
+}
+
+
+.your-music {
+  display: flex;
+  flex-direction: column;
 }
 
 // only create playlist button so far
 .main-view button {
   display: inline-block;
   position: relative;
+  border: 0;
   cursor: pointer;
   font-family: 'Proxima Nova', sans-serif;
   box-sizing: border-box;
-  color: white;
-  background: #648f00;
-  border-color: #648f00;
+  color: #dfe0e6;
+  background: #07d159;
+  border-color: #07d159;
   text-transform: uppercase;
   border-radius: 500px;
   letter-spacing: 1.5px;
@@ -83,8 +100,6 @@ ul a:hover {
   padding: 0 27px;
 }
 
-.new-playlist-form button:hover {
-  color: #fbfbfc;
-  background: #84bd00;
-  border-color: #84bd00;
+.main-view button:hover {
+  color: #FFFFFF;
 }

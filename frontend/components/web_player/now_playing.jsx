@@ -33,28 +33,42 @@ class NowPlaying extends React.Component {
     return(
       <div className="now-playing-wrapper active">
         <div id="now-playing">
-              <h3
-                className="now-playing-header">
-                Now Playing
-              </h3>
+          <h3
+            className="now-playing-header">
+            Now Playing
+          </h3>
 
-              <audio
-                className="audio-player"
-                ref={ ref => this.audioPlayer = ref }
-                src={ `${currentSong.audio}` }
-                controls={ true }
-                />
-              <button
-                className="play-toggle"
-                onClick={ this.handlePlayToggle }
-                >
-                <img
-                  src={
-                    this.props.playing ?
-                    window.images.pause :
-                    window.images.play
-                  } />
-              </button>
+          <br />
+
+          <div className="now-playing-art">
+            <img src={window.images.logo} />
+            <h4>
+              Sonatify
+            </h4>
+          </div>
+
+          <br />
+
+          <audio
+            className="audio-player"
+            ref={ ref => this.audioPlayer = ref }
+            src={ `${currentSong.audio}` }
+            controls={ true }
+            />
+
+          <div className="audio-controls">
+            <button
+              className="play-toggle"
+              onClick={ this.handlePlayToggle }
+              >
+              <img
+                src={
+                  this.props.playing ?
+                  window.images.pause :
+                  window.images.play
+                } />
+            </button>
+          </div>
 
         </div>
       </div>
