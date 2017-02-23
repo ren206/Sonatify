@@ -16,11 +16,11 @@ class NowPlaying extends React.Component {
 
   render() {
     const currentSong = this.props.currentSong;
-    if (!currentSong.song.id) {
+    if (!currentSong.song.audio) {
       return (<div className="now-playing-wrapper inactive"></div>);
     }
     return(
-      <div className="now-playing-wrapper">
+      <div className="now-playing-wrapper active">
         <div id="now-playing">
           <ul>
             <li className="now-playing-header">
