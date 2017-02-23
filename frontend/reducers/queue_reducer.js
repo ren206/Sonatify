@@ -1,19 +1,19 @@
 import {
-  RECEIVE_CURRENT_SONG,
+  SET_CURRENT_SONG,
   PLAY_CURRENT_SONG,
   PAUSE_CURRENT_SONG,
   ADD_SONG_TO_QUEUE,
   ADD_PLAYLIST_TO_QUEUE
-} from '../actions/play_queue_actions';
+} from '../actions/queue_actions';
 
 import merge from 'lodash/merge';
 
-const defaultState = {
+const _defaultState = {
   currentSong: {
     song: {},
     playing: false
-  }
-  songs: {}
+  },
+  songs: {},
   order: []
 
 }
@@ -21,7 +21,7 @@ const defaultState = {
 export default (state = _defaultState, action) => {
   Object.freeze(state);
   switch (action.type) {
-    case RECEIVE_CURRENT_SONG: {
+    case SET_CURRENT_SONG: {
       return merge(
         {},
         state,
@@ -42,7 +42,7 @@ export default (state = _defaultState, action) => {
         { currentSong: { playing: false } }
       );
     }
-    case ADD_SONG: {
+    case ADD_SONG_TO_QUEUE: {
       let newQueue = merge(
         {},
         state,
@@ -51,7 +51,7 @@ export default (state = _defaultState, action) => {
       newQueue.order.push(action.song.id);
       return newQueue;
     }
-    case ADD_PLAYLIST: {
+    case ADD_PLAYLIST_TO_QUEUE: {
       let newQueue = merge(
         {},
         state

@@ -7,6 +7,11 @@ import {
   deletePlaylist
 } from '../../actions/playlist_actions';
 
+import {
+  setCurrentSong,
+  playCurrentSong
+} from '../../actions/queue_actions';
+
 import PlaylistForm from './playlist_form';
 
 class Playlist extends React.Component {
@@ -17,6 +22,7 @@ class Playlist extends React.Component {
       // edit: 'inactive',
     // };
     this.handleDelete = this.handleDelete.bind(this);
+    this.handlePlay = this.handlePlay.bind(this);
 
   }
 
@@ -31,6 +37,14 @@ class Playlist extends React.Component {
   //     edit: 'active'
   //   });
   // }
+
+  handlePlay(song) {
+    return event => {
+      event.preventDefault();
+      this.props.setCurrentSong(song);
+      this.props.playCurrentSong();
+    }
+  }
 
   handleDelete(event) {
     const { routeParams, deletePlaylist, router } = this.props;
@@ -56,7 +70,10 @@ class Playlist extends React.Component {
         <tr
           className="song-list-items"
           key={index}>
-            <td className="play-button">
+            <td
+              onClick={ this.handlePlay(song) }
+              className="play-button"
+            >
               Play
             </td>
             <td>{ song.title }</td>
@@ -114,6 +131,8 @@ const mapDispatchToProps = (dispatch, { location }) => {
   return {
     fetchPlaylist: playlistId => dispatch(fetchPlaylist(playlistId)),
     deletePlaylist: playlistId => dispatch(deletePlaylist(playlistId)),
+    setCurrentSong: song => dispatch(setCurrentSong(song)),
+    playCurrentSong: () => dispatch(playCurrentSong()),
     location
   }
 }

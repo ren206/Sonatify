@@ -1,11 +1,11 @@
-export const RECEIVE_CURRENT_SONG = "RECEIVE_CURRENT_SONG";
+export const SET_CURRENT_SONG = "SET_CURRENT_SONG";
 export const PLAY_CURRENT_SONG = "PLAY_CURRENT_SONG";
 export const PAUSE_CURRENT_SONG = "PAUSE_CURRENT_SONG";
 export const ADD_SONG_TO_QUEUE = "ADD_SONG_TO_QUEUE";
 export const ADD_PLAYLIST_TO_QUEUE = "ADD_PLAYLIST_TO_QUEUE";
 
-export const receiveCurrentSong = song => ({
-  type: RECEIVE_CURRENT_SONG,
+export const setCurrentSong = song => ({
+  type: SET_CURRENT_SONG,
   song
 })
 
