@@ -7,7 +7,7 @@ class NowPlaying extends React.Component {
   }
 
   componentDidUpdate () {
-    if (this.props.currentSong.playing && this.audioPlayer) {
+    if (this.props.playing && this.audioPlayer) {
       this.audioPlayer.play();
     } else if (this.audioPlayer) {
       this.audioPlayer.pause();
@@ -16,7 +16,7 @@ class NowPlaying extends React.Component {
 
   render() {
     const currentSong = this.props.currentSong;
-    if (!currentSong.song.title) {
+    if (!currentSong.title) {
       return (<div className="now-playing-wrapper inactive"></div>);
     }
     return(
@@ -30,7 +30,7 @@ class NowPlaying extends React.Component {
             <li className="audio-player">
               <audio
                 ref={ ref => this.audioPlayer = ref }
-                src={ `${currentSong.song.audio}` }
+                src={ `${currentSong.audio}` }
                 />
             </li>
 
@@ -43,9 +43,10 @@ class NowPlaying extends React.Component {
 
 
 
-const mapStateToProps = state => {
+const mapStateToProps = ({ queue }) => {
   return {
-    currentSong: state.queue.currentSong
+    currentSong: queue.currentSong,
+    playing: queue.playing
   }
 }
 const mapDispatchToProps = dispatch => {

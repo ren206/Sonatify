@@ -9,10 +9,8 @@ import {
 import merge from 'lodash/merge';
 
 const _defaultState = {
-  currentSong: {
-    song: {},
-    playing: false
-  },
+  currentSong: {},
+  playing: false,
   songs: {},
   order: []
 
@@ -22,24 +20,24 @@ export default (state = _defaultState, action) => {
   Object.freeze(state);
   switch (action.type) {
     case SET_CURRENT_SONG: {
-      return merge(
+      return Object.assign(
         {},
         state,
-        { currentSong: { song: action.song } }
+        { currentSong: action.song }
       );
     }
     case PLAY_CURRENT_SONG: {
-      return merge(
+      return Object.assign(
         {},
         state,
-        { currentSong: { playing: true } }
+        { playing: true }
       );
     }
     case PAUSE_CURRENT_SONG: {
       return merge(
         {},
         state,
-        { currentSong: { playing: false } }
+        { playing: false }
       );
     }
     case ADD_SONG_TO_QUEUE: {
