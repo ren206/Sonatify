@@ -40,21 +40,29 @@ class NowPlaying extends React.Component {
 
           <br />
 
-          <div className="now-playing-art">
-            <img src={window.images.logo} />
-            <h4>
-              Sonatify
-            </h4>
-          </div>
+          <div className="now-playing-info">
+            
+            <div className="now-playing-art">
+              <img src={window.images.logo} />
+              <h4>
+                Sonatify
+              </h4>
+            </div>
 
           <br />
 
-          <audio
-            className="audio-player"
-            ref={ ref => this.audioPlayer = ref }
-            src={ `${currentSong.audio}` }
-            controls={ true }
-            />
+            <h5>
+              {`${currentSong.title}`}
+            </h5>
+
+            <br/>
+
+            <h6>
+              {`${currentSong.artist.name}`}
+            </h6>
+          </div>
+
+          <br />
 
           <div className="audio-controls">
             <button
@@ -68,8 +76,18 @@ class NowPlaying extends React.Component {
                   window.images.play
                 } />
             </button>
+
+
           </div>
 
+          <br />
+
+          <audio
+            className="audio-player"
+            ref={ ref => this.audioPlayer = ref }
+            src={ `${currentSong.audio}` }
+            controls={ true }
+            />
         </div>
       </div>
     )

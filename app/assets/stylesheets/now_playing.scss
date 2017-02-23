@@ -21,7 +21,6 @@
   width: 200px;
   min-height: 150px;
   min-width:  150px;
-  border: 1px solid red;
   text-align: center;
 }
 
@@ -32,7 +31,22 @@
 
 .now-playing-art h4 {
   letter-spacing: 6px;
-  font-size: 24px;
+  font-size: 32px;
+}
+
+.now-playing-info {
+  text-transform: none;
+  text-align: center;
+}
+
+.now-playing-info h5 {
+  color: #fbfbfc;
+  font-size: 14px;
+  line-height: 19px;
+}
+.now-playing-info h6 {
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .audio-controls {
