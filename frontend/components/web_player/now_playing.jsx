@@ -31,6 +31,7 @@ class NowPlaying extends React.Component {
               <audio
                 ref={ ref => this.audioPlayer = ref }
                 src={ `${currentSong.audio}` }
+                controls={ true }
                 />
             </li>
 
