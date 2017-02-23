@@ -16,7 +16,7 @@ class NowPlaying extends React.Component {
 
   render() {
     const currentSong = this.props.currentSong;
-    if (!currentSong.song.audio) {
+    if (!currentSong.song.title) {
       return (<div className="now-playing-wrapper inactive"></div>);
     }
     return(
