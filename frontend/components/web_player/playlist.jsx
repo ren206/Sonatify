@@ -78,7 +78,10 @@ class Playlist extends React.Component {
             <td>{ song.title }</td>
             <td>{ song.artist.name }</td>
             <td>{ song.album.name }</td>
-            <td>3:00</td>
+            <td
+              className="song-ellipsis">
+              <img src={window.images.ellipsis} />
+            </td>
         </tr>
       );
     });
@@ -111,7 +114,7 @@ class Playlist extends React.Component {
               <th>Song</th>
               <th>Artist</th>
               <th>Album</th>
-              <th>Time</th>
+              <th></th>
             </tr>
             { songsAsArray }
           </tbody>

@@ -1,5 +1,5 @@
 .main-view {
-  background-color: black;
+  background-color: #121314;
   color: #fbfbfc;
   font-weight: lighter;
   overflow-y: scroll;
@@ -33,17 +33,35 @@ table.song-list {
   width: 100%;
 }
 
+tr {
+  border-top: 1px solid #222326;
+}
+
+tr:nth-of-type(1) {
+  border: none;
+}
+
+td {
+  padding: 10px 0;
+}
+
+
 th {
   text-transform: uppercase;
   text-align: left;
 }
 
-td.play-button {
+td > img {
+  max-height: 25px;
+  border-radius: 100%;
+  border: 1px solid;
+  border-color: transparentize(#88898c, 1);
 }
 
-.play-button img {
-  max-height: 25px;
+td > img:hover {
+  border-color: transparentize(#88898c, 0);
 }
+
 
 ul h4 {
   font-weight: lighter;
@@ -83,10 +101,10 @@ ul a:hover {
   flex-direction: column;
 }
 
-// only create playlist button so far
 .main-view button {
   display: inline-block;
   position: relative;
+  min-width: 130px;
   border: 0;
   cursor: pointer;
   font-family: 'Proxima Nova', sans-serif;
