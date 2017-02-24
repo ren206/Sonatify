@@ -14,13 +14,6 @@ class PlaylistEditForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  // componentDidMount() {
-  //     this.props.fetchPlaylist(this.props.params.playlistId)
-  //     .then(
-  //       () => this.setState(this.props.playlist)
-  //     );
-  //   }
-
   componentWillReceiveProps(newProps) {
     if(!!newProps.playlist) this.setState(newProps.playlist);
   }
