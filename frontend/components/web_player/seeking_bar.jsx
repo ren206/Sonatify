@@ -7,7 +7,7 @@ class ProgressBar extends React.Component {
       currentTime: 0,
       duration: 0
     }
-    this.updateTimes = this.updateTimes.bind(this);
+    this.updateTime = this.updateTime.bind(this);
   }
 
   componentDidMount() {
