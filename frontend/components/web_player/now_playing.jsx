@@ -6,9 +6,16 @@ import {
   pauseCurrentSong
 } from '../../actions/queue_actions';
 
+import SeekingBar from './seeking_bar';
+
 class NowPlaying extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      currentTime: 0
+    }
+
     this.handlePlayToggle = this.handlePlayToggle.bind(this);
   }
 
@@ -63,8 +70,17 @@ class NowPlaying extends React.Component {
           </div>
 
           <br />
-
+          <audio
+            id="audio-player"
+            ref={ ref => this.audioPlayer = ref }
+            src={ `${currentSong.audio}` }
+            autoPlay
+            />
+          <br />
           <div className="audio-controls">
+
+            <SeekingBar
+              currentSong={currentSong} />
             <button
               className="play-toggle"
               onClick={ this.handlePlayToggle }
@@ -82,13 +98,6 @@ class NowPlaying extends React.Component {
 
           <br />
 
-          <audio
-            className="audio-player"
-            ref={ ref => this.audioPlayer = ref }
-            src={ `${currentSong.audio}` }
-            controls={ true }
-            autoPlay
-            />
         </div>
       </div>
     )
