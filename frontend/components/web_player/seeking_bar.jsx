@@ -12,10 +12,10 @@ class ProgressBar extends React.Component {
 
   componentDidMount() {
     this.audioElement = document.getElementById('audio-player')
-    this.audioElement.addEventListener('timeupdate', this.updateTimes);
+    this.audioElement.addEventListener('timeupdate', this.updateTime);
   }
 
-  updateTimes (event) {
+  updateTime (event) {
     const currentTime = Math.floor(event.currentTarget.currentTime);
     const duration = Math.floor(event.currentTarget.duration);
     this.setState({ currentTime, duration });
@@ -35,7 +35,7 @@ class ProgressBar extends React.Component {
     const currentSong = this.props.currentSong;
     return (
       <div className="song-progress">
-        <progress 
+        <progress
           id="song-progress-bar"
           value={ currentTime / currentSong.duration }
           max="1">
