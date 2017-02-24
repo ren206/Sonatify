@@ -51,10 +51,14 @@ class Playlist extends React.Component {
     this.props.fetchPlaylists(this.props.currentUser.username);
   }
 
+  componentWillReceiveProps(nextProps) {
+  }
+
   handleClick(event) {
     event.preventDefault();
     this.setState({
-      editing: true
+      editing: true,
+      removedASong: false
     });
   }
 

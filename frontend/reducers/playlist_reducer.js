@@ -20,12 +20,12 @@ export default (state = _initialState, action) => {
       return action.playlist;
 
     case RECEIVE_PLAYLIST_WITHOUT_SONG:
-      const newPlaylist = Object.assign(
+      const newPlaylist = merge(
         {},
         state,
       );
 
-      delete newPlaylist[action.song_id];
+      delete newPlaylist.songs[action.listing.song_id];
 
       return newPlaylist;
 
