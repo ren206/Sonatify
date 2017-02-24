@@ -34,9 +34,9 @@ class Playlist extends React.Component {
   constructor(props) {
     super(props);
 
-    // this.state = {
-      // edit: 'inactive',
-    // };
+    this.state = {
+      edit: 'inactive'
+    };
 
 
     this.handleDelete = this.handleDelete.bind(this);
@@ -50,12 +50,12 @@ class Playlist extends React.Component {
     this.props.fetchPlaylists(this.props.currentUser.username);
   }
 
-  // handleClick(event) {
-  //   event.preventDefault();
-  //   this.setState({
-  //     edit: 'active'
-  //   });
-  // }
+  handleClick(event) {
+    event.preventDefault();
+    this.setState({
+      edit: 'active'
+    });
+  }
 
   handlePlay(song) {
     return event => {
@@ -103,43 +103,34 @@ class Playlist extends React.Component {
       return song;
     });
 
-    const songsAsArray = songs.map( (song, index) => {
+    return songs.map( (song, index) => {
       return (
-        <table className="song-list">
-          <tbody>
-            <tr>
-              <th></th>
-              <th>Song</th>
-              <th>Artist</th>
-              <th>Album</th>
-              <th></th>
-              <ContextMenuTrigger renderTag='tr'
-                  className="song-list-items"
-                  id={SONG_CONTEXT_MENU}
-                  song={song}
-                  collect={collect}
-                  holdToDisplay={1000}
-                  key={index}>
-                    <td
-                      className="play-button"
-                      onClick={ this.handlePlay(song) }>
-                      <img src={window.images.play} />
-                    </td>
-                    <td>{ song.title }</td>
-                    <td>{ song.artist.name }</td>
-                    <td>{ song.album.name }</td>
-                    <ContextMenuTrigger renderTag='td'
-                      id={SONG_CONTEXT_MENU}
-                      song={song}
-                      collect={collect}
-                      holdToDisplay={0}
-                      className="song-ellipsis">
-                      <img src={window.images.ellipsis} />
-                    </ContextMenuTrigger>
-                </ContextMenuTrigger>
-            </tr>
-          </tbody>
-        </table>
+        <ContextMenuTrigger renderTag='tr'
+          className="song-list-items"
+          id={SONG_CONTEXT_MENU}
+          song={song}
+          collect={collect}
+          holdToDisplay={1000}
+          key={index}>
+            <td
+              className="play-button"
+              onClick={ this.handlePlay(song) }>
+              <img src={window.images.play} />
+            </td>
+            <td>{ song.title }</td>
+            <td>{ song.artist.name }</td>
+            <td>{ song.album.name }</td>
+
+            <ContextMenuTrigger renderTag='td'
+              id={SONG_CONTEXT_MENU}
+              song={song}
+              collect={collect}
+              holdToDisplay={0}
+              className="song-ellipsis">
+              <img src={window.images.ellipsis} />
+            </ContextMenuTrigger>
+
+        </ContextMenuTrigger>
       );
     });
 
@@ -165,15 +156,15 @@ class Playlist extends React.Component {
         </MenuItem>
       )
     });
-    // <button onClick={ this.handleClick }>
-    //   Rename
-    // </button>
     return(
       <section className="playlist-wrapper">
         <header className="main-title">
           <h1 className="main-title">
             { this.props.playlist.name }
           </h1>
+            <button onClick={ this.handleClick }>
+              Rename
+            </button>
           <div className="edit-delete-playlist">
             <PlaylistEditForm />
             &nbsp;&nbsp;
@@ -184,8 +175,18 @@ class Playlist extends React.Component {
             </button>
           </div>
         </header>
-
-        { this.generateSongs() }
+        <table className="song-list">
+          <tbody>
+            <tr>
+              <th></th>
+              <th>Song</th>
+              <th>Artist</th>
+              <th>Album</th>
+              <th></th>
+            </tr>
+          { this.generateSongs() }
+        </tbody>
+      </table>
 
         <ContextMenu id={SONG_CONTEXT_MENU}>
           <MenuItem onClick={this.handleClickPlay}>Play Song</MenuItem>
