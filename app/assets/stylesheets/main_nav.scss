@@ -20,7 +20,7 @@ ul.main-menu-nav {
 }
 
 ul.main-menu-nav a, li {
-  color: white;
+  color: #dfe0e6;
   text-decoration: none;
 }
 
@@ -46,18 +46,19 @@ button.logout {
   width: 80px;
   height: 30px;
   border-radius: 30px;
-  border: none;
   display: inline-block;
   position: relative;
   cursor: pointer;
   font-family: 'Proxima Nova', sans-serif;
   box-sizing: border-box;
   color: #dfe0e6;
-  background: #07d159;
+  background: transparent;
   border-color: #07d159;
+  border: 1px solid grey;
   text-transform: uppercase;
 }
 
 button.logout:hover {
   color: #FFFFFF;
+  border-color: #dfe0e6;
 }
