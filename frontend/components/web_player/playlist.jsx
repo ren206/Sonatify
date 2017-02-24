@@ -150,7 +150,7 @@ class Playlist extends React.Component {
 
         <ContextMenu id={SONG_CONTEXT_MENU}>
           <MenuItem onClick={this.handleClickPlay}>Play Song</MenuItem>
-          <MenuItem onClick={this.handleClick} data={{item: 'item 2'}}>Menu Item 2</MenuItem>
+          <MenuItem onClick={this.handleAddToPlaylist}>Menu Item 2</MenuItem>
         </ContextMenu>
 
       </section>
@@ -172,6 +172,8 @@ const mapDispatchToProps = (dispatch, { location }) => {
     deletePlaylist: playlistId => dispatch(deletePlaylist(playlistId)),
     setCurrentSong: song => dispatch(setCurrentSong(song)),
     playCurrentSong: () => dispatch(playCurrentSong()),
+    createListing: (playlistId, songId) => dispatch(createListing(playlistId, songId)),
+    removeListing: listingId => dispatch(removeListing(listingId)),
     location
   }
 }
