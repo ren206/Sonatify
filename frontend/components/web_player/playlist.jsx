@@ -87,7 +87,7 @@ class Playlist extends React.Component {
 
   handleRemoveFromPlaylist(event, data, target) {
     event.preventDefault();
-    this.props.removeListing(data.song.listingId);
+    this.props.removeListing(data.song.listingId)
   }
 
   generateSongs() {
