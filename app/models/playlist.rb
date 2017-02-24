@@ -30,4 +30,9 @@ class Playlist < ActiveRecord::Base
       .joins("JOIN users ON users.id = playlists.user_id")
       .where("users.username = ?", username)
   end
+
+  def owned_by?(user)
+    self.user == user
+  end
+
 end

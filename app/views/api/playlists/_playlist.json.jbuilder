@@ -1,5 +1,7 @@
 json.extract! playlist, :name, :user_id, :id
 
+# json.owned playlist.owned_by?(current_user)
+
 json.songs do
   playlist.songs.each do |song|
     json.set! song.id do
