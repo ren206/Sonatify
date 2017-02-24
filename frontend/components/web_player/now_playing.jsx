@@ -74,7 +74,6 @@ class NowPlaying extends React.Component {
             id="audio-player"
             ref={ ref => this.audioPlayer = ref }
             src={ `${currentSong.audio}` }
-            autoPlay
             />
           <br />
           <div className="audio-controls">
