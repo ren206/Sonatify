@@ -17,7 +17,7 @@ class PlaylistForm extends React.Component {
   componentDidMount() {
     if (this.props.params) {
       this.props.fetchPlaylist(this.props.params.playlistId).then(
-        () => this.setState(this.props.playlist || {})
+        () => this.setState(this.props.playlist)
       );
     }
   }
