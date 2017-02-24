@@ -6,7 +6,7 @@ import {
   fetchPlaylist
 } from '../../actions/playlist_actions';
 
-class PlaylistForm extends React.Component {
+class PlaylistEditForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.playlist || {};
@@ -14,13 +14,12 @@ class PlaylistForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentDidMount() {
-    if (this.props.params) {
-      this.props.fetchPlaylist(this.props.params.playlistId).then(
-        () => this.setState(this.props.playlist)
-      );
-    }
-  }
+  // componentDidMount() {
+  //     this.props.fetchPlaylist(this.props.params.playlistId)
+  //     .then(
+  //       () => this.setState(this.props.playlist)
+  //     );
+  //   }
 
   componentWillReceiveProps(newProps) {
     if(!!newProps.playlist) this.setState(newProps.playlist);
@@ -28,18 +27,10 @@ class PlaylistForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    if (this.props.formType === 'new') {
-      const playlist = Object.assign({}, this.state);
-      this.props.createPlaylist(playlist).then(
-        () => this.setState(this.props.playlist)
-      );
-
-    } else {
-      const playlist = Object.assign({}, this.state);
-      this.props.renamePlaylist(playlist.id, playlist.name).then(
-        () => this.setState(this.props.playlist)
-      );
-    }
+    const playlist = Object.assign({}, this.state);
+    this.props.renamePlaylist(playlist.id, playlist.name).then(
+      () => this.setState(this.props.playlist)
+    );
   }
 
   updateInfo(field) {
@@ -49,19 +40,17 @@ class PlaylistForm extends React.Component {
   }
 
   render() {
-    const stateName = this.state.name || "";
-    const text = this.props.formType === 'new' ? "Create" : "Rename";
     return(
       <div className="playlist-form">
         <form onSubmit={ this.handleSubmit }>
           <input
             type="text"
-            value={ stateName }
+            value={ this.state.name }
             onChange={ this.updateInfo("name") }
             />
           &nbsp;
           <button className="main-green-button">
-            { text }
+            Rename
           </button>
         </form>
       </div>
@@ -69,18 +58,12 @@ class PlaylistForm extends React.Component {
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
-  let playlist = { name: "New Playlist" };
-  if (ownProps.params) {
-    playlist = state.playlists[ownProps.params.playlistId];
-  }
-  let formType = ownProps.formType || "edit";
-  return { playlist, formType };
+const mapStateToProps = ({playlist}, ownProps) => {
+  return { playlist };
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    createPlaylist: playlist => dispatch(createPlaylist(playlist)),
     renamePlaylist: (playlistId, newName) => dispatch(renamePlaylist(playlistId, newName)),
     fetchPlaylist: playlistId => dispatch(fetchPlaylist(playlistId))
   }
@@ -89,4 +72,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(PlaylistForm);
+)(PlaylistEditForm);

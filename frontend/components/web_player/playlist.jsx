@@ -22,7 +22,7 @@ import {
   playCurrentSong
 } from '../../actions/queue_actions';
 
-import PlaylistForm from './playlist_form';
+import PlaylistEditForm from './playlist_edit_form';
 
 const SONG_CONTEXT_MENU = "SONG_CONTEXT_MENU";
 
@@ -154,8 +154,7 @@ class Playlist extends React.Component {
             { this.props.playlist.name }
           </h1>
           <div className="edit-delete-playlist">
-            <PlaylistForm
-              params={this.props.params} />
+            <PlaylistEditForm />
             &nbsp;&nbsp;
             <button
               className="delete-playlist"

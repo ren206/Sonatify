@@ -9,7 +9,7 @@ import {
   deletePlaylist
 } from '../../actions/playlist_actions';
 
-import PlaylistForm from './playlist_form';
+import PlaylistNewForm from './playlist_new_form';
 
 class YourMusic extends React.Component {
 
@@ -29,9 +29,7 @@ class YourMusic extends React.Component {
       <section className="your-music">
         <h1>{ this.props.currentUser.f_name }'s Music</h1>
 
-        <PlaylistForm
-          formType="new"
-          createPlaylist={ this.props.createPlaylist }/>
+        <PlaylistNewForm />
 
         <MainList
           itemsObj={playlistsObj}
