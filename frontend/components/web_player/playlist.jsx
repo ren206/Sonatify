@@ -5,7 +5,8 @@ import { withRouter } from 'react-router';
 import {
   ContextMenu,
   MenuItem,
-  ContextMenuTrigger
+  ContextMenuTrigger,
+  SubMenu
 } from "react-contextmenu";
 
 import {
@@ -72,6 +73,11 @@ class Playlist extends React.Component {
     event.preventDefault();
     this.props.setCurrentSong(data.song);
     this.props.playCurrentSong();
+  }
+
+  handleAddToPlaylist(event, data, target) {
+    event.preventDefault();
+    this.props.createListing(this.props.)
   }
 
   render() {
@@ -150,7 +156,7 @@ class Playlist extends React.Component {
 
         <ContextMenu id={SONG_CONTEXT_MENU}>
           <MenuItem onClick={this.handleClickPlay}>Play Song</MenuItem>
-          <MenuItem onClick={this.handleAddToPlaylist}>Menu Item 2</MenuItem>
+          <MenuItem onClick={this.handleAddToPlaylist}>Add Song To...</MenuItem>
         </ContextMenu>
 
       </section>
@@ -161,6 +167,7 @@ class Playlist extends React.Component {
 const mapStateToProps = (state, { location }) => {
   return {
     playlist: state.playlist,
+    playlists: state.playlists,
     location
   }
 }
