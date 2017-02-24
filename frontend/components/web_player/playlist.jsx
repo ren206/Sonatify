@@ -10,7 +10,9 @@ import {
 
 import {
   fetchPlaylist,
-  deletePlaylist
+  deletePlaylist,
+  createListing,
+  removeListing
 } from '../../actions/playlist_actions';
 
 import {
@@ -19,6 +21,12 @@ import {
 } from '../../actions/queue_actions';
 
 import PlaylistForm from './playlist_form';
+
+const MENU_TYPE = "SONG_CONTEXT_MENU";
+
+const collect = props => {
+  return { song: props.song };
+}
 
 class Playlist extends React.Component {
   constructor(props) {
@@ -29,11 +37,11 @@ class Playlist extends React.Component {
     // };
     this.handleDelete = this.handleDelete.bind(this);
     this.handlePlay = this.handlePlay.bind(this);
+    this.handleClick = this.handleClick.bind(this);
 
   }
 
   componentDidMount() {
-    // const playlistId = this.props.routeParams.playlistId;
     this.props.fetchPlaylist(this.props.routeParams.playlistId);
   }
 
@@ -60,6 +68,12 @@ class Playlist extends React.Component {
     );
   }
 
+  handleClick(event, data, target) {
+    event.preventDefault();
+    this.props.setCurrentSong(data.song);
+    this.props.playCurrentSong();
+  }
+
   render() {
     const songsObj = this.props.playlist.songs;
     if (!this.props.playlist.songs) return null;
@@ -73,22 +87,26 @@ class Playlist extends React.Component {
 
     const songsAsArray = songs.map( (song, index) => {
       return (
-        <tr
-          className="song-list-items"
-          key={index}>
-            <td
-              onClick={ this.handlePlay(song) }
-              className="play-button">
-              <img src={window.images.play} />
-            </td>
-            <td>{ song.title }</td>
-            <td>{ song.artist.name }</td>
-            <td>{ song.album.name }</td>
-            <td
-              className="song-ellipsis">
-              <img src={window.images.ellipsis} />
-            </td>
-        </tr>
+        <ContextMenuTrigger renderTag='tr'
+            className="song-list-items"
+            id={MENU_TYPE}
+            song={song}
+            collect={collect}
+            holdToDisplay={1000}
+            key={index}>
+              <td
+                onClick={ this.handlePlay(song) }
+                className="play-button">
+                <img src={window.images.play} />
+              </td>
+              <td>{ song.title }</td>
+              <td>{ song.artist.name }</td>
+              <td>{ song.album.name }</td>
+              <td
+                className="song-ellipsis">
+                <img src={window.images.ellipsis} />
+              </td>
+          </ContextMenuTrigger>
       );
     });
 
@@ -126,6 +144,11 @@ class Playlist extends React.Component {
           </tbody>
         </table>
 
+        <ContextMenu id={MENU_TYPE}>
+          <MenuItem onClick={this.handleClick} data={{item: 'item 1'}}>Play Song</MenuItem>
+          <MenuItem onClick={this.handleClick} data={{item: 'item 2'}}>Menu Item 2</MenuItem>
+        </ContextMenu>
+
       </section>
     )
   }
@@ -140,6 +163,7 @@ const mapStateToProps = (state, { location }) => {
 
 const mapDispatchToProps = (dispatch, { location }) => {
   return {
+    fetchPlaylists: username => dispatch(fetchPlaylists(username)),
     fetchPlaylist: playlistId => dispatch(fetchPlaylist(playlistId)),
     deletePlaylist: playlistId => dispatch(deletePlaylist(playlistId)),
     setCurrentSong: song => dispatch(setCurrentSong(song)),

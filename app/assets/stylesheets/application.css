@@ -18,5 +18,6 @@
  *= require main_nav
  *= require main_view
  *= require now_playing
+ *= require react_context_menu
  *= require_self
  */

@@ -10,7 +10,7 @@ export default ({ children }) => {
     <section id="app-wrapper">
       <NavigationBar />
 
-      <main className="main-view">
+      <main className="main-view unselectable">
         { children }
       </main>
 
