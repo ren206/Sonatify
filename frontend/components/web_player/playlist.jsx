@@ -35,13 +35,13 @@ class Playlist extends React.Component {
     super(props);
 
     this.state = {
-      edit: 'inactive'
+      editing: false
     };
-
 
     this.handleDelete = this.handleDelete.bind(this);
     this.handlePlay = this.handlePlay.bind(this);
     this.handleClickPlay = this.handleClickPlay.bind(this);
+    this.handleClick = this.handleClick.bind(this);
     this.handleAddToPlaylist = this.handleAddToPlaylist.bind(this);
   }
 
@@ -53,7 +53,7 @@ class Playlist extends React.Component {
   handleClick(event) {
     event.preventDefault();
     this.setState({
-      edit: 'active'
+      editing: true
     });
   }
 
@@ -156,6 +156,9 @@ class Playlist extends React.Component {
         </MenuItem>
       )
     });
+
+    const editingClass = this.state.editing ? "editing-playlist-active" : "editing-playlist-inactive";
+
     return(
       <section className="playlist-wrapper">
         <header className="main-title">
@@ -163,9 +166,9 @@ class Playlist extends React.Component {
             { this.props.playlist.name }
           </h1>
             <button onClick={ this.handleClick }>
-              Rename
+              Edit
             </button>
-          <div className="edit-delete-playlist">
+          <div className={editingClass}>
             <PlaylistEditForm />
             &nbsp;&nbsp;
             <button

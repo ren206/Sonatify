@@ -77,10 +77,15 @@ ul a:hover {
   color: #fbfbfc;
 }
 
-.edit-delete-playlist {
+.editing-playlist-active {
   display: flex;
   justify-content: flex-start;
 }
+.editing-playlist-inactive {
+  display: none;
+}
+
+
 
 .playlist-form input {
   display: inline-block;
