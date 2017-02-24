@@ -11,6 +11,7 @@ import {
 
 import {
   fetchPlaylist,
+  fetchPlaylists,
   deletePlaylist,
   createListing,
   removeListing
@@ -39,11 +40,14 @@ class Playlist extends React.Component {
     this.handleDelete = this.handleDelete.bind(this);
     this.handlePlay = this.handlePlay.bind(this);
     this.handleClickPlay = this.handleClickPlay.bind(this);
+    this.handleAddToPlaylist = this.handleAddToPlaylist.bind(this);
 
   }
 
   componentDidMount() {
     this.props.fetchPlaylist(this.props.routeParams.playlistId);
+
+    this.props.fetchPlaylists(this.props.currentUser.username);
   }
 
   // handleClick(event) {
@@ -77,12 +81,32 @@ class Playlist extends React.Component {
 
   handleAddToPlaylist(event, data, target) {
     event.preventDefault();
-    this.props.createListing(this.props.)
+    this.props.createListing(data.myPlaylist.id, data.song.id)
   }
 
   render() {
-    const songsObj = this.props.playlist.songs;
+    const myPlaylistsObj = this.props.playlists || {};
+    const myPlaylistKeys = Object.keys(myPlaylistsObj);
+
+    const myPlaylists = myPlaylistKeys.map( key => {
+      const myPlaylist = myPlaylistsObj[key];
+      myPlaylist.id = key;
+      return myPlaylist;
+    });
+
+    const myPlaylistsAsArray = myPlaylists.map( (myPlaylist, index) => {
+      return (
+        <MenuItem
+          key={index}
+          onClick={this.handleAddToPlaylist}
+          data={{myPlaylist: myPlaylist}} >
+          {myPlaylist.name}
+        </MenuItem>
+      )
+    });
+
     if (!this.props.playlist.songs) return null;
+    const songsObj = this.props.playlist.songs;
     const songKeys = Object.keys(songsObj);
 
     const songs = songKeys.map( key => {
@@ -156,7 +180,9 @@ class Playlist extends React.Component {
 
         <ContextMenu id={SONG_CONTEXT_MENU}>
           <MenuItem onClick={this.handleClickPlay}>Play Song</MenuItem>
-          <MenuItem onClick={this.handleAddToPlaylist}>Add Song To...</MenuItem>
+            <SubMenu title='Add Song To...'>
+                {myPlaylistsAsArray}
+            </SubMenu>
         </ContextMenu>
 
       </section>
@@ -166,6 +192,7 @@ class Playlist extends React.Component {
 
 const mapStateToProps = (state, { location }) => {
   return {
+    currentUser: state.session.currentUser,
     playlist: state.playlist,
     playlists: state.playlists,
     location
