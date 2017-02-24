@@ -9,7 +9,7 @@ import {
 class PlaylistEditForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.playlist || { name: "" };
+    this.state = this.props.playlist || {};
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }

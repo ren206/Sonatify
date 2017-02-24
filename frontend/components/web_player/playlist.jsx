@@ -43,6 +43,7 @@ class Playlist extends React.Component {
     this.handleClickPlay = this.handleClickPlay.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.handleAddToPlaylist = this.handleAddToPlaylist.bind(this);
+    this.handleRemoveFromPlaylist = this.handleRemoveFromPlaylist.bind(this);
   }
 
   componentDidMount() {
@@ -81,7 +82,12 @@ class Playlist extends React.Component {
 
   handleAddToPlaylist(event, data, target) {
     event.preventDefault();
-    this.props.createListing(data.myPlaylist.id, data.song.id)
+    this.props.createListing(data.myPlaylist.id, data.song.id);
+  }
+
+  handleRemoveFromPlaylist(event, data, target) {
+    event.preventDefault();
+    this.props.removeListing(data.song.listingId);
   }
 
   generateSongs() {
@@ -193,6 +199,7 @@ class Playlist extends React.Component {
 
         <ContextMenu id={SONG_CONTEXT_MENU}>
           <MenuItem onClick={this.handleClickPlay}>Play Song</MenuItem>
+          <MenuItem onClick={this.handleRemoveFromPlaylist}>Remove</MenuItem>
             <SubMenu title='Add Song To...'>
                 {myPlaylistsAsArray}
             </SubMenu>
