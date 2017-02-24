@@ -3,6 +3,12 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 
 import {
+  ContextMenu,
+  MenuItem,
+  ContextMenuTrigger
+} from "react-contextmenu";
+
+import {
   fetchPlaylist,
   deletePlaylist
 } from '../../actions/playlist_actions';
