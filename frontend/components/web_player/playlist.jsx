@@ -22,7 +22,7 @@ import {
 
 import PlaylistForm from './playlist_form';
 
-const MENU_TYPE = "SONG_CONTEXT_MENU";
+const SONG_CONTEXT_MENU = "SONG_CONTEXT_MENU";
 
 const collect = props => {
   return { song: props.song };
@@ -37,7 +37,7 @@ class Playlist extends React.Component {
     // };
     this.handleDelete = this.handleDelete.bind(this);
     this.handlePlay = this.handlePlay.bind(this);
-    this.handleClick = this.handleClick.bind(this);
+    this.handleClickPlay = this.handleClickPlay.bind(this);
 
   }
 
@@ -68,7 +68,7 @@ class Playlist extends React.Component {
     );
   }
 
-  handleClick(event, data, target) {
+  handleClickPlay(event, data, target) {
     event.preventDefault();
     this.props.setCurrentSong(data.song);
     this.props.playCurrentSong();
@@ -89,23 +89,27 @@ class Playlist extends React.Component {
       return (
         <ContextMenuTrigger renderTag='tr'
             className="song-list-items"
-            id={MENU_TYPE}
+            id={SONG_CONTEXT_MENU}
             song={song}
             collect={collect}
             holdToDisplay={1000}
             key={index}>
               <td
-                onClick={ this.handlePlay(song) }
-                className="play-button">
+                className="play-button"
+                onClick={ this.handlePlay(song) }>
                 <img src={window.images.play} />
               </td>
               <td>{ song.title }</td>
               <td>{ song.artist.name }</td>
               <td>{ song.album.name }</td>
-              <td
+              <ContextMenuTrigger renderTag='td'
+                id={SONG_CONTEXT_MENU}
+                song={song}
+                collect={collect}
+                holdToDisplay={0}
                 className="song-ellipsis">
                 <img src={window.images.ellipsis} />
-              </td>
+              </ContextMenuTrigger>
           </ContextMenuTrigger>
       );
     });
@@ -144,8 +148,8 @@ class Playlist extends React.Component {
           </tbody>
         </table>
 
-        <ContextMenu id={MENU_TYPE}>
-          <MenuItem onClick={this.handleClick} data={{item: 'item 1'}}>Play Song</MenuItem>
+        <ContextMenu id={SONG_CONTEXT_MENU}>
+          <MenuItem onClick={this.handleClickPlay}>Play Song</MenuItem>
           <MenuItem onClick={this.handleClick} data={{item: 'item 2'}}>Menu Item 2</MenuItem>
         </ContextMenu>
 
