@@ -19,7 +19,8 @@ import {
 
 import {
   setCurrentSong,
-  playCurrentSong
+  playCurrentSong,
+  addSongToQueue
 } from '../../actions/queue_actions';
 
 import PlaylistEditForm from './playlist_edit_form';
@@ -54,8 +55,7 @@ class Playlist extends React.Component {
   handleClick(event) {
     event.preventDefault();
     this.setState({
-      editing: true,
-      removedASong: false
+      editing: true
     });
   }
 
@@ -96,9 +96,17 @@ class Playlist extends React.Component {
 
     if (Object.keys(songsObj).length === 0) {
       return (
-        <h4>
-          No songs to see here!
-        </h4>
+        <tr>
+          <td/>
+          <td>
+            No songs to see here!
+          </td>
+          <td>
+            <Link to="/browse">
+              Please Visit Browse
+            </Link>
+          </td>
+        </tr>
       );
     }
 
