@@ -20,14 +20,14 @@ export default (state = _defaultState, action) => {
   Object.freeze(state);
   switch (action.type) {
     case SET_CURRENT_SONG: {
-      return Object.assign(
+      return merge(
         {},
         state,
         { currentSong: action.song }
       );
     }
     case PLAY_CURRENT_SONG: {
-      return Object.assign(
+      return merge(
         {},
         state,
         { playing: true }
