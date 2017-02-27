@@ -91,35 +91,36 @@ class NowPlaying extends React.Component {
           <br />
           <div className="audio-controls">
 
-            <SeekingBar
+            <SeekingBar className="seeking-bar"
               currentSong={currentSong} />
 
-            <button
-              className="prev-button"
-              onClick={ this.handleClickPrev }>
-              <img
-                src={ window.images.prev }/>
-            </button>
+            <div className="audio-control-buttons">
+              <button
+                className="prev-button"
+                onClick={ this.handleClickPrev }>
+                <img
+                  src={ window.images.prev }/>
+              </button>
 
-            <button
-              className="play-toggle"
-              onClick={ this.handleTogglePlay }
-              >
-              <img
-                src={
-                  this.props.playing ?
-                  window.images.pause :
-                  window.images.play
-                } />
-            </button>
+              <button
+                className="play-toggle"
+                onClick={ this.handleTogglePlay }
+                >
+                <img
+                  src={
+                    this.props.playing ?
+                    window.images.pause :
+                    window.images.play
+                  } />
+              </button>
 
-            <button
-              className="next-button"
-              onClick={ this.handleClickNext }>
-              <img
-                src={ window.images.next }/>
-            </button>
-
+              <button
+                className="next-button"
+                onClick={ this.handleClickNext }>
+                <img
+                  src={ window.images.next }/>
+              </button>
+            </div>
           </div>
 
           <br />

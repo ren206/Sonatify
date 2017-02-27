@@ -53,16 +53,54 @@
   display: flex;
   min-height: 50px;
   width: 100%;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
 }
 
+progress {
+  height: 4px;
+  border: 0;
+  border-radius: 2px;
+}
+progress::-webkit-progress-bar {
+  background-color: #88898c;
+  border-radius: 2px;
+}
+progress::-webkit-progress-value {
+  background-color: #07d159;
+  border-radius: 2px;
+}
+progress::-moz-progress-bar {
+  background-color: #07d159;
+  border-radius: 2px;
+}
+
+#song-progress-bar {
+  width: 100%;
+}
+
+ul.song-progress-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.song-progress-info li {
+  display: inline;
+}
+
 .audio-controls button {
-  display: block;
+  display: flex;
+  flex-direction: column;
   height: 50px;
   width: 50px;
   background: none;
   border: none;
+}
+
+.audio-control-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 .audio-controls img {

@@ -42,10 +42,10 @@ class ProgressBar extends React.Component {
         </progress>
         <ul className="song-progress-info">
           <li>
-            <p>{ padTime(this.state.currentTime) }</p>
+            { padTime(this.state.currentTime) }
           </li>
           <li>
-            <p>{ padTime(this.state.duration) }</p>
+            { padTime(this.state.duration) }
           </li>
         </ul>
       </div>
