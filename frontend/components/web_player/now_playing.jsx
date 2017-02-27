@@ -19,6 +19,7 @@ class NowPlaying extends React.Component {
 
     this.handleTogglePlay = this.handleTogglePlay.bind(this);
     this.handleClickNext = this.handleClickNext.bind(this);
+    this.handleClickPrev = this.handleClickPrev.bind(this);
   }
 
   componentDidUpdate () {
@@ -37,6 +38,11 @@ class NowPlaying extends React.Component {
   handleClickNext(event) {
     event.preventDefault();
     this.props.nextSong();
+  }
+  handleClickPrev(event) {
+    event.preventDefault();
+    this.audioPlayer = document.getElementById('audio-player');
+    this.audioPlayer.currentTime = 0;
   }
 
   render() {
@@ -89,6 +95,13 @@ class NowPlaying extends React.Component {
               currentSong={currentSong} />
 
             <button
+              className="prev-button"
+              onClick={ this.handleClickPrev }>
+              <img
+                src={ window.images.prev }/>
+            </button>
+
+            <button
               className="play-toggle"
               onClick={ this.handleTogglePlay }
               >
@@ -103,7 +116,8 @@ class NowPlaying extends React.Component {
             <button
               className="next-button"
               onClick={ this.handleClickNext }>
-              Next
+              <img
+                src={ window.images.next }/>
             </button>
 
           </div>

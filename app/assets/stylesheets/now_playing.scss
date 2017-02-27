@@ -57,7 +57,7 @@
   justify-content: center;
 }
 
-button.play-toggle {
+.audio-controls button {
   display: block;
   height: 50px;
   width: 50px;
@@ -65,13 +65,13 @@ button.play-toggle {
   border: none;
 }
 
-.play-toggle > img {
+.audio-controls img {
   position: relative;
   height: 100%;
   border-radius: 100%;
   border: 1px solid #88898c;
 }
 
-.play-toggle > img:hover {
+.audio-controls img:hover {
   border: 1px solid #07d159;
 }
