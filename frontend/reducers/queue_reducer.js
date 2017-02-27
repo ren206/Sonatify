@@ -4,7 +4,8 @@ import {
   PAUSE_CURRENT_SONG,
   ADD_SONG_TO_QUEUE,
   ADD_PLAYLIST_TO_QUEUE,
-  NEXT_SONG
+  NEXT_SONG,
+  CLEAR_QUEUE
 } from '../actions/queue_actions';
 
 import merge from 'lodash/merge';
@@ -79,6 +80,18 @@ export default (state = _defaultState, action) => {
       })
       return newQueue;
     }
+
+    case CLEAR_QUEUE: {
+      return merge(
+        {},
+        _defaultState,
+        {
+          currentSong: state.currentSong,
+          playing: state.playing
+        }
+      )
+    }
+
     default: {
       return state;
     }

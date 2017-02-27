@@ -9,6 +9,8 @@ import {
 
 import SeekingBar from './seeking_bar';
 
+import QueuedSongs from './queued_songs';
+
 class NowPlaying extends React.Component {
   constructor(props) {
     super(props);
@@ -122,10 +124,9 @@ class NowPlaying extends React.Component {
               </button>
             </div>
           </div>
-
-          <br />
-
         </div>
+
+        <QueuedSongs />
       </div>
     )
   }

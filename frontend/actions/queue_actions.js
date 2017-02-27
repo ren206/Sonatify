@@ -2,6 +2,7 @@ export const SET_CURRENT_SONG = "SET_CURRENT_SONG";
 export const PLAY_CURRENT_SONG = "PLAY_CURRENT_SONG";
 export const PAUSE_CURRENT_SONG = "PAUSE_CURRENT_SONG";
 export const NEXT_SONG = "NEXT_SONG";
+export const CLEAR_QUEUE = "CLEAR_QUEUE";
 export const ADD_SONG_TO_QUEUE = "ADD_SONG_TO_QUEUE";
 export const ADD_PLAYLIST_TO_QUEUE = "ADD_PLAYLIST_TO_QUEUE";
 
@@ -39,3 +40,9 @@ export const addPlaylistToQueue = playlist => {
     playlist
   })
 }
+
+export const clearQueue = () => {
+  return {
+    type: CLEAR_QUEUE
+  }
+};
