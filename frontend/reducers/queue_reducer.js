@@ -3,7 +3,8 @@ import {
   PLAY_CURRENT_SONG,
   PAUSE_CURRENT_SONG,
   ADD_SONG_TO_QUEUE,
-  ADD_PLAYLIST_TO_QUEUE
+  ADD_PLAYLIST_TO_QUEUE,
+  NEXT_SONG
 } from '../actions/queue_actions';
 
 import merge from 'lodash/merge';
@@ -26,6 +27,7 @@ export default (state = _defaultState, action) => {
         { currentSong: action.song }
       );
     }
+
     case PLAY_CURRENT_SONG: {
       return merge(
         {},
@@ -33,6 +35,7 @@ export default (state = _defaultState, action) => {
         { playing: true }
       );
     }
+
     case PAUSE_CURRENT_SONG: {
       return merge(
         {},
@@ -40,6 +43,21 @@ export default (state = _defaultState, action) => {
         { playing: false }
       );
     }
+
+    case NEXT_SONG: {
+      let newQueue = merge({}, state);
+      if (newQueue.order.length) {
+        newQueue.currentSong = newQueue.songs[newQueue.order[0]];
+
+        newQueue.order.shift();
+        return newQueue;
+
+      } else {
+        newQueue.playing = false;
+        return newQueue;
+      }
+    }
+
     case ADD_SONG_TO_QUEUE: {
       let newQueue = merge(
         {},
@@ -49,6 +67,7 @@ export default (state = _defaultState, action) => {
       newQueue.order.push(action.song.id);
       return newQueue;
     }
+
     case ADD_PLAYLIST_TO_QUEUE: {
       let newQueue = merge(
         {},

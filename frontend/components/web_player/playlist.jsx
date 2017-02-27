@@ -43,6 +43,7 @@ class Playlist extends React.Component {
     this.handlePlay = this.handlePlay.bind(this);
     this.handleClickPlay = this.handleClickPlay.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.handleAddSongToQueue = this.handleAddSongToQueue.bind(this);
     this.handleAddToPlaylist = this.handleAddToPlaylist.bind(this);
     this.handleRemoveFromPlaylist = this.handleRemoveFromPlaylist.bind(this);
   }
@@ -79,6 +80,11 @@ class Playlist extends React.Component {
     event.preventDefault();
     this.props.setCurrentSong(data.song);
     this.props.playCurrentSong();
+  }
+
+  handleAddSongToQueue(event, data, target) {
+    event.preventDefault();
+    this.props.addSongToQueue(data.song);
   }
 
   handleAddToPlaylist(event, data, target) {
@@ -209,9 +215,11 @@ class Playlist extends React.Component {
         <ContextMenu id={SONG_CONTEXT_MENU}>
           <MenuItem onClick={this.handleClickPlay}>Play Song</MenuItem>
           <MenuItem onClick={this.handleRemoveFromPlaylist}>Remove</MenuItem>
-            <SubMenu title='Add Song To...'>
-                {myPlaylistsAsArray}
-            </SubMenu>
+          <MenuItem onClick={this.handleAddSongToQueue}>Add Song to Queue</MenuItem>
+          <SubMenu title='Add Song To...'>
+              {myPlaylistsAsArray}
+          </SubMenu>
+
         </ContextMenu>
 
       </section>
@@ -237,6 +245,7 @@ const mapDispatchToProps = (dispatch, { location }) => {
     playCurrentSong: () => dispatch(playCurrentSong()),
     createListing: (playlistId, songId) => dispatch(createListing(playlistId, songId)),
     removeListing: listingId => dispatch(removeListing(listingId)),
+    addSongToQueue: song => dispatch(addSongToQueue(song)),
     location
   }
 }

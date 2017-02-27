@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 
 import {
   playCurrentSong,
-  pauseCurrentSong
+  pauseCurrentSong,
+  nextSong
 } from '../../actions/queue_actions';
 
 import SeekingBar from './seeking_bar';
@@ -16,7 +17,8 @@ class NowPlaying extends React.Component {
       currentTime: 0
     }
 
-    this.handlePlayToggle = this.handlePlayToggle.bind(this);
+    this.handleTogglePlay = this.handleTogglePlay.bind(this);
+    this.handleClickNext = this.handleClickNext.bind(this);
   }
 
   componentDidUpdate () {
@@ -27,9 +29,14 @@ class NowPlaying extends React.Component {
     }
   }
 
-  handlePlayToggle(event) {
+  handleTogglePlay(event) {
     event.preventDefault();
     this.props.playing ? this.props.pauseCurrentSong() : this.props.playCurrentSong();
+  }
+
+  handleClickNext(event) {
+    event.preventDefault();
+    this.props.nextSong();
   }
 
   render() {
@@ -80,9 +87,10 @@ class NowPlaying extends React.Component {
 
             <SeekingBar
               currentSong={currentSong} />
+
             <button
               className="play-toggle"
-              onClick={ this.handlePlayToggle }
+              onClick={ this.handleTogglePlay }
               >
               <img
                 src={
@@ -92,6 +100,11 @@ class NowPlaying extends React.Component {
                 } />
             </button>
 
+            <button
+              className="next-button"
+              onClick={ this.handleClickNext }>
+              Next
+            </button>
 
           </div>
 
@@ -103,8 +116,6 @@ class NowPlaying extends React.Component {
   }
 }
 
-
-
 const mapStateToProps = ({ queue }) => {
   return {
     currentSong: queue.currentSong,
@@ -114,7 +125,8 @@ const mapStateToProps = ({ queue }) => {
 const mapDispatchToProps = dispatch => {
   return {
     playCurrentSong: () => dispatch(playCurrentSong()),
-    pauseCurrentSong: () => dispatch(pauseCurrentSong())
+    pauseCurrentSong: () => dispatch(pauseCurrentSong()),
+    nextSong: () => dispatch(nextSong())
   }
 }
 
