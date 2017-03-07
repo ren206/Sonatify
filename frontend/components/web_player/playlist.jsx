@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router';
+import Spinner from '../loading/spinner';
+
 
 import {
   ContextMenu,
@@ -179,8 +181,9 @@ class Playlist extends React.Component {
     });
 
     const editingClass = this.state.editing ? "editing-playlist-active" : "editing-playlist-inactive";
-
     return(
+      this.props.loading ?
+      <Spinner /> :
       <section className="playlist-wrapper">
         <header className="main-title">
           <h1 className="main-title">
@@ -232,6 +235,7 @@ const mapStateToProps = (state, { location }) => {
     currentUser: state.session.currentUser,
     playlist: state.playlist,
     playlists: state.playlists,
+    loading: state.loading.playlistLoading,
     location
   }
 }

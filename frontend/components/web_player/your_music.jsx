@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import MainList from './main_list';
+import Spinner from '../loading/spinner';
 
 import {
   fetchPlaylists,
@@ -24,8 +25,9 @@ class YourMusic extends React.Component {
 
   render() {
     const playlistsObj = this.props.playlists || {};
-
     return(
+      this.props.loading ?
+      <Spinner /> :
       <section className="your-music">
         <h1>{ this.props.currentUser.f_name }'s Music</h1>
 
@@ -39,10 +41,11 @@ class YourMusic extends React.Component {
   }
 }
 
-const mapStateToProps = ({ session, playlists }) => {
+const mapStateToProps = ({ session, playlists, loading }) => {
   return {
     currentUser: session.currentUser,
-    playlists
+    playlists,
+    loading: loading.playlistsLoading
   }
 }
 

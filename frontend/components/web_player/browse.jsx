@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchPlaylists } from '../../actions/playlist_actions';
 import MainList from './main_list';
+import Spinner from '../loading/spinner';
 
 class Browse extends React.Component {
 
@@ -20,6 +21,8 @@ class Browse extends React.Component {
 
   render() {
     return (
+      this.props.loading ?
+      <Spinner /> :
       <section className="browse">
         <h1>Browse</h1>
         <MainList
@@ -29,10 +32,11 @@ class Browse extends React.Component {
     )
   }
 }
-const mapStateToProps = ({ session, playlists }) => {
+const mapStateToProps = ({ session, playlists, loading }) => {
   return {
     session,
-    playlists
+    playlists,
+    loading: loading.playlistsLoading
   }
 }
 

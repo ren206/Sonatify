@@ -10,14 +10,14 @@ export const RECEIVE_LISTING = "RECEIVE_LISTING";
 export const RECEIVE_PLAYLIST_WITHOUT_SONG = "RECEIVE_PLAYLIST_WITHOUT_SONG";
 
 export const fetchPlaylist = playlistId => dispatch => {
-  dispatch(startLoadingPlaylist);
+  dispatch(startLoadingPlaylist());
   return APIUtil.fetchPlaylist(playlistId).then(
     playlist => dispatch(receivePlaylist(playlist))
   );
 }
 
 export const fetchPlaylists = username => dispatch => {
-  dispatch(startLoadingPlaylists);
+  dispatch(startLoadingPlaylists());
   return APIUtil.fetchPlaylists(username).then(
     playlists => dispatch(receivePlaylists(playlists))
   );
