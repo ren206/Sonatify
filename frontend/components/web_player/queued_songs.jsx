@@ -26,7 +26,7 @@ class QueuedSongs extends React.Component {
         <div
           id="queued-songs"
           >
-          <p>Queued Songs</p>
+          <h3>Queued Songs</h3>
           <ul>
             {queueList}
           </ul>
@@ -35,7 +35,7 @@ class QueuedSongs extends React.Component {
     } else {
       return (
         <div id="queued-songs">
-
+          <h3>No songs queued</h3>
         </div>
       );
     }
