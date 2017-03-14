@@ -1,3 +1,0 @@
-== README
-
-=== In development. Please refer to the development README.
