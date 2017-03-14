@@ -1,10 +1,11 @@
 # Sonatify
-**Note:** This is the development README.
+**Note:** This is the development README. [Production README](../README.md)
 
+[Live link][live]
 [Heroku link][heroku]
-
 [Trello link][trello]
 
+[live]: http://www.sonatify.com/
 [heroku]: https://sonatify.herokuapp.com/
 [trello]: https://trello.com/b/PHWCrnkL/sonatify
 
@@ -17,11 +18,11 @@ sufficient CSS styling:
 
 - [x] Hosting on Heroku
 - [x] New account creation, login, and guest/demo login
-- [ ] CRUD playlists
-- [ ] Maintain a queue of songs
-- [ ] Song playback during navigation
+- [x] CRUD playlists
+- [x] Maintain a queue of songs
+- [x] Song playback during navigation
 - [ ] Following friends and their playlists
-- [ ] [Production README] (../README.md) **Note:** This will be added
+- [x] [Production README] (../README.md) **Note:**
 
 ## Design Docs
 - [View Wireframes][wireframes]
