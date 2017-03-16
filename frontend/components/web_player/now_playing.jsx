@@ -65,7 +65,7 @@ class NowPlaying extends React.Component {
           <div className="now-playing-info">
 
             <div className="now-playing-art">
-              <img src={window.images.logo} />
+              <img src={currentSong.album.cover_url} />
               <h4>
                 Sonatify
               </h4>

@@ -15,6 +15,7 @@ class Album < ActiveRecord::Base
 
   belongs_to :artist
   has_many :songs, dependent: :delete_all
-  
 
+  has_attached_file :cover, default_url: "logo.png"
+  validates_attachment_content_type :cover, content_type: /\Aimage\/.*\z/
 end
