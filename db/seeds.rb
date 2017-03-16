@@ -14,6 +14,10 @@ Playlist.find_or_create_by(name: 'Recommended for You') do |playlist|
   playlist.user_id = User.find_by_username("michael").id
 end
 
+Playlist.find_or_create_by(name: 'My Favorites') do |playlist|
+  playlist.user_id = User.find_by_username("guest").id
+end
+
 Artist.find_or_create_by(name: "John Sayles")
 Artist.find_or_create_by(name: "Angelwing")
 Artist.find_or_create_by(name: "Zeropage")
@@ -26,7 +30,10 @@ Artist.find_or_create_by(name: "Mattia Vlad Morleo")
 Artist.find_or_create_by(name: "The Moose")
 Artist.find_or_create_by(name: "Mickey Blue")
 Artist.find_or_create_by(name: "THE.MADPIX.PROJECT")
+Artist.find_or_create_by(name: "Brain Purist")
 
+
+Album.delete_all
 
 Album.find_or_create_by(name: "Classical Songs") do |album|
   album.artist_id = Artist.find_by_name("John Sayles").id
@@ -38,7 +45,6 @@ Album.find_or_create_by(name: "Soothing Instrumentals") do |album|
   album.year = 1970
 end
 
-Album.where(name: "Another Effect").destroy_all
 Album.find_or_create_by(name: "Another Effect") do |album|
   album.artist_id = Artist.find_by_name("Zeropage").id
   album.year = 2017
@@ -48,30 +54,49 @@ end
 Album.find_or_create_by(name: "Epic Collection") do |album|
   album.artist_id = Artist.find_by_name("Alex Che").id
   album.year = 2016
+  album.cover = 'https://s3.amazonaws.com/aa-sonatify-dev/seeds/Epic-Collection.jpg'
 end
 
-Album.find_or_create_by(name: "Mattia Vlad Morleo") do |album|
+Album.find_or_create_by(name: "The Flying of a Leaf") do |album|
   album.artist_id = Artist.find_by_name("Mattia Vlad Morleo").id
   album.year = 2016
+  album.cover = 'https://s3.amazonaws.com/aa-sonatify-dev/seeds/the-flying-of-a-leaf.jpg'
+end
+
+Album.find_or_create_by(name: "Passando") do |album|
+  album.artist_id = Artist.find_by_name("Mattia Vlad Morleo").id
+  album.year = 2016
+  album.cover = 'https://s3.amazonaws.com/aa-sonatify-dev/seeds/Passando.jpg'
 end
 
 Album.find_or_create_by(name: "Scandanavian Sound") do |album|
   album.artist_id = Artist.find_by_name("The Moose").id
   album.year = 2017
+  album.cover = 'https://s3.amazonaws.com/aa-sonatify-dev/seeds/Scandanavian-Sound.jpg'
 end
 
 Album.find_or_create_by(name: "Give Yourself Away") do |album|
   album.artist_id = Artist.find_by_name("Mickey Blue").id
   album.year = 2016
+  album.cover = 'https://s3.amazonaws.com/aa-sonatify-dev/seeds/Give+Yourself+Away.jpg'
 end
 
 Album.find_or_create_by(name: "Kind of Light") do |album|
   album.artist_id = Artist.find_by_name("Dofhei Project").id
   album.year = 2017
+  album.cover = 'https://s3.amazonaws.com/aa-sonatify-dev/seeds/Kind-of-light.jpg'
 end
+
 Album.find_or_create_by(name: "TMP") do |album|
   album.artist_id = Artist.find_by_name("THE.MADPIX.PROJECT").id
   album.year = 2016
+  album.cover = 'https://s3.amazonaws.com/aa-sonatify-dev/seeds/TMP.jpg'
+end
+
+Album.find_or_create_by(name: "Curse the Day") do |album|
+  album.artist_id = Artist.find_by_name("Brain Purist").id
+  album.year = 2016
+  album.cover = 'https://s3.amazonaws.com/aa-sonatify-dev/seeds/Curse-The-Day.jpg'
 end
 
 
@@ -102,12 +127,17 @@ audio: 'https://s3.amazonaws.com/aa-sonatify-dev/seeds/Courante_1st_Cello_Suite_
 #   song.ord = 2
 # end
 
-Song.create!(
-  title: "The Calling",
-  album_id: Album.find_by_name("Soothing Instrumentals").id,
-  ord: 1,
-  audio: 'https://s3.amazonaws.com/aa-sonatify-dev/seeds/theCalling-Angelwing.mp3'
-)
+# Song.create!(
+#   title: "The Calling",
+#   album_id: Album.find_by_name("Soothing Instrumentals").id,
+#   ord: 1,
+#   audio: 'https://s3.amazonaws.com/aa-sonatify-dev/seeds/theCalling-Angelwing.mp3'
+# )
+# Listing.create!(
+# playlist_id: Playlist.find_by_name("Recommended for You").id,
+# song_id: Song.find_by_title("The Calling").id
+# )
+
 # Song.find_or_create_by(audio_file_name: 'https://s3.amazonaws.com/aa-sonatify-dev/seeds/theCalling-Angelwing.mp3') do |song|
 #   song.title = "The Calling"
 #   song.album_id = Album.find_by_name("Soothing Instrumentals").id
@@ -121,10 +151,6 @@ song_id: Song.find_by_title("Double Violin Concerto by JS Bach").id
 Listing.create!(
 playlist_id: Playlist.find_by_name("Recommended for You").id,
 song_id: Song.find_by_title("Courante 1st Cello Suite by JS Bach").id
-)
-Listing.create!(
-playlist_id: Playlist.find_by_name("Recommended for You").id,
-song_id: Song.find_by_title("The Calling").id
 )
 
 # Album - Another Effect
@@ -229,19 +255,24 @@ song_id: Song.find_by_title("Grand Epic").id
 
 Song.create!(
 title: "The Flying of a Leaf",
-album_id: Album.find_by_name("Mattia Vlad Morleo").id,
+album_id: Album.find_by_name("The Flying of a Leaf").id,
 ord: 1,
 audio: 'https://s3.amazonaws.com/aa-sonatify-dev/seeds/Mattia_Vlad_Morleo_-_The_Flying_of_a_Leaf.mp3'
 )
-# Song.find_or_create_by(audio_file_name: 'https://s3.amazonaws.com/aa-sonatify-dev/seeds/Mattia_Vlad_Morleo_-_The_Flying_of_a_Leaf.mp3') do |song|
-#   song.title = "The Flying of a Leaf"
-#   song.album_id = Album.find_by_name("Mattia Vlad Morleo").id
-#   song.ord = 1
-# end
-
 Listing.create!(
 playlist_id: Playlist.find_by_name("Recommended for You").id,
 song_id: Song.find_by_title("The Flying of a Leaf").id
+)
+
+Song.create!(
+title: "Passando",
+album_id: Album.find_by_name("Passando").id,
+ord: 1,
+audio: 'https://s3.amazonaws.com/aa-sonatify-dev/seeds/Mattia_Vlad_Morleo_-_Passando.mp3'
+)
+Listing.create!(
+playlist_id: Playlist.find_by_name("Recommended for You").id,
+song_id: Song.find_by_title("Passando").id
 )
 
 Song.create!(
@@ -288,7 +319,6 @@ playlist_id: Playlist.find_by_name("Recommended for You").id,
 song_id: Song.find_by_title("Kind of Light").id
 )
 
-
 Song.create!(
 title: "Just For A Second",
 album_id: Album.find_by_name("TMP").id,
@@ -298,4 +328,15 @@ audio: 'https://s3.amazonaws.com/aa-sonatify-dev/seeds/The.madpix.project_-_Just
 Listing.create!(
 playlist_id: Playlist.find_by_name("Recommended for You").id,
 song_id: Song.find_by_title("Just For A Second").id
+)
+
+Song.create!(
+title: "Curse the Day",
+album_id: Album.find_by_name("Curse the Day").id,
+ord: 1,
+audio: 'https://s3.amazonaws.com/aa-sonatify-dev/seeds/Brain_Purist_-_Curse_the_Day__Radio_Edit_.mp3'
+)
+Listing.create!(
+playlist_id: Playlist.find_by_name("Recommended for You").id,
+song_id: Song.find_by_title("Curse the Day").id
 )
