@@ -106,6 +106,15 @@ ul a:hover {
   flex-direction: column;
 }
 
+.main-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.main-list li {
+  margin: 10px;
+}
+
 .main-view button {
   display: inline-block;
   position: relative;

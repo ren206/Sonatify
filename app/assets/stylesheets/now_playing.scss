@@ -114,6 +114,10 @@ ul.song-progress-info {
   border: 1px solid #07d159;
 }
 
-#queue-list {
+#queued-songs {
   margin: 20px;
+}
+
+#queued-songs ol {
+  list-style-type: decimal;
 }

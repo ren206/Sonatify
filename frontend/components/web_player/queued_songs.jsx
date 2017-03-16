@@ -27,9 +27,9 @@ class QueuedSongs extends React.Component {
           id="queued-songs"
           >
           <h3>Queued Songs</h3>
-          <ul>
+          <ol>
             {queueList}
-          </ul>
+          </ol>
         </div>
       );
     } else {
