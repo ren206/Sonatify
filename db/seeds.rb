@@ -360,123 +360,123 @@ playlist_id: Playlist.find_by_name("Recommended for You").id,
 song_id: Song.find_by_title("Your Way").id
 )
 
-Song.create!(
-title: "Hobo Blues",
-album_id: Album.find_by_name("Hobo Blues").id,
-ord: 2,
-audio: 'https://s3.amazonaws.com/aa-sonatify-dev/seeds/02+-+The+Brothers+-+HOBO+BLUES.mp3'
-)
-Listing.create!(
-playlist_id: Playlist.find_by_name("Recommended for You").id,
-song_id: Song.find_by_title("Hobo Blues").id
-)
-
-Song.create!(
-title: "Mama Blues (feat Dickey F.)",
-album_id: Album.find_by_name("Hobo Blues").id,
-ord: 3,
-audio: 'https://s3.amazonaws.com/aa-sonatify-dev/seeds/03+-+The+Brothers+-+MAMA+BLUES+feat+Dickey+F.mp3'
-)
-Listing.create!(
-playlist_id: Playlist.find_by_name("Recommended for You").id,
-song_id: Song.find_by_title("Mama Blues (feat Dickey F.)").id
-)
-
-Song.create!(
-title: "Broken Heart Blues",
-album_id: Album.find_by_name("Hobo Blues").id,
-ord: 4,
-audio: 'https://s3.amazonaws.com/aa-sonatify-dev/seeds/04+-+The+Brothers+-+BROKEN+HEART+BLUES.mp3'
-)
-Listing.create!(
-playlist_id: Playlist.find_by_name("Recommended for You").id,
-song_id: Song.find_by_title("Broken Heart Blues").id
-)
-
-Song.create!(
-title: "Sweet Little Baby",
-album_id: Album.find_by_name("Hobo Blues").id,
-ord: 5,
-audio: 'https://s3.amazonaws.com/aa-sonatify-dev/seeds/05+-+The+Brothers+-+SWEET+LITTLE+BABY.mp3'
-)
-Listing.create!(
-playlist_id: Playlist.find_by_name("Recommended for You").id,
-song_id: Song.find_by_title("Sweet Little Baby").id
-)
-
-Song.create!(
-title: "Never Go Back",
-album_id: Album.find_by_name("Hobo Blues").id,
-ord: 6,
-audio: 'https://s3.amazonaws.com/aa-sonatify-dev/seeds/06+-+The+Brothers+-+NEVER+GO+BACK.mp3'
-)
-Listing.create!(
-playlist_id: Playlist.find_by_name("Recommended for You").id,
-song_id: Song.find_by_title("Never Go Back").id
-)
-
-Song.create!(
-title: "Talking With My Baby",
-album_id: Album.find_by_name("Hobo Blues").id,
-ord: 7,
-audio: 'https://s3.amazonaws.com/aa-sonatify-dev/seeds/07+-+The+Brothers+-+TALKING+WITH+MY+BABY.mp3'
-)
-Listing.create!(
-playlist_id: Playlist.find_by_name("Recommended for You").id,
-song_id: Song.find_by_title("Talking With My Baby").id
-)
-
-Song.create!(
-title: "My Memories",
-album_id: Album.find_by_name("Hobo Blues").id,
-ord: 8,
-audio: 'https://s3.amazonaws.com/aa-sonatify-dev/seeds/08+-+The+Brothers+-+MY+MEMORIES.mp3'
-)
-Listing.create!(
-playlist_id: Playlist.find_by_name("Recommended for You").id,
-song_id: Song.find_by_title("My Memories").id
-)
-
-Song.create!(
-title: "Fighting Mood",
-album_id: Album.find_by_name("Hobo Blues").id,
-ord: 9,
-audio: 'https://s3.amazonaws.com/aa-sonatify-dev/seeds/09+-+The+Brothers+-+FIGHTING+MOOD.mp3'
-)
-Listing.create!(
-playlist_id: Playlist.find_by_name("Recommended for You").id,
-song_id: Song.find_by_title("Fighting Mood").id
-)
-
-Song.create!(
-title: "Sheila",
-album_id: Album.find_by_name("Hobo Blues").id,
-ord: 10,
-audio: 'https://s3.amazonaws.com/aa-sonatify-dev/seeds/10+-+The+Brothers+-+SHEILA.mp3'
-)
-Listing.create!(
-playlist_id: Playlist.find_by_name("Recommended for You").id,
-song_id: Song.find_by_title("Sheila").id
-)
-
-Song.create!(
-title: "Oh, Baby",
-album_id: Album.find_by_name("Hobo Blues").id,
-ord: 11,
-audio: 'https://s3.amazonaws.com/aa-sonatify-dev/seeds/11+-+The+Brothers+-+OH-BABY.mp3'
-)
-Listing.create!(
-playlist_id: Playlist.find_by_name("Recommended for You").id,
-song_id: Song.find_by_title("Oh, Baby").id
-)
-
-Song.create!(
-title: "If I Had Possession Over Judgment Day (by Robert Johnson)",
-album_id: Album.find_by_name("Hobo Blues").id,
-ord: 12,
-audio: 'https://s3.amazonaws.com/aa-sonatify-dev/seeds/12+-+The+Brothers+-+IF+I+HAD+POSESSION+OVER+JUDGMENT+DAY+_song+by+Robert+Johnson_.mp3'
-)
-Listing.create!(
-playlist_id: Playlist.find_by_name("Recommended for You").id,
-song_id: Song.find_by_title("If I Had Possession Over Judgment Day (by Robert Johnson)").id
-)
+# Song.create!(
+# title: "Hobo Blues",
+# album_id: Album.find_by_name("Hobo Blues").id,
+# ord: 2,
+# audio: 'https://s3.amazonaws.com/aa-sonatify-dev/seeds/02+-+The+Brothers+-+HOBO+BLUES.mp3'
+# )
+# Listing.create!(
+# playlist_id: Playlist.find_by_name("Recommended for You").id,
+# song_id: Song.find_by_title("Hobo Blues").id
+# )
+#
+# Song.create!(
+# title: "Mama Blues (feat Dickey F.)",
+# album_id: Album.find_by_name("Hobo Blues").id,
+# ord: 3,
+# audio: 'https://s3.amazonaws.com/aa-sonatify-dev/seeds/03+-+The+Brothers+-+MAMA+BLUES+feat+Dickey+F.mp3'
+# )
+# Listing.create!(
+# playlist_id: Playlist.find_by_name("Recommended for You").id,
+# song_id: Song.find_by_title("Mama Blues (feat Dickey F.)").id
+# )
+#
+# Song.create!(
+# title: "Broken Heart Blues",
+# album_id: Album.find_by_name("Hobo Blues").id,
+# ord: 4,
+# audio: 'https://s3.amazonaws.com/aa-sonatify-dev/seeds/04+-+The+Brothers+-+BROKEN+HEART+BLUES.mp3'
+# )
+# Listing.create!(
+# playlist_id: Playlist.find_by_name("Recommended for You").id,
+# song_id: Song.find_by_title("Broken Heart Blues").id
+# )
+#
+# Song.create!(
+# title: "Sweet Little Baby",
+# album_id: Album.find_by_name("Hobo Blues").id,
+# ord: 5,
+# audio: 'https://s3.amazonaws.com/aa-sonatify-dev/seeds/05+-+The+Brothers+-+SWEET+LITTLE+BABY.mp3'
+# )
+# Listing.create!(
+# playlist_id: Playlist.find_by_name("Recommended for You").id,
+# song_id: Song.find_by_title("Sweet Little Baby").id
+# )
+#
+# Song.create!(
+# title: "Never Go Back",
+# album_id: Album.find_by_name("Hobo Blues").id,
+# ord: 6,
+# audio: 'https://s3.amazonaws.com/aa-sonatify-dev/seeds/06+-+The+Brothers+-+NEVER+GO+BACK.mp3'
+# )
+# Listing.create!(
+# playlist_id: Playlist.find_by_name("Recommended for You").id,
+# song_id: Song.find_by_title("Never Go Back").id
+# )
+#
+# Song.create!(
+# title: "Talking With My Baby",
+# album_id: Album.find_by_name("Hobo Blues").id,
+# ord: 7,
+# audio: 'https://s3.amazonaws.com/aa-sonatify-dev/seeds/07+-+The+Brothers+-+TALKING+WITH+MY+BABY.mp3'
+# )
+# Listing.create!(
+# playlist_id: Playlist.find_by_name("Recommended for You").id,
+# song_id: Song.find_by_title("Talking With My Baby").id
+# )
+#
+# Song.create!(
+# title: "My Memories",
+# album_id: Album.find_by_name("Hobo Blues").id,
+# ord: 8,
+# audio: 'https://s3.amazonaws.com/aa-sonatify-dev/seeds/08+-+The+Brothers+-+MY+MEMORIES.mp3'
+# )
+# Listing.create!(
+# playlist_id: Playlist.find_by_name("Recommended for You").id,
+# song_id: Song.find_by_title("My Memories").id
+# )
+#
+# Song.create!(
+# title: "Fighting Mood",
+# album_id: Album.find_by_name("Hobo Blues").id,
+# ord: 9,
+# audio: 'https://s3.amazonaws.com/aa-sonatify-dev/seeds/09+-+The+Brothers+-+FIGHTING+MOOD.mp3'
+# )
+# Listing.create!(
+# playlist_id: Playlist.find_by_name("Recommended for You").id,
+# song_id: Song.find_by_title("Fighting Mood").id
+# )
+#
+# Song.create!(
+# title: "Sheila",
+# album_id: Album.find_by_name("Hobo Blues").id,
+# ord: 10,
+# audio: 'https://s3.amazonaws.com/aa-sonatify-dev/seeds/10+-+The+Brothers+-+SHEILA.mp3'
+# )
+# Listing.create!(
+# playlist_id: Playlist.find_by_name("Recommended for You").id,
+# song_id: Song.find_by_title("Sheila").id
+# )
+#
+# Song.create!(
+# title: "Oh, Baby",
+# album_id: Album.find_by_name("Hobo Blues").id,
+# ord: 11,
+# audio: 'https://s3.amazonaws.com/aa-sonatify-dev/seeds/11+-+The+Brothers+-+OH-BABY.mp3'
+# )
+# Listing.create!(
+# playlist_id: Playlist.find_by_name("Recommended for You").id,
+# song_id: Song.find_by_title("Oh, Baby").id
+# )
+#
+# Song.create!(
+# title: "If I Had Possession Over Judgment Day (by Robert Johnson)",
+# album_id: Album.find_by_name("Hobo Blues").id,
+# ord: 12,
+# audio: 'https://s3.amazonaws.com/aa-sonatify-dev/seeds/12+-+The+Brothers+-+IF+I+HAD+POSESSION+OVER+JUDGMENT+DAY+_song+by+Robert+Johnson_.mp3'
+# )
+# Listing.create!(
+# playlist_id: Playlist.find_by_name("Recommended for You").id,
+# song_id: Song.find_by_title("If I Had Possession Over Judgment Day (by Robert Johnson)").id
+# )
