@@ -8,7 +8,7 @@ Sonatify is a full-stack web application inspired by the web player app of Spoti
 
 ### Persistent Playback
 
-![alt text](https://raw.githubusercontent.com/ren206/Sonatify/master/docs/screenshots/persistent-playback.jpg "Persistent Playback")
+![alt text](https://raw.githubusercontent.com/ren206/Sonatify/master/docs/screenshots/persistent-playback.gif "Persistent Playback")
 
 The main attraction of Sonatify is music streaming, and persistent playback is the primary concern to guarantee seamless user experience while performing other tasks. I accomplished this through carefully architecting the [component hierarchy](./docs/component-hierarchy).
 The main `WebPlayer` component contains:
@@ -18,8 +18,8 @@ The main `WebPlayer` component contains:
 
 ### Playlist CRUD
 
-![alt text](https://raw.githubusercontent.com/ren206/Sonatify/master/docs/screenshots/playlist-crud.jpg "Playlist CRUD")
+![alt text](https://raw.githubusercontent.com/ren206/Sonatify/master/docs/screenshots/playlist-crud.gif "Playlist CRUD")
 
 ### Custom Context Menus
 
-![alt text](https://raw.githubusercontent.com/ren206/Sonatify/master/docs/screenshots/custom-context-menus.jpg "Custom Context Menus)
+![alt text](https://raw.githubusercontent.com/ren206/Sonatify/master/docs/screenshots/custom-context-menus.gif "Custom Context Menus)
