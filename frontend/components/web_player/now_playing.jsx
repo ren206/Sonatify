@@ -55,6 +55,9 @@ class NowPlaying extends React.Component {
     return(
       <div className="now-playing-wrapper-active">
         <div id="now-playing">
+          <h4>
+            Sonatify
+          </h4>
           <h3
             className="now-playing-header">
             Now Playing
@@ -66,9 +69,6 @@ class NowPlaying extends React.Component {
 
             <div className="now-playing-art">
               <img src={currentSong.album.cover_url} />
-              <h4>
-                Sonatify
-              </h4>
             </div>
 
           <br />

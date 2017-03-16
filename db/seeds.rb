@@ -38,9 +38,11 @@ Album.find_or_create_by(name: "Soothing Instrumentals") do |album|
   album.year = 1970
 end
 
+Album.where(name: "Another Effect").destroy_all
 Album.find_or_create_by(name: "Another Effect") do |album|
   album.artist_id = Artist.find_by_name("Zeropage").id
   album.year = 2017
+  album.cover = 'https://s3.amazonaws.com/aa-sonatify-dev/seeds/Another-Effect.jpg'
 end
 
 Album.find_or_create_by(name: "Epic Collection") do |album|
@@ -73,8 +75,8 @@ Album.find_or_create_by(name: "TMP") do |album|
 end
 
 
-Song.destroy_all
-Listing.destroy_all
+Song.delete_all
+Listing.delete_all
 
 Song.create!(
 title: "Double Violin Concerto by JS Bach",
