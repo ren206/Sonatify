@@ -23,12 +23,16 @@ class ProgressBar extends React.Component {
 
   render () {
     const padTime = seconds => {
-      const min = Math.floor(seconds / 60);
-      let sec = seconds % 60;
-      if (sec < 10) {
-        sec = `0${sec}`;
-      }
-      return `${min}:${sec}`;
+      if (seconds) {
+        const min = Math.floor(seconds / 60);
+        let sec = seconds % 60;
+        if (sec < 10) {
+          sec = `0${sec}`;
+        }
+        return `${min}:${sec}`;
+      } else {
+      return "0:00";
+    }
     };
 
     const currentTime = this.state.currentTime;
