@@ -85,8 +85,6 @@ ul a:hover {
   display: none;
 }
 
-
-
 .playlist-form input {
   display: inline-block;
   background-color: transparent;
@@ -147,4 +145,12 @@ ul a:hover {
   position: relative;
   justify-content: center;
   align-items: center;
+}
+
+button.editable-active {
+  display: inline-block;
+}
+
+button.editable-inactive {
+  display: none;
 }

@@ -179,7 +179,15 @@ class Playlist extends React.Component {
         </MenuItem>
       )
     });
-
+    let editable;
+    if (
+      this.props.playlist.id &&
+      Object.keys(this.props.currentUser.playlists).includes(this.props.playlist.id.toString())
+    ) {
+      editable = "editable-active";
+    } else {
+      editable = "editable-inactive";
+    }
     const editingClass = this.state.editing ? "editing-playlist-active" : "editing-playlist-inactive";
     return(
       this.props.loading ?
@@ -189,7 +197,9 @@ class Playlist extends React.Component {
           <h1 className="main-title">
             { this.props.playlist.name }
           </h1>
-            <button onClick={ this.handleClick }>
+            <button
+              className={editable}
+              onClick={ this.handleClick }>
               Edit
             </button>
           <div className={editingClass}>
