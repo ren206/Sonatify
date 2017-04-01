@@ -181,7 +181,7 @@ class Playlist extends React.Component {
     });
     let editable;
     if (
-      this.props.playlist.id &&
+      this.props.playlist.id && this.props.currentUser.playlists &&
       Object.keys(this.props.currentUser.playlists).includes(this.props.playlist.id.toString())
     ) {
       editable = "editable-active";
