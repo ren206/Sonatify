@@ -63,14 +63,14 @@ class Splash extends React.Component {
 
             <br />
 
-            <h2>Listen to hundreds of songs for free.</h2>
+            <h2>Listen to dozens of songs for free.</h2>
 
             <br />
 
             <ul>
-              <li>Search &amp; discover music you'll love</li>
+              <li>Discover music you'll love</li>
               <li>Create playlists of your favorite music</li>
-              <li>Follow friends and their playlists</li>
+              <li>And more!</li>
             </ul>
           </div>
         </div>
